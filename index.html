@@ -123,6 +123,26 @@ p { margin: 0; max-width: 62ch; }
 .shopcard span { font-size: 15px; color: var(--ink-soft); }
 .shopcard.star { background: var(--sun); }
 
+/* lesson plans */
+.plans { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.plan { background: #fff; border: 3px solid var(--ink); border-radius: 22px; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px; }
+.plan-top { display: flex; align-items: center; gap: 14px; }
+.plan-top img { width: 112px; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; border: 2px solid var(--ink); flex: none; }
+.plan-meta { font-size: 14px; color: var(--ink-soft); font-weight: 700; }
+.plan h4 { font-family: var(--display); font-size: 17px; font-weight: 800; margin: 4px 0 0; color: var(--berry); }
+.plan ul { margin: 0; padding-left: 20px; font-size: 16px; }
+.plan li + li { margin-top: 4px; }
+.plan p { font-size: 16px; }
+.plan .printbtn { align-self: flex-start; font: inherit; font-weight: 700; font-size: 15px; padding: 8px 16px; border-radius: 999px; border: 2px solid var(--ink); background: #fff; color: var(--ink); cursor: pointer; margin-top: auto; }
+.plan .printbtn:hover { background: var(--sun); }
+@media (max-width: 760px) { .plans { grid-template-columns: 1fr; } }
+@media print {
+  body { background: #fff; }
+  body.print-one header, body.print-one main > *:not(#lessons), body.print-one footer, body.print-one #lessons .head, body.print-one .plan:not(.printing), body.print-one .printbtn { display: none !important; }
+  body.print-one #lessons { padding: 0; }
+  body.print-one .plan { border: 0; padding: 0; }
+}
+
 footer { padding: 36px 0 52px; border-top: 2px dashed var(--line); margin-top: 20px; color: var(--ink-soft); font-size: 15px; }
 footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 
@@ -149,6 +169,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   <nav class="nav" aria-label="Main">
     <a href="#episodes">Episodes</a>
     <a href="#teachers">Nurseries &amp; schools</a>
+    <a href="#lessons">Lesson plans</a>
     <a href="#shop">Books</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -238,6 +259,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
           <li><div><b>Keep it going</b><span>Finish with drawing, a shape hunt around the room or counting toys.</span></div></li>
         </ol>
         <div class="why"><span>Free on YouTube</span><span>Made for Kids</span><span>One idea per episode</span></div>
+        <div class="ctas"><a class="btn btn-white" href="#lessons">See the free lesson plans</a></div>
       </div>
       <div class="mailcard" id="contact">
         <h3>Teachers and parents, say hello</h3>
@@ -248,6 +270,74 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
           <button class="copy" type="button" id="copy">Copy email</button>
         </div>
         <p class="note" id="copy-note" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="lessons">
+    <div class="wrap">
+      <div class="head">
+        <span class="kicker">Free lesson plans</span>
+        <h2>A lesson plan for every episode</h2>
+        <p>Ready for circle time: a goal, questions to ask, and one hands-on activity with things you already have in class. Print the one you need.</p>
+      </div>
+      <div class="plans">
+        <article class="plan" id="plan-1">
+          <div class="plan-top"><img src="https://i.ytimg.com/vi/baG8fJsSXFg/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><div><h3>Ian's Zoo Day</h3><p class="plan-meta">Episode 1 · 15 min · ages 2 to 5</p></div></div>
+          <p><b>Goal:</b> Children name common zoo animals and say one thing about each.</p>
+          <h4>Before you press play</h4>
+          <ul><li>Ask: who has been to a zoo? Which animals live there?</li></ul>
+          <h4>Pause and ask</h4>
+          <ul><li>Which animal is that?</li><li>What sound does it make?</li><li>Is it big or small?</li></ul>
+          <h4>After the episode</h4>
+          <ul><li>Ask each child: which animal was your favourite, and why?</li></ul>
+          <h4>Activity</h4>
+          <p>Animal walk. Call out an animal from the episode and let the children move like it: stomp, hop, waddle or swing. No materials needed.</p>
+          <p><a href="https://www.youtube.com/watch?v=baG8fJsSXFg">Open the episode on YouTube</a></p>
+          <button class="printbtn" type="button" data-plan="plan-1">Print this plan</button>
+        </article>
+        <article class="plan" id="plan-2">
+          <div class="plan-top"><img src="https://i.ytimg.com/vi/oUq2iLSBxUU/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><div><h3>Ian's Little Garden</h3><p class="plan-meta">Episode 2 · 9 min · ages 2 to 5</p></div></div>
+          <p><b>Goal:</b> Children tell the order: seed, soil, water, sun, plant.</p>
+          <h4>Before you press play</h4>
+          <ul><li>Show a real seed. Ask: what do you think will grow from this?</li></ul>
+          <h4>Pause and ask</h4>
+          <ul><li>What does a plant need to grow?</li><li>What did Ian do to help?</li><li>What grows from a seed?</li></ul>
+          <h4>After the episode</h4>
+          <ul><li>Ask the children to tell the steps back in order, using their hands to show the plant growing.</li></ul>
+          <h4>Activity</h4>
+          <p>Cup garden. Each child puts a bean seed on wet cotton in a clear cup by the window. Check it every morning and talk about what changed.</p>
+          <p><a href="https://www.youtube.com/watch?v=oUq2iLSBxUU">Open the episode on YouTube</a></p>
+          <button class="printbtn" type="button" data-plan="plan-2">Print this plan</button>
+        </article>
+        <article class="plan" id="plan-3">
+          <div class="plan-top"><img src="https://i.ytimg.com/vi/E2k4atUZDsg/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><div><h3>Ian's Shape Hunt</h3><p class="plan-meta">Episode 3 · 9 min · ages 2 to 5</p></div></div>
+          <p><b>Goal:</b> Children recognise and name a circle, a square and a triangle.</p>
+          <h4>Before you press play</h4>
+          <ul><li>Draw a circle, a square and a triangle on the board. Ask: do you know these shapes?</li></ul>
+          <h4>Pause and ask</h4>
+          <ul><li>What shape is that?</li><li>How many corners does a triangle have?</li><li>Can you see that shape in our room?</li></ul>
+          <h4>After the episode</h4>
+          <ul><li>Ask: which shape has no corners? Which one has four?</li></ul>
+          <h4>Activity</h4>
+          <p>Classroom shape hunt. Draw one big shape on each of three sheets of paper. Children find objects in the room and place them on the matching sheet.</p>
+          <p><a href="https://www.youtube.com/watch?v=E2k4atUZDsg">Open the episode on YouTube</a></p>
+          <button class="printbtn" type="button" data-plan="plan-3">Print this plan</button>
+        </article>
+        <article class="plan" id="plan-4">
+          <div class="plan-top"><img src="https://i.ytimg.com/vi/_5Jwth51cnc/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><div><h3>Ian's Number Walk</h3><p class="plan-meta">Episode 4 · 8 min · ages 2 to 5</p></div></div>
+          <p><b>Goal:</b> Children count objects from 1 to 5, one number for each object.</p>
+          <h4>Before you press play</h4>
+          <ul><li>Hold up your fingers one at a time and count to five together.</li></ul>
+          <h4>Pause and ask</h4>
+          <ul><li>How many can you see?</li><li>Can you count with Ian on your fingers?</li><li>What number comes after 3?</li></ul>
+          <h4>After the episode</h4>
+          <ul><li>Line up five toys and count them together. Take one away and count again.</li></ul>
+          <h4>Activity</h4>
+          <p>Counting walk. Walk around the playground and collect five leaves, stones or sticks each. Sit in a circle and count them out loud together.</p>
+          <p><a href="https://www.youtube.com/watch?v=_5Jwth51cnc">Open the episode on YouTube</a></p>
+          <button class="printbtn" type="button" data-plan="plan-4">Print this plan</button>
+        </article>
       </div>
     </div>
   </section>
@@ -287,6 +377,13 @@ document.getElementById('copy').addEventListener('click', async () => {
     note.textContent = 'Copy did not work here. Select the address above and copy it.';
   }
 });
+document.querySelectorAll('.printbtn').forEach((b) => b.addEventListener('click', () => {
+  const plan = document.getElementById(b.dataset.plan);
+  document.body.classList.add('print-one'); plan.classList.add('printing');
+  const done = () => { document.body.classList.remove('print-one'); plan.classList.remove('printing'); window.removeEventListener('afterprint', done); };
+  window.addEventListener('afterprint', done);
+  window.print();
+}));
 </script>
 </body>
 </html>
