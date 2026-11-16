@@ -7,25 +7,34 @@
       "title": "Ian's Zoo Day",
       "learn": "Learn the names of zoo animals.",
       "products": [
-        {"name": "Zoo Animals Coloring Book", "kind": "Printable or paperback", "links": [
-          {"store": "Amazon", "label": "Paperback", "url": "https://www.amazon.com/dp/B0HRRWB3TR"},
-          {"store": "Gumroad", "label": "Printable", "url": "https://mahibrahim.gumroad.com/l/busqsl"},
-          {"store": "Payhip", "url": "https://payhip.com/b/Jbai0"},
-          {"store": "Ko-fi", "url": "https://ko-fi.com/s/9710aa2221"},
-          {"store": "itch.io", "url": "https://learnwithian.itch.io/zoo-animals-coloring-book-with-ian-ages-25"},
-          {"store": "Gumroad", "label": "English, French & Portuguese", "url": "https://mahibrahim.gumroad.com/l/guybk"}
+        {"id": "zoo-coloring-book", "name": "Zoo Animals Coloring Book",
+         "about": "Color the zoo animals from the episode.",
+         "image": "https://m.media-amazon.com/images/P/B0HRRWB3TR.01._SCLZZZZZZZ_.jpg",
+         "links": [
+          {"format": "printable", "store": "Gumroad", "url": "https://mahibrahim.gumroad.com/l/busqsl"},
+          {"format": "paperback", "store": "Amazon", "url": "https://www.amazon.com/dp/B0HRRWB3TR"},
+          {"format": "printable", "store": "Payhip", "url": "https://payhip.com/b/Jbai0"},
+          {"format": "printable", "store": "Ko-fi", "url": "https://ko-fi.com/s/9710aa2221"},
+          {"format": "printable", "store": "itch.io", "url": "https://learnwithian.itch.io/zoo-animals-coloring-book-with-ian-ages-25"},
+          {"format": "printable", "store": "Gumroad", "label": "English, French & Portuguese", "url": "https://mahibrahim.gumroad.com/l/guybk"}
         ]},
-        {"name": "Ian's Zoo Day storybook", "kind": "Picture book", "links": [
-          {"store": "Lulu", "label": "Paperback", "url": "https://www.lulu.com/shop/learn-with-ian/ians-zoo-day/paperback/product-nvempn8.html"},
-          {"store": "Lulu", "label": "eBook", "url": "https://www.lulu.com/shop/learn-with-ian/ians-zoo-day/ebook/product-p685j56.html"},
-          {"store": "Payhip", "label": "eBook", "url": "https://payhip.com/b/bZy8O"}
+        {"id": "zoo-day-storybook", "name": "Ian's Zoo Day storybook",
+         "about": "The Zoo Day story as a picture book to read together.",
+         "image": "https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1k7ahkvqtqi1k4l131i1v19r9b1h.jpg",
+         "links": [
+          {"format": "paperback", "store": "Lulu", "url": "https://www.lulu.com/shop/learn-with-ian/ians-zoo-day/paperback/product-nvempn8.html"},
+          {"format": "ebook", "store": "Payhip", "url": "https://payhip.com/b/bZy8O"},
+          {"format": "ebook", "store": "Lulu", "url": "https://www.lulu.com/shop/learn-with-ian/ians-zoo-day/ebook/product-p685j56.html"}
         ]},
-        {"name": "Count with Ian: Zoo Counting 1 to 10", "kind": "Printable activity sheets", "links": [
-          {"store": "Gumroad", "url": "https://mahibrahim.gumroad.com/l/wjegih"},
-          {"store": "Payhip", "url": "https://payhip.com/b/j6KvB"},
-          {"store": "Ko-fi", "url": "https://ko-fi.com/s/cd702ae449"},
-          {"store": "itch.io", "url": "https://learnwithian.itch.io/count-with-ian-zoo-counting-110-ages-25"},
-          {"store": "Gumroad", "label": "English, French & Portuguese", "url": "https://mahibrahim.gumroad.com/l/ttlgl"}
+        {"id": "zoo-counting", "name": "Count with Ian: Zoo Counting 1 to 10",
+         "about": "Count the zoo animals from 1 to 10.",
+         "image": "https://public-files.gumroad.com/0wkmr4u5yn1gbvcy7l99nuv8ff17",
+         "links": [
+          {"format": "printable", "store": "Gumroad", "url": "https://mahibrahim.gumroad.com/l/wjegih"},
+          {"format": "printable", "store": "Payhip", "url": "https://payhip.com/b/j6KvB"},
+          {"format": "printable", "store": "Ko-fi", "url": "https://ko-fi.com/s/cd702ae449"},
+          {"format": "printable", "store": "itch.io", "url": "https://learnwithian.itch.io/count-with-ian-zoo-counting-110-ages-25"},
+          {"format": "printable", "store": "Gumroad", "label": "English, French & Portuguese", "url": "https://mahibrahim.gumroad.com/l/ttlgl"}
         ]}
       ]
     },
@@ -35,11 +44,14 @@
       "title": "How Plants Grow: Ian's Little Garden",
       "learn": "Learn how a little seed grows into a plant.",
       "products": [
-        {"name": "Ian's Little Garden: Plant Life Cycle", "kind": "Printable science activity", "links": [
-          {"store": "Gumroad", "url": "https://mahibrahim.gumroad.com/l/plant-life-cycle-printable"},
-          {"store": "Payhip", "url": "https://payhip.com/b/5zRu4"},
-          {"store": "Ko-fi", "url": "https://ko-fi.com/s/c968923648"},
-          {"store": "itch.io", "url": "https://learnwithian.itch.io/ians-little-garden-plant-life-cycle-ages-25"}
+        {"id": "plant-life-cycle", "name": "Ian's Little Garden: Plant Life Cycle",
+         "about": "See how a little seed grows into a plant.",
+         "image": "https://public-files.gumroad.com/nrqjoy1v6mq0tujtrumbmt2e4ao3",
+         "links": [
+          {"format": "printable", "store": "Gumroad", "url": "https://mahibrahim.gumroad.com/l/plant-life-cycle-printable"},
+          {"format": "printable", "store": "Payhip", "url": "https://payhip.com/b/5zRu4"},
+          {"format": "printable", "store": "Ko-fi", "url": "https://ko-fi.com/s/c968923648"},
+          {"format": "printable", "store": "itch.io", "url": "https://learnwithian.itch.io/ians-little-garden-plant-life-cycle-ages-25"}
         ]}
       ]
     },
@@ -49,9 +61,12 @@
       "title": "Shapes: Ian's Shape Hunt",
       "learn": "Learn circles, squares and triangles.",
       "products": [
-        {"name": "Ian's Shape Hunt: Coloring & Tracing Pages", "kind": "Printable", "links": [
-          {"store": "Payhip", "url": "https://payhip.com/b/zGnMy"},
-          {"store": "Gumroad", "url": "https://mahibrahim.gumroad.com/l/xdtrd"}
+        {"id": "shape-hunt-pages", "name": "Ian's Shape Hunt: Coloring & Tracing Pages",
+         "about": "Trace and color circles, squares, triangles, stars and hearts.",
+         "image": "https://public-files.gumroad.com/heuczl7qq47wue1swvviuav6o41t",
+         "links": [
+          {"format": "printable", "store": "Gumroad", "url": "https://mahibrahim.gumroad.com/l/xdtrd"},
+          {"format": "printable", "store": "Payhip", "url": "https://payhip.com/b/zGnMy"}
         ]}
       ]
     },
@@ -61,25 +76,40 @@
       "title": "1 2 3 4 5: Ian's Number Walk",
       "learn": "Learn to count from 1 to 5.",
       "products": [
-        {"name": "Ian's Number Walk: Coloring & Tracing Pages", "kind": "Printable", "links": [
-          {"store": "Payhip", "url": "https://payhip.com/b/iZFw1"},
-          {"store": "Gumroad", "url": "https://mahibrahim.gumroad.com/l/wjhjys"}
+        {"id": "number-walk-pages", "name": "Ian's Number Walk: Coloring & Tracing Pages",
+         "about": "Count, color and trace the numbers 1 to 5.",
+         "image": "https://public-files.gumroad.com/sncyxrtebhwuspyknwpu42amn4i9",
+         "links": [
+          {"format": "printable", "store": "Gumroad", "url": "https://mahibrahim.gumroad.com/l/wjhjys"},
+          {"format": "printable", "store": "Payhip", "url": "https://payhip.com/b/iZFw1"}
         ]}
       ]
     }
   },
+  "bundle": {"id": "bundle", "name": "All Ian books in one download",
+    "about": "Every Ian book in one download, so you don't have to choose.",
+    "images": [
+      "https://m.media-amazon.com/images/P/B0HRRWB3TR.01._SCLZZZZZZZ_.jpg",
+      "https://public-files.gumroad.com/0wkmr4u5yn1gbvcy7l99nuv8ff17",
+      "https://public-files.gumroad.com/nrqjoy1v6mq0tujtrumbmt2e4ao3"
+    ],
+    "links": [{"format": "bundle", "store": "Gumroad", "url": "https://mahibrahim.gumroad.com/l/jwxgyp"}]
+  },
   "general": [
-    {"name": "All Ian books bundle", "kind": "Every Ian book in one download", "links": [
-      {"store": "Gumroad", "url": "https://mahibrahim.gumroad.com/l/jwxgyp"}
+    {"id": "trace-abc", "name": "Trace the ABC with Ian",
+     "about": "Trace the letters of the alphabet with Ian.",
+     "image": "https://m.media-amazon.com/images/P/B0HRTMD298.01._SCLZZZZZZZ_.jpg",
+     "links": [
+      {"format": "paperback", "store": "Amazon", "url": "https://www.amazon.com/dp/B0HRTMD298"}
     ]},
-    {"name": "Trace the ABC with Ian", "kind": "Paperback activity book", "links": [
-      {"store": "Amazon", "url": "https://www.amazon.com/dp/B0HRTMD298"}
-    ]},
-    {"name": "Ian T-shirts for kids", "kind": "Ian and Friends, ABC, 123, Latte the Cat", "links": [
-      {"store": "Teemill", "label": "Kids tees", "url": "https://learn-with-ian.teemill.com"},
-      {"store": "Zazzle", "url": "https://www.zazzle.com/store/learnwithian"},
-      {"store": "TeePublic", "url": "https://www.teepublic.com/user/learnwithian"},
-      {"store": "Spreadshop", "url": "https://learnwithian.myspreadshop.com/all"}
+    {"id": "tshirts", "name": "Ian T-shirts for kids",
+     "about": "Ian and Friends, ABC, 123 and Latte the Cat designs.",
+     "image": "",
+     "links": [
+      {"format": "tshirt", "store": "Teemill", "url": "https://learn-with-ian.teemill.com"},
+      {"format": "tshirt", "store": "Zazzle", "url": "https://www.zazzle.com/store/learnwithian"},
+      {"format": "tshirt", "store": "TeePublic", "url": "https://www.teepublic.com/user/learnwithian"},
+      {"format": "tshirt", "store": "Spreadshop", "url": "https://learnwithian.myspreadshop.com/all"}
     ]}
   ],
   "stores": [
