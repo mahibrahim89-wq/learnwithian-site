@@ -2,7 +2,7 @@ name: Daily site update
 
 on:
   schedule:
-    - cron: "17 3 * * *"
+    - cron: "17 */3 * * *"
   workflow_dispatch:
 
 permissions:
@@ -21,8 +21,8 @@ jobs:
           git config user.email "hello@learnwithian.com"
           git add -A
           if git diff --cached --quiet; then
-            echo "No new episodes or products today."
+            echo "Nothing new on the channel."
           else
-            git commit -m "Daily update from YouTube"
+            git commit -m "Site update from YouTube"
             git push
           fi
