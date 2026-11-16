@@ -1,0 +1,28 @@
+name: Daily site update
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read the YouTube channel and rebuild the pages
+        run: python3 scripts/update.py
+      - name: Save changes
+        run: |
+          git config user.name "learnwithian-bot"
+          git config user.email "hello@learnwithian.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No new episodes or products today."
+          else
+            git commit -m "Daily update from YouTube"
+            git push
+          fi
