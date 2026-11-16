@@ -33,6 +33,8 @@
   --line: #ecdcbc;
   --display: "Baloo 2", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
   --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --outline: -2px -2px 0 var(--ink), 2px -2px 0 var(--ink), -2px 2px 0 var(--ink), 2px 2px 0 var(--ink), 0 -2px 0 var(--ink), 0 2px 0 var(--ink), -2px 0 0 var(--ink), 2px 0 0 var(--ink), 0 5px 0 var(--ink);
+  --outline-big: -3px -3px 0 var(--ink), 3px -3px 0 var(--ink), -3px 3px 0 var(--ink), 3px 3px 0 var(--ink), 0 -3px 0 var(--ink), 0 3px 0 var(--ink), -3px 0 0 var(--ink), 3px 0 0 var(--ink), 0 9px 0 var(--ink);
   color-scheme: light;
 }
 * { box-sizing: border-box; }
@@ -58,15 +60,19 @@ p { margin: 0; max-width: 62ch; }
 
 /* top bar */
 .bar { display: flex; align-items: center; justify-content: space-between; gap: 12px 20px; padding: 14px 0; flex-wrap: wrap; }
-.logo { font-family: var(--display); font-weight: 800; font-size: clamp(34px, 5vw, 52px); line-height: 1; letter-spacing: 0.03em; text-decoration: none; text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, 0 3px 0 #fff, 0 -3px 0 #fff, 3px 0 0 #fff, -3px 0 0 #fff, 0 7px 0 rgba(29, 43, 69, 0.3); } .logo span { transition: transform .2s ease; } .logo:hover span:nth-child(odd) { transform: translateY(-4px) rotate(-4deg); } .logo:hover span:nth-child(even) { transform: translateY(-2px) rotate(4deg); }
+.logo { font-family: var(--display); font-weight: 800; font-size: clamp(26px, 3vw, 34px); line-height: 1; letter-spacing: 0.04em; text-decoration: none; text-shadow: var(--outline); } .logo span { transition: transform .2s ease; } .logo:hover span:nth-child(odd) { transform: translateY(-4px) rotate(-4deg); } .logo:hover span:nth-child(even) { transform: translateY(-2px) rotate(4deg); }
 .nav { display: flex; gap: 6px 20px; flex-wrap: wrap; }
 .nav a { color: var(--ink); text-decoration: none; font-weight: 700; font-size: 16px; padding: 4px 0; }
 .nav a:hover { color: var(--sky); }
 
 /* hero */
 .hero { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 36px; align-items: center; padding: 20px 0 56px; }
-.hero h1 { font-size: clamp(40px, 6vw, 68px); font-weight: 800; }
-.hero h1 em { font-style: normal; color: var(--berry); }
+.brandmark { font-size: clamp(54px, 7.4vw, 104px); font-weight: 800; line-height: 1.02; letter-spacing: 0.03em; text-shadow: var(--outline-big); padding-bottom: 6px; }
+.brandmark span { transition: transform .2s ease; }
+.brandmark:hover span:nth-child(odd) { transform: translateY(-5px) rotate(-4deg); }
+.brandmark:hover span:nth-child(even) { transform: translateY(-3px) rotate(4deg); }
+.tagline { font-family: var(--display); font-weight: 800; font-size: clamp(26px, 3vw, 38px); line-height: 1.1; margin-top: 14px; }
+.tagline em { font-style: normal; color: var(--berry); }
 .lede { font-size: 20px; color: var(--ink-soft); margin-top: 16px; }
 .ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
 .btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 22px; border-radius: 999px; font-weight: 700; font-size: 18px; text-decoration: none; border: 3px solid var(--ink); box-shadow: 0 5px 0 var(--ink); transition: transform .15s ease, box-shadow .15s ease; }
@@ -167,7 +173,8 @@ body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; 
 }
 @media (max-width: 640px) {
   .hero { padding-top: 4px; gap: 18px; }
-  .hero h1 { font-size: 34px; }
+  .brandmark { font-size: 48px; }
+  .tagline { font-size: 24px; }
   .lede { font-size: 17px; margin-top: 10px; }
   .ctas { margin-top: 16px; }
   .player-cap { display: none; }
@@ -178,6 +185,7 @@ body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; 
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .brandmark span, .logo span { transition: none; }
   .btn, .ep, .shopcard { transition: none; }
 }
 </style>
@@ -196,7 +204,8 @@ body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; 
 <main>
   <section class="wrap hero">
     <div>
-      <h1>Little cartoon adventures for <em>ages 2 to 5</em></h1>
+      <h1 class="brandmark rainbow" aria-label="Learn with Ian"><span>L</span><span>E</span><span>A</span><span>R</span><span>N</span><span class="sp"></span><span>W</span><span>I</span><span>T</span><span>H</span><span class="sp"></span><span>I</span><span>A</span><span>N</span></h1>
+      <p class="tagline">Little cartoon adventures for <em>ages 2 to 5</em></p>
       <p class="lede">Ian goes to the zoo, grows a garden, hunts for shapes and counts to five. Your child watches, points and learns right along with him.</p>
       <div class="ctas">
         <a class="btn btn-red" href="https://www.youtube.com/@LearnWithIanKids?sub_confirmation=1">
