@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shop Learn with Ian</title>
+<title>Shop Learn with Ian: books and printables</title>
 <meta name="description" content="Coloring books, storybooks, printable activity packs and kids T-shirts from every Learn with Ian episode, on Amazon, Gumroad, Payhip, Lulu and more.">
 <meta property="og:title" content="Shop Learn with Ian: books and printables from every episode">
 <meta property="og:image" content="https://i.ytimg.com/vi/baG8fJsSXFg/maxresdefault.jpg">
@@ -198,25 +198,64 @@ body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; 
 }
 
 
-.shopwrap { padding: 28px 0 40px; }
-.shopintro h1 { font-size: clamp(38px, 6vw, 64px); font-weight: 800; }
-.shopintro p { margin-top: 10px; color: var(--ink-soft); font-size: 19px; }
+.shopwrap { padding: 24px 0 40px; }
+.shopintro h1 { font-size: clamp(36px, 6vw, 60px); font-weight: 800; }
+.shopintro p { margin-top: 8px; color: var(--ink-soft); font-size: 19px; }
+.filters { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; align-items: center; }
+.filters .flabel { font-weight: 700; margin-right: 2px; }
+.filters button { font: inherit; font-weight: 700; font-size: 17px; padding: 9px 18px; border-radius: 999px; border: 3px solid var(--ink); background: #fff; color: var(--ink); cursor: pointer; }
+.filters button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+.jumpline { margin-top: 14px; font-size: 15px; color: var(--ink-soft); display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.jumpline a { font-weight: 700; color: var(--ink); }
+.bundle { margin-top: 26px; display: grid; grid-template-columns: 220px 1fr; gap: 26px; align-items: center; background: #fff; border: 3px solid var(--ink); border-radius: 26px; padding: 22px 26px; box-shadow: 8px 8px 0 var(--sun); }
+.bcovers { position: relative; height: 190px; }
+.bcovers img { position: absolute; top: 0; width: 120px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 10px; border: 3px solid var(--ink); background: #fff; }
+.bcovers img:nth-child(1) { left: 0; transform: rotate(-7deg); }
+.bcovers img:nth-child(2) { left: 50px; top: 8px; z-index: 1; }
+.bcovers img:nth-child(3) { left: 100px; transform: rotate(7deg); }
+.bbody h2 { font-size: clamp(26px, 3.4vw, 36px); }
+.bbody p { margin-top: 6px; color: var(--ink-soft); }
+.bbtn { margin-top: 14px; max-width: 340px; }
 .shopep, .shopgen { padding: 34px 0; border-bottom: 2px dashed var(--line); }
 .shophead { display: flex; gap: 18px; align-items: center; margin-bottom: 18px; flex-wrap: wrap; }
-.shophead img { width: 200px; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; border: 3px solid var(--ink); }
+.shophead img { width: 180px; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; border: 3px solid var(--ink); }
 .shophead h2 { font-size: clamp(26px, 3.4vw, 36px); }
 .watchlink { font-weight: 700; color: var(--ink); text-decoration-color: var(--sun); text-decoration-thickness: 3px; text-underline-offset: 4px; }
-.products { display: grid; gap: 14px; }
-.product { display: grid; grid-template-columns: 1fr auto; gap: 8px 18px; align-items: center; background: #fff; border: 2px solid var(--ink); border-radius: 18px; padding: 16px 18px; }
-.ptext b { display: block; font-size: 19px; }
-.pkind { color: var(--ink-soft); font-size: 15px; }
-.pbuy { font-size: 16px; padding: 10px 18px; white-space: nowrap; }
-.plabel { font-weight: 400; opacity: .9; }
-.pmore { grid-column: 1 / -1; font-size: 15px; color: var(--ink-soft); display: flex; flex-wrap: wrap; gap: 6px 14px; }
-.pmore a { font-weight: 700; }
+.pgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); gap: 18px; }
+.pcard { display: grid; grid-template-columns: 150px 1fr; gap: 18px; background: #fff; border: 3px solid var(--ink); border-radius: 22px; padding: 16px; scroll-margin-top: 90px; }
+.pcard:target { box-shadow: 0 0 0 5px var(--sun); }
+.pcard[hidden], .shopep[hidden], .shopgen[hidden] { display: none; }
+.pimg { display: block; align-self: start; border-radius: 12px; overflow: hidden; border: 2px solid var(--line); background: #fff8ea; }
+.pimg img, .pimg svg { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+.pbody { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.pbody h3 { font-size: 21px; }
+.pabout { font-size: 16px; color: var(--ink-soft); }
+.pbtns { display: grid; gap: 10px; margin-top: 4px; }
+.pbtn { display: flex; flex-direction: column; gap: 1px; padding: 10px 16px; border-radius: 16px; border: 3px solid var(--ink); text-decoration: none; box-shadow: 0 4px 0 var(--ink); transition: transform .15s ease, box-shadow .15s ease; }
+.pbtn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--ink); }
+.pbtn b { font-size: 18px; line-height: 1.2; }
+.pbtn span { font-size: 14px; line-height: 1.3; }
+.pbtn-main { background: #ff2f2f; color: #fff; }
+.pbtn-alt { background: #fff; color: var(--ink); }
+.pbtn-alt span { color: var(--ink-soft); }
+.pother { font-size: 15px; color: var(--ink-soft); margin-top: 2px; }
+.pother summary { cursor: pointer; font-weight: 700; color: var(--ink); width: fit-content; }
+.pother ul { margin: 8px 0 0; padding-left: 20px; display: grid; gap: 4px; }
+.pother a { font-weight: 700; }
 .pnone { color: var(--ink-soft); }
 .note-buy { font-size: 15px; color: var(--ink-soft); margin-top: 14px; }
-@media (max-width: 640px) { .product { grid-template-columns: 1fr; } .pbuy { white-space: normal; } .shophead img { width: 100%; } }
+.nav a[aria-current] { color: var(--berry); }
+@media (max-width: 640px) {
+  .bundle { grid-template-columns: 1fr; padding: 18px; gap: 14px; }
+  .bcovers { height: 150px; }
+  .bcovers img { width: 95px; }
+  .bcovers img:nth-child(2) { left: 70px; } .bcovers img:nth-child(3) { left: 140px; }
+  .pcard { grid-template-columns: 96px 1fr; gap: 14px; padding: 14px; }
+  .pbody h3 { font-size: 19px; }
+  .shophead img { width: 130px; }
+  .filters button { font-size: 16px; padding: 8px 14px; }
+}
+@media (prefers-reduced-motion: reduce) { .pbtn { transition: none; } }
 
 </style>
 </head>
@@ -227,6 +266,7 @@ body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; 
     <nav class="nav" aria-label="Main">
       <a href="./#episodes">Episodes</a>
       <a href="./#lessons">Lesson plans</a>
+      <a href="shop.html" aria-current="page">Shop</a>
       <a href="./#contact">Contact</a>
     </nav>
     <a class="subnow" href="https://www.youtube.com/@LearnWithIanKids?sub_confirmation=1">Subscribe</a>
@@ -235,58 +275,66 @@ body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; 
 <main class="wrap shopwrap">
   <div class="shopintro">
     <h1>Shop Learn with Ian</h1>
-    <p>Books, printables and T-shirts from every episode. You buy on the store you trust; prices are shown there.</p>
-    <nav class="jump" aria-label="Jump to an episode" style="margin-top:18px"><a href="#zoo-day">Ep 1: Ian&#x27;s Zoo Day</a><a href="#little-garden">Ep 2: Ian&#x27;s Little Garden</a><a href="#shape-hunt">Ep 3: Ian&#x27;s Shape Hunt</a><a href="#number-walk">Ep 4: Ian&#x27;s Number Walk</a><a href="#for-every-child">For every child</a><a href="#stores">All stores</a></nav>
+    <p>Books and printables from the episodes your child loves. You pay on a store you trust, and the price is shown there.</p>
+    <div class="filters" role="group" aria-label="Show">
+      <span class="flabel">Show:</span>
+      <button type="button" data-f="all" aria-pressed="true">Everything</button>
+      <button type="button" data-f="printable" aria-pressed="false">Print at home</button>
+      <button type="button" data-f="book" aria-pressed="false">Books</button>
+      <button type="button" data-f="tshirt" aria-pressed="false">T-shirts</button>
+    </div>
+    <nav class="jumpline" aria-label="Jump to an episode"><span>Jump to:</span><a href="#zoo-day">Ian&#x27;s Zoo Day</a><a href="#little-garden">Ian&#x27;s Little Garden</a><a href="#shape-hunt">Ian&#x27;s Shape Hunt</a><a href="#number-walk">Ian&#x27;s Number Walk</a><a href="#for-every-child">ABC &amp; T-shirts</a></nav>
   </div>
+  <section class="bundle" id="bundle" aria-labelledby="bundle-h"><div class="bcovers" aria-hidden="true"><img src="https://m.media-amazon.com/images/P/B0HRRWB3TR.01._SCLZZZZZZZ_.jpg" alt="" loading="lazy"><img src="https://public-files.gumroad.com/0wkmr4u5yn1gbvcy7l99nuv8ff17" alt="" loading="lazy"><img src="https://public-files.gumroad.com/nrqjoy1v6mq0tujtrumbmt2e4ao3" alt="" loading="lazy"></div><div class="bbody"><span class="kicker">Want everything?</span><h2 id="bundle-h">All Ian books in one download</h2><p>Every Ian book in one download, so you don&#x27;t have to choose.</p><a class="pbtn pbtn-main bbtn" href="https://mahibrahim.gumroad.com/l/jwxgyp"><b>Get the bundle</b><span>Instant download &middot; Gumroad</span></a></div></section>
 
     <section class="shopep" id="zoo-day">
       <div class="shophead">
-        <img src="https://i.ytimg.com/vi/baG8fJsSXFg/mqdefault.jpg" alt="" width="320" height="180" loading="lazy">
+        <a href="https://www.youtube.com/watch?v=baG8fJsSXFg" tabindex="-1" aria-hidden="true"><img src="https://i.ytimg.com/vi/baG8fJsSXFg/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></a>
         <div>
           <span class="kicker">Episode 1</span>
           <h2>Ian&#x27;s Zoo Day</h2>
-          <a class="watchlink" href="https://www.youtube.com/watch?v=baG8fJsSXFg">Watch the episode free on YouTube &rarr;</a>
+          <a class="watchlink" href="https://www.youtube.com/watch?v=baG8fJsSXFg">Watch it free on YouTube &rarr;</a>
         </div>
       </div>
-      <div class="products"><div class="product"><div class="ptext"><b>Zoo Animals Coloring Book</b><span class="pkind">Printable or paperback</span></div><a class="btn btn-red pbuy" href="https://www.amazon.com/dp/B0HRRWB3TR">See price on Amazon <span class="plabel">(Paperback)</span></a><div class="pmore"><span>Also on:</span> <a href="https://mahibrahim.gumroad.com/l/busqsl">Gumroad · Printable</a><a href="https://payhip.com/b/Jbai0">Payhip</a><a href="https://ko-fi.com/s/9710aa2221">Ko-fi</a><a href="https://learnwithian.itch.io/zoo-animals-coloring-book-with-ian-ages-25">itch.io</a><a href="https://mahibrahim.gumroad.com/l/guybk">Gumroad · English, French &amp; Portuguese</a></div></div><div class="product"><div class="ptext"><b>Ian&#x27;s Zoo Day storybook</b><span class="pkind">Picture book</span></div><a class="btn btn-red pbuy" href="https://www.lulu.com/shop/learn-with-ian/ians-zoo-day/paperback/product-nvempn8.html">See price on Lulu <span class="plabel">(Paperback)</span></a><div class="pmore"><span>Also on:</span> <a href="https://www.lulu.com/shop/learn-with-ian/ians-zoo-day/ebook/product-p685j56.html">Lulu · eBook</a><a href="https://payhip.com/b/bZy8O">Payhip · eBook</a></div></div><div class="product"><div class="ptext"><b>Count with Ian: Zoo Counting 1 to 10</b><span class="pkind">Printable activity sheets</span></div><a class="btn btn-red pbuy" href="https://mahibrahim.gumroad.com/l/wjegih">See price on Gumroad</a><div class="pmore"><span>Also on:</span> <a href="https://payhip.com/b/j6KvB">Payhip</a><a href="https://ko-fi.com/s/cd702ae449">Ko-fi</a><a href="https://learnwithian.itch.io/count-with-ian-zoo-counting-110-ages-25">itch.io</a><a href="https://mahibrahim.gumroad.com/l/ttlgl">Gumroad · English, French &amp; Portuguese</a></div></div></div>
+      <div class="pgrid"><article class="pcard" id="zoo-coloring-book" data-f="book printable"><a class="pimg" href="https://mahibrahim.gumroad.com/l/busqsl" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/P/B0HRRWB3TR.01._SCLZZZZZZZ_.jpg" alt="Zoo Animals Coloring Book cover" loading="lazy"></a><div class="pbody"><h3>Zoo Animals Coloring Book</h3><p class="pabout">Color the zoo animals from the episode.</p><div class="pbtns"><a class="pbtn pbtn-main" href="https://mahibrahim.gumroad.com/l/busqsl"><b>Printable PDF</b><span>Instant download, print at home &middot; Gumroad</span></a><a class="pbtn pbtn-alt" href="https://www.amazon.com/dp/B0HRRWB3TR"><b>Paperback book</b><span>Printed and shipped to your door &middot; Amazon</span></a></div><details class="pother"><summary>Also on 4 other stores</summary><ul><li><a href="https://payhip.com/b/Jbai0">Payhip</a> <span>Printable PDF</span></li><li><a href="https://ko-fi.com/s/9710aa2221">Ko-fi</a> <span>Printable PDF</span></li><li><a href="https://learnwithian.itch.io/zoo-animals-coloring-book-with-ian-ages-25">itch.io</a> <span>Printable PDF</span></li><li><a href="https://mahibrahim.gumroad.com/l/guybk">Gumroad</a> <span>Printable PDF, English, French &amp; Portuguese</span></li></ul></details></div></article><article class="pcard" id="zoo-day-storybook" data-f="book"><a class="pimg" href="https://www.lulu.com/shop/learn-with-ian/ians-zoo-day/paperback/product-nvempn8.html" tabindex="-1" aria-hidden="true"><img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1k7ahkvqtqi1k4l131i1v19r9b1h.jpg" alt="Ian&#x27;s Zoo Day storybook cover" loading="lazy"></a><div class="pbody"><h3>Ian&#x27;s Zoo Day storybook</h3><p class="pabout">The Zoo Day story as a picture book to read together.</p><div class="pbtns"><a class="pbtn pbtn-main" href="https://www.lulu.com/shop/learn-with-ian/ians-zoo-day/paperback/product-nvempn8.html"><b>Paperback book</b><span>Printed and shipped to your door &middot; Lulu</span></a><a class="pbtn pbtn-alt" href="https://payhip.com/b/bZy8O"><b>eBook</b><span>Instant download, read on a tablet &middot; Payhip</span></a></div><details class="pother"><summary>Also on 1 other store</summary><ul><li><a href="https://www.lulu.com/shop/learn-with-ian/ians-zoo-day/ebook/product-p685j56.html">Lulu</a> <span>eBook</span></li></ul></details></div></article><article class="pcard" id="zoo-counting" data-f="printable"><a class="pimg" href="https://mahibrahim.gumroad.com/l/wjegih" tabindex="-1" aria-hidden="true"><img src="https://public-files.gumroad.com/0wkmr4u5yn1gbvcy7l99nuv8ff17" alt="Count with Ian: Zoo Counting 1 to 10 cover" loading="lazy"></a><div class="pbody"><h3>Count with Ian: Zoo Counting 1 to 10</h3><p class="pabout">Count the zoo animals from 1 to 10.</p><div class="pbtns"><a class="pbtn pbtn-main" href="https://mahibrahim.gumroad.com/l/wjegih"><b>Printable PDF</b><span>Instant download, print at home &middot; Gumroad</span></a></div><details class="pother"><summary>Also on 4 other stores</summary><ul><li><a href="https://payhip.com/b/j6KvB">Payhip</a> <span>Printable PDF</span></li><li><a href="https://ko-fi.com/s/cd702ae449">Ko-fi</a> <span>Printable PDF</span></li><li><a href="https://learnwithian.itch.io/count-with-ian-zoo-counting-110-ages-25">itch.io</a> <span>Printable PDF</span></li><li><a href="https://mahibrahim.gumroad.com/l/ttlgl">Gumroad</a> <span>Printable PDF, English, French &amp; Portuguese</span></li></ul></details></div></article></div>
     </section>
     <section class="shopep" id="little-garden">
       <div class="shophead">
-        <img src="https://i.ytimg.com/vi/oUq2iLSBxUU/mqdefault.jpg" alt="" width="320" height="180" loading="lazy">
+        <a href="https://www.youtube.com/watch?v=oUq2iLSBxUU" tabindex="-1" aria-hidden="true"><img src="https://i.ytimg.com/vi/oUq2iLSBxUU/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></a>
         <div>
           <span class="kicker">Episode 2</span>
           <h2>How Plants Grow: Ian&#x27;s Little Garden</h2>
-          <a class="watchlink" href="https://www.youtube.com/watch?v=oUq2iLSBxUU">Watch the episode free on YouTube &rarr;</a>
+          <a class="watchlink" href="https://www.youtube.com/watch?v=oUq2iLSBxUU">Watch it free on YouTube &rarr;</a>
         </div>
       </div>
-      <div class="products"><div class="product"><div class="ptext"><b>Ian&#x27;s Little Garden: Plant Life Cycle</b><span class="pkind">Printable science activity</span></div><a class="btn btn-red pbuy" href="https://mahibrahim.gumroad.com/l/plant-life-cycle-printable">See price on Gumroad</a><div class="pmore"><span>Also on:</span> <a href="https://payhip.com/b/5zRu4">Payhip</a><a href="https://ko-fi.com/s/c968923648">Ko-fi</a><a href="https://learnwithian.itch.io/ians-little-garden-plant-life-cycle-ages-25">itch.io</a></div></div></div>
+      <div class="pgrid"><article class="pcard" id="plant-life-cycle" data-f="printable"><a class="pimg" href="https://mahibrahim.gumroad.com/l/plant-life-cycle-printable" tabindex="-1" aria-hidden="true"><img src="https://public-files.gumroad.com/nrqjoy1v6mq0tujtrumbmt2e4ao3" alt="Ian&#x27;s Little Garden: Plant Life Cycle cover" loading="lazy"></a><div class="pbody"><h3>Ian&#x27;s Little Garden: Plant Life Cycle</h3><p class="pabout">See how a little seed grows into a plant.</p><div class="pbtns"><a class="pbtn pbtn-main" href="https://mahibrahim.gumroad.com/l/plant-life-cycle-printable"><b>Printable PDF</b><span>Instant download, print at home &middot; Gumroad</span></a></div><details class="pother"><summary>Also on 3 other stores</summary><ul><li><a href="https://payhip.com/b/5zRu4">Payhip</a> <span>Printable PDF</span></li><li><a href="https://ko-fi.com/s/c968923648">Ko-fi</a> <span>Printable PDF</span></li><li><a href="https://learnwithian.itch.io/ians-little-garden-plant-life-cycle-ages-25">itch.io</a> <span>Printable PDF</span></li></ul></details></div></article></div>
     </section>
     <section class="shopep" id="shape-hunt">
       <div class="shophead">
-        <img src="https://i.ytimg.com/vi/E2k4atUZDsg/mqdefault.jpg" alt="" width="320" height="180" loading="lazy">
+        <a href="https://www.youtube.com/watch?v=E2k4atUZDsg" tabindex="-1" aria-hidden="true"><img src="https://i.ytimg.com/vi/E2k4atUZDsg/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></a>
         <div>
           <span class="kicker">Episode 3</span>
           <h2>Shapes: Ian&#x27;s Shape Hunt</h2>
-          <a class="watchlink" href="https://www.youtube.com/watch?v=E2k4atUZDsg">Watch the episode free on YouTube &rarr;</a>
+          <a class="watchlink" href="https://www.youtube.com/watch?v=E2k4atUZDsg">Watch it free on YouTube &rarr;</a>
         </div>
       </div>
-      <div class="products"><div class="product"><div class="ptext"><b>Ian&#x27;s Shape Hunt: Coloring &amp; Tracing Pages</b><span class="pkind">Printable</span></div><a class="btn btn-red pbuy" href="https://payhip.com/b/zGnMy">See price on Payhip</a><div class="pmore"><span>Also on:</span> <a href="https://mahibrahim.gumroad.com/l/xdtrd">Gumroad</a></div></div></div>
+      <div class="pgrid"><article class="pcard" id="shape-hunt-pages" data-f="printable"><a class="pimg" href="https://mahibrahim.gumroad.com/l/xdtrd" tabindex="-1" aria-hidden="true"><img src="https://public-files.gumroad.com/heuczl7qq47wue1swvviuav6o41t" alt="Ian&#x27;s Shape Hunt: Coloring &amp; Tracing Pages cover" loading="lazy"></a><div class="pbody"><h3>Ian&#x27;s Shape Hunt: Coloring &amp; Tracing Pages</h3><p class="pabout">Trace and color circles, squares, triangles, stars and hearts.</p><div class="pbtns"><a class="pbtn pbtn-main" href="https://mahibrahim.gumroad.com/l/xdtrd"><b>Printable PDF</b><span>Instant download, print at home &middot; Gumroad</span></a></div><details class="pother"><summary>Also on 1 other store</summary><ul><li><a href="https://payhip.com/b/zGnMy">Payhip</a> <span>Printable PDF</span></li></ul></details></div></article></div>
     </section>
     <section class="shopep" id="number-walk">
       <div class="shophead">
-        <img src="https://i.ytimg.com/vi/_5Jwth51cnc/mqdefault.jpg" alt="" width="320" height="180" loading="lazy">
+        <a href="https://www.youtube.com/watch?v=_5Jwth51cnc" tabindex="-1" aria-hidden="true"><img src="https://i.ytimg.com/vi/_5Jwth51cnc/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></a>
         <div>
           <span class="kicker">Episode 4</span>
           <h2>1 2 3 4 5: Ian&#x27;s Number Walk</h2>
-          <a class="watchlink" href="https://www.youtube.com/watch?v=_5Jwth51cnc">Watch the episode free on YouTube &rarr;</a>
+          <a class="watchlink" href="https://www.youtube.com/watch?v=_5Jwth51cnc">Watch it free on YouTube &rarr;</a>
         </div>
       </div>
-      <div class="products"><div class="product"><div class="ptext"><b>Ian&#x27;s Number Walk: Coloring &amp; Tracing Pages</b><span class="pkind">Printable</span></div><a class="btn btn-red pbuy" href="https://payhip.com/b/iZFw1">See price on Payhip</a><div class="pmore"><span>Also on:</span> <a href="https://mahibrahim.gumroad.com/l/wjhjys">Gumroad</a></div></div></div>
+      <div class="pgrid"><article class="pcard" id="number-walk-pages" data-f="printable"><a class="pimg" href="https://mahibrahim.gumroad.com/l/wjhjys" tabindex="-1" aria-hidden="true"><img src="https://public-files.gumroad.com/sncyxrtebhwuspyknwpu42amn4i9" alt="Ian&#x27;s Number Walk: Coloring &amp; Tracing Pages cover" loading="lazy"></a><div class="pbody"><h3>Ian&#x27;s Number Walk: Coloring &amp; Tracing Pages</h3><p class="pabout">Count, color and trace the numbers 1 to 5.</p><div class="pbtns"><a class="pbtn pbtn-main" href="https://mahibrahim.gumroad.com/l/wjhjys"><b>Printable PDF</b><span>Instant download, print at home &middot; Gumroad</span></a></div><details class="pother"><summary>Also on 1 other store</summary><ul><li><a href="https://payhip.com/b/iZFw1">Payhip</a> <span>Printable PDF</span></li></ul></details></div></article></div>
     </section>
-  <section class="shopgen" id="for-every-child">
+  <section class="shopgen prods" id="for-every-child">
     <span class="kicker">For every child</span>
-    <h2>Bundles, ABC and T-shirts</h2>
-    <div class="products" style="margin-top:18px"><div class="product"><div class="ptext"><b>All Ian books bundle</b><span class="pkind">Every Ian book in one download</span></div><a class="btn btn-red pbuy" href="https://mahibrahim.gumroad.com/l/jwxgyp">See price on Gumroad</a></div><div class="product"><div class="ptext"><b>Trace the ABC with Ian</b><span class="pkind">Paperback activity book</span></div><a class="btn btn-red pbuy" href="https://www.amazon.com/dp/B0HRTMD298">See price on Amazon</a></div><div class="product"><div class="ptext"><b>Ian T-shirts for kids</b><span class="pkind">Ian and Friends, ABC, 123, Latte the Cat</span></div><a class="btn btn-red pbuy" href="https://learn-with-ian.teemill.com">See price on Teemill <span class="plabel">(Kids tees)</span></a><div class="pmore"><span>Also on:</span> <a href="https://www.zazzle.com/store/learnwithian">Zazzle</a><a href="https://www.teepublic.com/user/learnwithian">TeePublic</a><a href="https://learnwithian.myspreadshop.com/all">Spreadshop</a></div></div></div>
+    <h2>ABC and T-shirts</h2>
+    <div class="pgrid" style="margin-top:18px"><article class="pcard" id="trace-abc" data-f="book"><a class="pimg" href="https://www.amazon.com/dp/B0HRTMD298" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/P/B0HRTMD298.01._SCLZZZZZZZ_.jpg" alt="Trace the ABC with Ian cover" loading="lazy"></a><div class="pbody"><h3>Trace the ABC with Ian</h3><p class="pabout">Trace the letters of the alphabet with Ian.</p><div class="pbtns"><a class="pbtn pbtn-main" href="https://www.amazon.com/dp/B0HRTMD298"><b>Paperback book</b><span>Printed and shipped to your door &middot; Amazon</span></a></div></div></article><article class="pcard" id="tshirts" data-f="tshirt"><a class="pimg" href="https://learn-with-ian.teemill.com" tabindex="-1" aria-hidden="true"><svg viewBox="0 0 120 150" role="img" aria-label="Ian T-shirt"><rect width="120" height="150" fill="#fff1d6"/><path d="M38 30l-26 14 10 22 12-6v62h52V60l12 6 10-22-26-14c-3 8-11 13-22 13s-19-5-22-13z" fill="#ec4f7b" stroke="#1d2b45" stroke-width="4" stroke-linejoin="round"/><text x="60" y="96" text-anchor="middle" font-family="Baloo 2, Arial Rounded MT Bold, sans-serif" font-weight="800" font-size="24" fill="#ffb321" stroke="#1d2b45" stroke-width="1.5">IAN</text></svg></a><div class="pbody"><h3>Ian T-shirts for kids</h3><p class="pabout">Ian and Friends, ABC, 123 and Latte the Cat designs.</p><div class="pbtns"><a class="pbtn pbtn-main" href="https://learn-with-ian.teemill.com"><b>Kids T-shirts</b><span>Printed and shipped to your door &middot; Teemill</span></a></div><details class="pother"><summary>Also on 3 other stores</summary><ul><li><a href="https://www.zazzle.com/store/learnwithian">Zazzle</a> <span>Kids T-shirts</span></li><li><a href="https://www.teepublic.com/user/learnwithian">TeePublic</a> <span>Kids T-shirts</span></li><li><a href="https://learnwithian.myspreadshop.com/all">Spreadshop</a> <span>Kids T-shirts</span></li></ul></details></div></article></div>
   </section>
   <section class="shopgen" id="stores">
     <span class="kicker">All stores</span>
@@ -301,5 +349,20 @@ body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; 
     <span>hello@learnwithian.com</span>
   </div>
 </footer>
+
+<script>
+(() => {
+  const btns = document.querySelectorAll('.filters button');
+  const show = (f) => {
+    btns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.f === f)));
+    document.querySelectorAll('.pcard').forEach((c) => { c.hidden = f !== 'all' && !c.dataset.f.split(' ').includes(f); });
+    document.querySelectorAll('.shopep, .shopgen.prods').forEach((s) => {
+      const cards = s.querySelectorAll('.pcard');
+      s.hidden = cards.length > 0 && [...cards].every((c) => c.hidden);
+    });
+  };
+  btns.forEach((b) => b.addEventListener('click', () => show(b.dataset.f)));
+})();
+</script>
 </body>
 </html>
