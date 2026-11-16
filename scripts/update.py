@@ -99,19 +99,6 @@ def clean_name(label):
     return name.strip(" :") or "Printable activity pack"
 
 
-def group_products(links):
-    """Links tagged (EpN) are one product sold on several stores; others stand alone."""
-    tagged = [l for l in links if re.search(r"\(Ep\s*\d+\)", l["label"])]
-    other = [l for l in links if l not in tagged]
-    prods = []
-    if tagged:
-        names = sorted((clean_name(l["label"]) for l in tagged), key=len, reverse=True)
-        prods.append({"name": names[0], "kind": "Printable", "links": [{"store": l["store"], "url": l["url"]} for l in tagged]})
-    for l in other:
-        prods.append({"name": clean_name(l["label"]) or l["store"], "kind": "", "links": [{"store": l["store"], "url": l["url"]}]})
-    return prods
-
-
 def slugify(s):
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")[:40] or "episode"
 
@@ -130,7 +117,8 @@ def episode_entries(allv):
     """Ordered list of episodes with products, manual data first."""
     manual = SHOP["episodes"]
     eps = []
-    general_urls = {l["url"] for g in SHOP["general"] for l in g["links"]} | {s["url"] for s in SHOP["stores"]}
+    general_urls = ({l["url"] for g in SHOP["general"] + [SHOP.get("bundle") or {"links": []}] for l in g["links"]}
+                    | {s["url"] for s in SHOP["stores"]})
     known = [v for v in allv]
     for vid, m in manual.items():
         if not any(v["id"] == vid for v in known):
@@ -142,75 +130,213 @@ def episode_entries(allv):
             eps.append({"id": v["id"], "num": m["num"], "slug": m["slug"], "title": m["title"],
                         "learn": m["learn"], "products": m["products"], "manual": True})
             continue
-        prods = group_products([l for l in v["links"] if l["url"] not in general_urls])
+        prods = group_products([l for l in v["links"] if l["url"] not in general_urls],
+                               f"https://i.ytimg.com/vi/{v['id']}/mqdefault.jpg")
         title = short_title(v["title"])
         eps.append({"id": v["id"], "num": i, "slug": slugify(title), "title": title,
                     "learn": "", "products": prods, "manual": False})
     return eps
 
 
-def product_html(p):
-    links = p["links"]
-    main, rest = links[0], links[1:]
-    main_label = "See price on " + main["store"]
-    more = "".join(
-        f'<a href="{esc(l["url"])}">{esc(l["store"])}{(" · " + esc(l["label"])) if l.get("label") else ""}</a>'
-        for l in rest)
-    kind = f'<span class="pkind">{esc(p["kind"])}</span>' if p.get("kind") else ""
-    first_label = f' <span class="plabel">({esc(main["label"])})</span>' if main.get("label") else ""
-    return (f'<div class="product"><div class="ptext"><b>{esc(p["name"])}</b>{kind}</div>'
-            f'<a class="btn btn-red pbuy" href="{esc(main["url"])}">{main_label}{first_label}</a>'
-            + (f'<div class="pmore"><span>Also on:</span> {more}</div>' if more else "") + '</div>')
+FORMATS = {
+    # format: (button title, how it reaches you, filter group)
+    "printable": ("Printable PDF", "Instant download, print at home", "printable"),
+    "ebook": ("eBook", "Instant download, read on a tablet", "book"),
+    "paperback": ("Paperback book", "Printed and shipped to your door", "book"),
+    "tshirt": ("Kids T-shirts", "Printed and shipped to your door", "tshirt"),
+    "bundle": ("Get the bundle", "Instant download", "printable"),
+}
+TEE_SVG = ('<svg viewBox="0 0 120 150" role="img" aria-label="Ian T-shirt"><rect width="120" height="150" fill="#fff1d6"/>'
+           '<path d="M38 30l-26 14 10 22 12-6v62h52V60l12 6 10-22-26-14c-3 8-11 13-22 13s-19-5-22-13z" fill="#ec4f7b" '
+           'stroke="#1d2b45" stroke-width="4" stroke-linejoin="round"/>'
+           '<text x="60" y="96" text-anchor="middle" font-family="Baloo 2, Arial Rounded MT Bold, sans-serif" '
+           'font-weight="800" font-size="24" fill="#ffb321" stroke="#1d2b45" stroke-width="1.5">IAN</text></svg>')
+
+
+def format_of(store):
+    if store in ("Amazon", "Lulu"):
+        return "paperback"
+    if store in ("Teemill", "Zazzle", "TeePublic", "Spreadshop", "Redbubble"):
+        return "tshirt"
+    return "printable"
+
+
+def group_products(links, image=""):
+    """Links tagged (EpN) are one product sold on several stores; others stand alone."""
+    tagged = [l for l in links if re.search(r"\(Ep\s*\d+\)", l["label"])]
+    other = [l for l in links if l not in tagged]
+    prods = []
+    if tagged:
+        names = sorted((clean_name(l["label"]) for l in tagged), key=len, reverse=True)
+        prods.append({"id": slugify(names[0]), "name": names[0], "about": "", "image": image,
+                      "links": [{"format": format_of(l["store"]), "store": l["store"], "url": l["url"]} for l in tagged]})
+    for l in other:
+        name = clean_name(l["label"]) or l["store"]
+        prods.append({"id": slugify(name), "name": name, "about": "", "image": image,
+                      "links": [{"format": format_of(l["store"]), "store": l["store"], "url": l["url"]}]})
+    return prods
+
+
+def split_links(links):
+    """First link of each format becomes a big button; the rest go under 'other stores'."""
+    main, seen = [], set()
+    for l in links:
+        f = l.get("format") or format_of(l["store"])
+        if f not in seen:
+            seen.add(f)
+            main.append(dict(l, format=f))
+    rest = [dict(l, format=l.get("format") or format_of(l["store"])) for l in links if l["url"] not in {m["url"] for m in main}]
+    return main, rest
+
+
+def buy_button(l, i):
+    title, how, _ = FORMATS.get(l["format"], FORMATS["printable"])
+    cls = "pbtn pbtn-main" if i == 0 else "pbtn pbtn-alt"
+    return (f'<a class="{cls}" href="{esc(l["url"])}"><b>{title}</b>'
+            f'<span>{how} &middot; {esc(l["store"])}</span></a>')
+
+
+def other_stores(rest):
+    if not rest:
+        return ""
+    items = "".join(
+        f'<li><a href="{esc(l["url"])}">{esc(l["store"])}</a> <span>{FORMATS.get(l["format"], FORMATS["printable"])[0]}'
+        f'{(", " + esc(l["label"])) if l.get("label") else ""}</span></li>' for l in rest)
+    n = len(rest)
+    return (f'<details class="pother"><summary>Also on {n} other store{"s" if n > 1 else ""}</summary>'
+            f'<ul>{items}</ul></details>')
+
+
+def product_html(p, fallback_img=""):
+    main, rest = split_links(p["links"])
+    groups = " ".join(sorted({FORMATS.get(l["format"], FORMATS["printable"])[2] for l in p["links"]}))
+    img = p.get("image") or fallback_img
+    pic = (f'<img src="{esc(img)}" alt="{esc(p["name"])} cover" loading="lazy">' if img else TEE_SVG)
+    about = f'<p class="pabout">{esc(p["about"])}</p>' if p.get("about") else ""
+    pid = p.get("id") or slugify(p["name"])
+    return (f'<article class="pcard" id="{esc(pid)}" data-f="{groups}">'
+            f'<a class="pimg" href="{esc(main[0]["url"])}" tabindex="-1" aria-hidden="true">{pic}</a>'
+            f'<div class="pbody"><h3>{esc(p["name"])}</h3>{about}'
+            f'<div class="pbtns">{"".join(buy_button(l, i) for i, l in enumerate(main))}</div>'
+            f'{other_stores(rest)}</div></article>')
+
+
+def bundle_html(b):
+    if not b:
+        return ""
+    covers = "".join(f'<img src="{esc(u)}" alt="" loading="lazy">' for u in b.get("images", [])[:3])
+    l = b["links"][0]
+    return (f'<section class="bundle" id="{esc(b["id"])}" aria-labelledby="bundle-h">'
+            f'<div class="bcovers" aria-hidden="true">{covers}</div>'
+            f'<div class="bbody"><span class="kicker">Want everything?</span><h2 id="bundle-h">{esc(b["name"])}</h2>'
+            f'<p>{esc(b["about"])}</p>'
+            f'<a class="pbtn pbtn-main bbtn" href="{esc(l["url"])}"><b>Get the bundle</b>'
+            f'<span>Instant download &middot; {esc(l["store"])}</span></a></div></section>')
 
 
 def render_shop(eps, style):
     ep_blocks = []
     for e in eps:
-        prods = "".join(product_html(p) for p in e["products"]) or \
+        thumb = f'https://i.ytimg.com/vi/{e["id"]}/mqdefault.jpg'
+        prods = "".join(product_html(p, thumb) for p in e["products"]) or \
             '<p class="pnone">Books and printables for this episode are coming soon.</p>'
         ep_blocks.append(f'''
     <section class="shopep" id="{esc(e["slug"])}">
       <div class="shophead">
-        <img src="https://i.ytimg.com/vi/{esc(e["id"])}/mqdefault.jpg" alt="" width="320" height="180" loading="lazy">
+        <a href="https://www.youtube.com/watch?v={esc(e["id"])}" tabindex="-1" aria-hidden="true"><img src="{esc(thumb)}" alt="" width="320" height="180" loading="lazy"></a>
         <div>
           <span class="kicker">Episode {e["num"]}</span>
           <h2>{esc(e["title"])}</h2>
-          <a class="watchlink" href="https://www.youtube.com/watch?v={esc(e["id"])}">Watch the episode free on YouTube &rarr;</a>
+          <a class="watchlink" href="https://www.youtube.com/watch?v={esc(e["id"])}">Watch it free on YouTube &rarr;</a>
         </div>
       </div>
-      <div class="products">{prods}</div>
+      <div class="pgrid">{prods}</div>
     </section>''')
-    jump = "".join(f'<a href="#{esc(e["slug"])}">Ep {e["num"]}: {esc(e["title"].split(": ")[-1])}</a>' for e in eps)
+    jump = "".join(f'<a href="#{esc(e["slug"])}">{esc(e["title"].split(": ")[-1])}</a>' for e in eps)
     general = "".join(product_html(p) for p in SHOP["general"])
     stores = "".join(f'<a class="shopcard" href="{esc(s["url"])}"><b>{esc(s["name"])}</b><span>{esc(s["what"])}</span></a>'
                      for s in SHOP["stores"])
     shop_css = """
-.shopwrap { padding: 28px 0 40px; }
-.shopintro h1 { font-size: clamp(38px, 6vw, 64px); font-weight: 800; }
-.shopintro p { margin-top: 10px; color: var(--ink-soft); font-size: 19px; }
+.shopwrap { padding: 24px 0 40px; }
+.shopintro h1 { font-size: clamp(36px, 6vw, 60px); font-weight: 800; }
+.shopintro p { margin-top: 8px; color: var(--ink-soft); font-size: 19px; }
+.filters { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; align-items: center; }
+.filters .flabel { font-weight: 700; margin-right: 2px; }
+.filters button { font: inherit; font-weight: 700; font-size: 17px; padding: 9px 18px; border-radius: 999px; border: 3px solid var(--ink); background: #fff; color: var(--ink); cursor: pointer; }
+.filters button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+.jumpline { margin-top: 14px; font-size: 15px; color: var(--ink-soft); display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.jumpline a { font-weight: 700; color: var(--ink); }
+.bundle { margin-top: 26px; display: grid; grid-template-columns: 220px 1fr; gap: 26px; align-items: center; background: #fff; border: 3px solid var(--ink); border-radius: 26px; padding: 22px 26px; box-shadow: 8px 8px 0 var(--sun); }
+.bcovers { position: relative; height: 190px; }
+.bcovers img { position: absolute; top: 0; width: 120px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 10px; border: 3px solid var(--ink); background: #fff; }
+.bcovers img:nth-child(1) { left: 0; transform: rotate(-7deg); }
+.bcovers img:nth-child(2) { left: 50px; top: 8px; z-index: 1; }
+.bcovers img:nth-child(3) { left: 100px; transform: rotate(7deg); }
+.bbody h2 { font-size: clamp(26px, 3.4vw, 36px); }
+.bbody p { margin-top: 6px; color: var(--ink-soft); }
+.bbtn { margin-top: 14px; max-width: 340px; }
 .shopep, .shopgen { padding: 34px 0; border-bottom: 2px dashed var(--line); }
 .shophead { display: flex; gap: 18px; align-items: center; margin-bottom: 18px; flex-wrap: wrap; }
-.shophead img { width: 200px; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; border: 3px solid var(--ink); }
+.shophead img { width: 180px; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; border: 3px solid var(--ink); }
 .shophead h2 { font-size: clamp(26px, 3.4vw, 36px); }
 .watchlink { font-weight: 700; color: var(--ink); text-decoration-color: var(--sun); text-decoration-thickness: 3px; text-underline-offset: 4px; }
-.products { display: grid; gap: 14px; }
-.product { display: grid; grid-template-columns: 1fr auto; gap: 8px 18px; align-items: center; background: #fff; border: 2px solid var(--ink); border-radius: 18px; padding: 16px 18px; }
-.ptext b { display: block; font-size: 19px; }
-.pkind { color: var(--ink-soft); font-size: 15px; }
-.pbuy { font-size: 16px; padding: 10px 18px; white-space: nowrap; }
-.plabel { font-weight: 400; opacity: .9; }
-.pmore { grid-column: 1 / -1; font-size: 15px; color: var(--ink-soft); display: flex; flex-wrap: wrap; gap: 6px 14px; }
-.pmore a { font-weight: 700; }
+.pgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); gap: 18px; }
+.pcard { display: grid; grid-template-columns: 150px 1fr; gap: 18px; background: #fff; border: 3px solid var(--ink); border-radius: 22px; padding: 16px; scroll-margin-top: 90px; }
+.pcard:target { box-shadow: 0 0 0 5px var(--sun); }
+.pcard[hidden], .shopep[hidden], .shopgen[hidden] { display: none; }
+.pimg { display: block; align-self: start; border-radius: 12px; overflow: hidden; border: 2px solid var(--line); background: #fff8ea; }
+.pimg img, .pimg svg { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+.pbody { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.pbody h3 { font-size: 21px; }
+.pabout { font-size: 16px; color: var(--ink-soft); }
+.pbtns { display: grid; gap: 10px; margin-top: 4px; }
+.pbtn { display: flex; flex-direction: column; gap: 1px; padding: 10px 16px; border-radius: 16px; border: 3px solid var(--ink); text-decoration: none; box-shadow: 0 4px 0 var(--ink); transition: transform .15s ease, box-shadow .15s ease; }
+.pbtn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--ink); }
+.pbtn b { font-size: 18px; line-height: 1.2; }
+.pbtn span { font-size: 14px; line-height: 1.3; }
+.pbtn-main { background: #ff2f2f; color: #fff; }
+.pbtn-alt { background: #fff; color: var(--ink); }
+.pbtn-alt span { color: var(--ink-soft); }
+.pother { font-size: 15px; color: var(--ink-soft); margin-top: 2px; }
+.pother summary { cursor: pointer; font-weight: 700; color: var(--ink); width: fit-content; }
+.pother ul { margin: 8px 0 0; padding-left: 20px; display: grid; gap: 4px; }
+.pother a { font-weight: 700; }
 .pnone { color: var(--ink-soft); }
 .note-buy { font-size: 15px; color: var(--ink-soft); margin-top: 14px; }
-@media (max-width: 640px) { .product { grid-template-columns: 1fr; } .pbuy { white-space: normal; } .shophead img { width: 100%; } }
+.nav a[aria-current] { color: var(--berry); }
+@media (max-width: 640px) {
+  .bundle { grid-template-columns: 1fr; padding: 18px; gap: 14px; }
+  .bcovers { height: 150px; }
+  .bcovers img { width: 95px; }
+  .bcovers img:nth-child(2) { left: 70px; } .bcovers img:nth-child(3) { left: 140px; }
+  .pcard { grid-template-columns: 96px 1fr; gap: 14px; padding: 14px; }
+  .pbody h3 { font-size: 19px; }
+  .shophead img { width: 130px; }
+  .filters button { font-size: 16px; padding: 8px 14px; }
+}
+@media (prefers-reduced-motion: reduce) { .pbtn { transition: none; } }
 """
+    script = """
+<script>
+(() => {
+  const btns = document.querySelectorAll('.filters button');
+  const show = (f) => {
+    btns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.f === f)));
+    document.querySelectorAll('.pcard').forEach((c) => { c.hidden = f !== 'all' && !c.dataset.f.split(' ').includes(f); });
+    document.querySelectorAll('.shopep, .shopgen.prods').forEach((s) => {
+      const cards = s.querySelectorAll('.pcard');
+      s.hidden = cards.length > 0 && [...cards].every((c) => c.hidden);
+    });
+  };
+  btns.forEach((b) => b.addEventListener('click', () => show(b.dataset.f)));
+})();
+</script>"""
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shop Learn with Ian</title>
+<title>Shop Learn with Ian: books and printables</title>
 <meta name="description" content="Coloring books, storybooks, printable activity packs and kids T-shirts from every Learn with Ian episode, on Amazon, Gumroad, Payhip, Lulu and more.">
 <meta property="og:title" content="Shop Learn with Ian: books and printables from every episode">
 <meta property="og:image" content="https://i.ytimg.com/vi/baG8fJsSXFg/maxresdefault.jpg">
@@ -231,6 +357,7 @@ def render_shop(eps, style):
     <nav class="nav" aria-label="Main">
       <a href="./#episodes">Episodes</a>
       <a href="./#lessons">Lesson plans</a>
+      <a href="shop.html" aria-current="page">Shop</a>
       <a href="./#contact">Contact</a>
     </nav>
     <a class="subnow" href="https://www.youtube.com/@LearnWithIanKids?sub_confirmation=1">Subscribe</a>
@@ -239,14 +366,22 @@ def render_shop(eps, style):
 <main class="wrap shopwrap">
   <div class="shopintro">
     <h1>Shop Learn with Ian</h1>
-    <p>Books, printables and T-shirts from every episode. You buy on the store you trust; prices are shown there.</p>
-    <nav class="jump" aria-label="Jump to an episode" style="margin-top:18px">{jump}<a href="#for-every-child">For every child</a><a href="#stores">All stores</a></nav>
+    <p>Books and printables from the episodes your child loves. You pay on a store you trust, and the price is shown there.</p>
+    <div class="filters" role="group" aria-label="Show">
+      <span class="flabel">Show:</span>
+      <button type="button" data-f="all" aria-pressed="true">Everything</button>
+      <button type="button" data-f="printable" aria-pressed="false">Print at home</button>
+      <button type="button" data-f="book" aria-pressed="false">Books</button>
+      <button type="button" data-f="tshirt" aria-pressed="false">T-shirts</button>
+    </div>
+    <nav class="jumpline" aria-label="Jump to an episode"><span>Jump to:</span>{jump}<a href="#for-every-child">ABC &amp; T-shirts</a></nav>
   </div>
+  {bundle_html(SHOP.get("bundle"))}
 {"".join(ep_blocks)}
-  <section class="shopgen" id="for-every-child">
+  <section class="shopgen prods" id="for-every-child">
     <span class="kicker">For every child</span>
-    <h2>Bundles, ABC and T-shirts</h2>
-    <div class="products" style="margin-top:18px">{general}</div>
+    <h2>ABC and T-shirts</h2>
+    <div class="pgrid" style="margin-top:18px">{general}</div>
   </section>
   <section class="shopgen" id="stores">
     <span class="kicker">All stores</span>
@@ -261,6 +396,7 @@ def render_shop(eps, style):
     <span>hello@learnwithian.com</span>
   </div>
 </footer>
+{script}
 </body>
 </html>
 '''
