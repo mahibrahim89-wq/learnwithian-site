@@ -59,7 +59,7 @@ p { margin: 0; max-width: 62ch; }
 .rainbow .sp { width: 0.3em; }
 
 /* top bar */
-.bar { display: flex; align-items: center; justify-content: space-between; gap: 12px 20px; padding: 14px 0; flex-wrap: wrap; }
+.bar { display: flex; align-items: center; justify-content: flex-end; gap: 12px 20px; padding: 14px 0; flex-wrap: wrap; }
 .logo { font-family: var(--display); font-weight: 800; font-size: clamp(26px, 3vw, 34px); line-height: 1; letter-spacing: 0.04em; text-decoration: none; text-shadow: var(--outline); } .logo span { transition: transform .2s ease; } .logo:hover span:nth-child(odd) { transform: translateY(-4px) rotate(-4deg); } .logo:hover span:nth-child(even) { transform: translateY(-2px) rotate(4deg); }
 .nav { display: flex; gap: 6px 20px; flex-wrap: wrap; }
 .nav a { color: var(--ink); text-decoration: none; font-weight: 700; font-size: 16px; padding: 4px 0; }
@@ -193,7 +193,7 @@ body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; 
 <body>
 
 <header class="wrap bar">
-  <a class="logo rainbow" href="#top" id="top" aria-label="Learn with Ian, home"><span>L</span><span>E</span><span>A</span><span>R</span><span>N</span><span class="sp"></span><span>W</span><span>I</span><span>T</span><span>H</span><span class="sp"></span><span>I</span><span>A</span><span>N</span></a>
+  <span id="top"></span>
   <nav class="nav" aria-label="Main">
     <a href="#episodes">Episodes</a>
     <a href="#lessons">Lesson plans</a>
