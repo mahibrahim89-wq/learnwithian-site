@@ -58,7 +58,7 @@ p { margin: 0; max-width: 62ch; }
 
 /* top bar */
 .bar { display: flex; align-items: center; justify-content: space-between; gap: 12px 20px; padding: 14px 0; flex-wrap: wrap; }
-.logo { font-family: var(--display); font-weight: 800; font-size: 26px; letter-spacing: 0.02em; text-decoration: none; -webkit-text-stroke: 1px rgba(29, 43, 69, 0.25); }
+.logo { font-family: var(--display); font-weight: 800; font-size: clamp(34px, 5vw, 52px); line-height: 1; letter-spacing: 0.03em; text-decoration: none; text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, 0 3px 0 #fff, 0 -3px 0 #fff, 3px 0 0 #fff, -3px 0 0 #fff, 0 7px 0 rgba(29, 43, 69, 0.3); } .logo span { transition: transform .2s ease; } .logo:hover span:nth-child(odd) { transform: translateY(-4px) rotate(-4deg); } .logo:hover span:nth-child(even) { transform: translateY(-2px) rotate(4deg); }
 .nav { display: flex; gap: 6px 20px; flex-wrap: wrap; }
 .nav a { color: var(--ink); text-decoration: none; font-weight: 700; font-size: 16px; padding: 4px 0; }
 .nav a:hover { color: var(--sky); }
