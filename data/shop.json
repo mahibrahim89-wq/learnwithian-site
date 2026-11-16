@@ -1,0 +1,97 @@
+{
+  "channel_id": "UCTdYL-ETh08kmCHDQEFk2Ag",
+  "episodes": {
+    "baG8fJsSXFg": {
+      "num": 1,
+      "slug": "zoo-day",
+      "title": "Ian's Zoo Day",
+      "learn": "Learn the names of zoo animals.",
+      "products": [
+        {"name": "Zoo Animals Coloring Book", "kind": "Printable or paperback", "links": [
+          {"store": "Amazon", "label": "Paperback", "url": "https://www.amazon.com/dp/B0HRRWB3TR"},
+          {"store": "Gumroad", "label": "Printable", "url": "https://mahibrahim.gumroad.com/l/busqsl"},
+          {"store": "Payhip", "url": "https://payhip.com/b/Jbai0"},
+          {"store": "Ko-fi", "url": "https://ko-fi.com/s/9710aa2221"},
+          {"store": "itch.io", "url": "https://learnwithian.itch.io/zoo-animals-coloring-book-with-ian-ages-25"},
+          {"store": "Gumroad", "label": "English, French & Portuguese", "url": "https://mahibrahim.gumroad.com/l/guybk"}
+        ]},
+        {"name": "Ian's Zoo Day storybook", "kind": "Picture book", "links": [
+          {"store": "Lulu", "label": "Paperback", "url": "https://www.lulu.com/shop/learn-with-ian/ians-zoo-day/paperback/product-nvempn8.html"},
+          {"store": "Lulu", "label": "eBook", "url": "https://www.lulu.com/shop/learn-with-ian/ians-zoo-day/ebook/product-p685j56.html"},
+          {"store": "Payhip", "label": "eBook", "url": "https://payhip.com/b/bZy8O"}
+        ]},
+        {"name": "Count with Ian: Zoo Counting 1 to 10", "kind": "Printable activity sheets", "links": [
+          {"store": "Gumroad", "url": "https://mahibrahim.gumroad.com/l/wjegih"},
+          {"store": "Payhip", "url": "https://payhip.com/b/j6KvB"},
+          {"store": "Ko-fi", "url": "https://ko-fi.com/s/cd702ae449"},
+          {"store": "itch.io", "url": "https://learnwithian.itch.io/count-with-ian-zoo-counting-110-ages-25"},
+          {"store": "Gumroad", "label": "English, French & Portuguese", "url": "https://mahibrahim.gumroad.com/l/ttlgl"}
+        ]}
+      ]
+    },
+    "oUq2iLSBxUU": {
+      "num": 2,
+      "slug": "little-garden",
+      "title": "How Plants Grow: Ian's Little Garden",
+      "learn": "Learn how a little seed grows into a plant.",
+      "products": [
+        {"name": "Ian's Little Garden: Plant Life Cycle", "kind": "Printable science activity", "links": [
+          {"store": "Gumroad", "url": "https://mahibrahim.gumroad.com/l/plant-life-cycle-printable"},
+          {"store": "Payhip", "url": "https://payhip.com/b/5zRu4"},
+          {"store": "Ko-fi", "url": "https://ko-fi.com/s/c968923648"},
+          {"store": "itch.io", "url": "https://learnwithian.itch.io/ians-little-garden-plant-life-cycle-ages-25"}
+        ]}
+      ]
+    },
+    "E2k4atUZDsg": {
+      "num": 3,
+      "slug": "shape-hunt",
+      "title": "Shapes: Ian's Shape Hunt",
+      "learn": "Learn circles, squares and triangles.",
+      "products": [
+        {"name": "Ian's Shape Hunt: Coloring & Tracing Pages", "kind": "Printable", "links": [
+          {"store": "Payhip", "url": "https://payhip.com/b/zGnMy"},
+          {"store": "Gumroad", "url": "https://mahibrahim.gumroad.com/l/xdtrd"}
+        ]}
+      ]
+    },
+    "_5Jwth51cnc": {
+      "num": 4,
+      "slug": "number-walk",
+      "title": "1 2 3 4 5: Ian's Number Walk",
+      "learn": "Learn to count from 1 to 5.",
+      "products": [
+        {"name": "Ian's Number Walk: Coloring & Tracing Pages", "kind": "Printable", "links": [
+          {"store": "Payhip", "url": "https://payhip.com/b/iZFw1"},
+          {"store": "Gumroad", "url": "https://mahibrahim.gumroad.com/l/wjhjys"}
+        ]}
+      ]
+    }
+  },
+  "general": [
+    {"name": "All Ian books bundle", "kind": "Every Ian book in one download", "links": [
+      {"store": "Gumroad", "url": "https://mahibrahim.gumroad.com/l/jwxgyp"}
+    ]},
+    {"name": "Trace the ABC with Ian", "kind": "Paperback activity book", "links": [
+      {"store": "Amazon", "url": "https://www.amazon.com/dp/B0HRTMD298"}
+    ]},
+    {"name": "Ian T-shirts for kids", "kind": "Ian and Friends, ABC, 123, Latte the Cat", "links": [
+      {"store": "Teemill", "label": "Kids tees", "url": "https://learn-with-ian.teemill.com"},
+      {"store": "Zazzle", "url": "https://www.zazzle.com/store/learnwithian"},
+      {"store": "TeePublic", "url": "https://www.teepublic.com/user/learnwithian"},
+      {"store": "Spreadshop", "url": "https://learnwithian.myspreadshop.com/all"}
+    ]}
+  ],
+  "stores": [
+    {"name": "Amazon", "what": "Paperback books", "url": "https://www.amazon.com/dp/B0HRRWB3TR"},
+    {"name": "Gumroad", "what": "Printables and bundles", "url": "https://mahibrahim.gumroad.com/"},
+    {"name": "Payhip", "what": "Printables and eBooks", "url": "https://payhip.com/LearnWithIan"},
+    {"name": "Lulu", "what": "Storybooks", "url": "https://www.lulu.com/shop/learn-with-ian/ians-zoo-day/paperback/product-nvempn8.html"},
+    {"name": "Ko-fi", "what": "Printables", "url": "https://ko-fi.com/learnwithian/shop"},
+    {"name": "itch.io", "what": "Printables", "url": "https://learnwithian.itch.io"},
+    {"name": "Teemill", "what": "Kids T-shirts", "url": "https://learn-with-ian.teemill.com"},
+    {"name": "Zazzle", "what": "T-shirts and gifts", "url": "https://www.zazzle.com/store/learnwithian"},
+    {"name": "TeePublic", "what": "T-shirts", "url": "https://www.teepublic.com/user/learnwithian"},
+    {"name": "Spreadshop", "what": "T-shirts", "url": "https://learnwithian.myspreadshop.com/"}
+  ]
+}
