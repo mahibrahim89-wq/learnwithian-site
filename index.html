@@ -138,19 +138,39 @@ p { margin: 0; max-width: 62ch; }
 @media (max-width: 760px) { .plans { grid-template-columns: 1fr; } }
 @media print {
   body { background: #fff; }
-  body.print-one header, body.print-one main > *:not(#lessons), body.print-one footer, body.print-one #lessons .head, body.print-one .plan:not(.printing), body.print-one .printbtn { display: none !important; }
+  body.print-one > header, body.print-one main > *:not(#lessons), body.print-one > footer, body.print-one #lessons .head, body.print-one .plan:not(.printing), body.print-one .printbtn { display: none !important; }
   body.print-one #lessons { padding: 0; }
   body.print-one .plan { border: 0; padding: 0; }
 }
 
-footer { padding: 36px 0 52px; border-top: 2px dashed var(--line); margin-top: 20px; color: var(--ink-soft); font-size: 15px; }
-footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+/* conversion tweaks */
+.teachlink { display: inline-block; margin-top: 16px; font-weight: 700; font-size: 17px; color: var(--ink); text-decoration: underline; text-decoration-color: var(--sun); text-decoration-thickness: 3px; text-underline-offset: 4px; }
+.teachlink:hover { color: var(--sky); }
+.trust { margin-top: 14px; font-size: 15px; color: var(--ink-soft); }
+.jump { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
+.jump a { background: #fff; border: 2px solid var(--ink); border-radius: 999px; padding: 6px 16px; font-weight: 700; font-size: 16px; color: var(--ink); text-decoration: none; }
+.jump a:nth-child(1) { background: #dff3e3; } .jump a:nth-child(2) { background: #e8f6d9; } .jump a:nth-child(3) { background: #e4f1fd; } .jump a:nth-child(4) { background: #fff1d6; }
+.jump a:hover { transform: translateY(-2px); }
+.plan { scroll-margin-top: 16px; }
+.story { padding: 20px 0 40px; }
+.storybox blockquote { margin: 0; background: var(--sun); border: 3px solid var(--ink); border-radius: 26px; padding: 30px 32px; box-shadow: 8px 8px 0 var(--ink); }
+.storybox blockquote p { font-family: var(--display); font-weight: 800; font-size: clamp(24px, 3.4vw, 34px); line-height: 1.2; max-width: 40ch; }
+.storybox .storymore { display: block; margin-top: 14px; font-size: 18px; line-height: 1.5; max-width: 60ch; }
+.storybox blockquote footer { margin-top: 12px; font-weight: 700; font-size: 17px; }
+
+body > footer { padding: 36px 0 52px; border-top: 2px dashed var(--line); margin-top: 20px; color: var(--ink-soft); font-size: 15px; }
+body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 
 @media (max-width: 900px) {
   .hero, .teach { grid-template-columns: 1fr; }
   .hero .media { order: -1; }
 }
 @media (max-width: 640px) {
+  .hero { padding-top: 4px; gap: 18px; }
+  .hero h1 { font-size: 34px; }
+  .lede { font-size: 17px; margin-top: 10px; }
+  .ctas { margin-top: 16px; }
+  .player-cap { display: none; }
   .eps { grid-template-columns: 1fr; }
   .bar { justify-content: center; }
   .nav { justify-content: center; }
@@ -168,9 +188,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   <a class="logo rainbow" href="#top" id="top" aria-label="Learn with Ian, home"><span>L</span><span>E</span><span>A</span><span>R</span><span>N</span><span class="sp"></span><span>W</span><span>I</span><span>T</span><span>H</span><span class="sp"></span><span>I</span><span>A</span><span>N</span></a>
   <nav class="nav" aria-label="Main">
     <a href="#episodes">Episodes</a>
-    <a href="#teachers">Nurseries &amp; schools</a>
     <a href="#lessons">Lesson plans</a>
-    <a href="#shop">Books</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -178,15 +196,16 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 <main>
   <section class="wrap hero">
     <div>
-      <h1>Cartoon adventures that teach your little one <em>something new</em> every episode.</h1>
-      <p class="lede">Ian goes to the zoo, grows a garden, hunts for shapes and counts to five. Preschoolers watch, point and learn right along with him. Every episode is free on YouTube.</p>
+      <h1>Little cartoon adventures for <em>ages 2 to 5</em></h1>
+      <p class="lede">Ian goes to the zoo, grows a garden, hunts for shapes and counts to five. Your child watches, points and learns right along with him.</p>
       <div class="ctas">
         <a class="btn btn-red" href="https://www.youtube.com/@LearnWithIanKids?sub_confirmation=1">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .6 12a31 31 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-4.8 31 31 0 0 0-.4-4.8zM9.7 15.1V8.9l5.8 3.1-5.8 3.1z"/></svg>
           Subscribe free on YouTube
         </a>
-        <a class="btn btn-white" href="#teachers">For nurseries &amp; schools</a>
       </div>
+      <a class="teachlink" href="#lessons">Teachers: free lesson plans &rarr;</a>
+      <p class="trust">Free &middot; Made for Kids on YouTube &middot; No ads or tracking on this site</p>
     </div>
     <div class="media">
       <div class="player">
@@ -281,6 +300,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <h2>A lesson plan for every episode</h2>
         <p>Ready for circle time: a goal, questions to ask, and one hands-on activity with things you already have in class. Print the one you need.</p>
       </div>
+      <nav class="jump" aria-label="Jump to a lesson plan"><a href="#plan-1">Animals</a><a href="#plan-2">Plants</a><a href="#plan-3">Shapes</a><a href="#plan-4">Numbers</a></nav>
       <div class="plans">
         <article class="plan" id="plan-1">
           <div class="plan-top"><img src="https://i.ytimg.com/vi/baG8fJsSXFg/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><div><h3>Ian's Zoo Day</h3><p class="plan-meta">Episode 1 · 15 min · ages 2 to 5</p></div></div>
@@ -339,6 +359,16 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
           <button class="printbtn" type="button" data-plan="plan-4">Print this plan</button>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section class="section story" id="story">
+    <div class="wrap storybox">
+      <blockquote>
+        <p>Made by a dad, for his son. Now for your child too.</p>
+        <span class="storymore">&ldquo;Ian is my son. I wanted him to learn the way children learn best: through stories, laughter and wonder. So I made this for him, and now for yours.&rdquo;</span>
+        <footer>Mahmoud, Ian&rsquo;s dad</footer>
+      </blockquote>
     </div>
   </section>
 
