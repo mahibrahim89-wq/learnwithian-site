@@ -452,5 +452,6 @@ document.querySelectorAll('.printbtn').forEach((b) => b.addEventListener('click'
   new IntersectionObserver(([e]) => bar.classList.toggle('scrolled', !e.isIntersecting), { rootMargin: '-64px 0px 0px 0px' }).observe(big);
 })();
 </script>
+<script>document.querySelectorAll('a[href^="http"]').forEach(function(a){if(a.host!==location.host){a.target="_blank";a.rel="noopener";}});</script>
 </body>
 </html>
