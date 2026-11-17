@@ -194,6 +194,9 @@ body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; 
   .subnow { display: none; }
   .topbar.scrolled .subnow { display: inline-block; }
   .topbar.scrolled .nav { display: none; }
+  .topbar:not(.scrolled) .logo { display: none; }
+  .topbar:not(.scrolled) .nav { margin: 0 auto; justify-content: center; flex-wrap: nowrap; gap: 4px 16px; }
+  .topbar:not(.scrolled) .nav a { padding: 8px 0; }
   .btn { width: 100%; justify-content: center; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -452,6 +455,7 @@ document.querySelectorAll('.printbtn').forEach((b) => b.addEventListener('click'
   new IntersectionObserver(([e]) => bar.classList.toggle('scrolled', !e.isIntersecting), { rootMargin: '-64px 0px 0px 0px' }).observe(big);
 })();
 </script>
-<script>document.querySelectorAll('a[href^="http"]').forEach(function(a){if(a.host!==location.host){a.target="_blank";a.rel="noopener";}});</script>
+<script>document.querySelectorAll('a[href^="http"]').forEach(function(a){if(a.host!==location.host){a.target="_blank";a.rel="noopener";}});
+document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){a.addEventListener("click",function(){var e=a.getAttribute("href").slice(7);var n=document.getElementById("copy-note");try{navigator.clipboard.writeText(e);if(n)n.textContent="We also copied "+e+" for you. If no email app opens, paste it in your email.";}catch(x){if(n)n.textContent="Our email: "+e;}});});</script>
 </body>
 </html>
