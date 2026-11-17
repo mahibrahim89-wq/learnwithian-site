@@ -329,6 +329,7 @@ def render_shop(eps, style):
     });
   };
   btns.forEach((b) => b.addEventListener('click', () => show(b.dataset.f)));
+  document.querySelectorAll('a[href^="http"]').forEach((a) => { if (a.host !== location.host) { a.target = '_blank'; a.rel = 'noopener'; } });
 })();
 </script>"""
     return f'''<!DOCTYPE html>
