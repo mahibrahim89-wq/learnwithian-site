@@ -300,6 +300,7 @@ def render_shop(eps, style):
 .pother { font-size: 15px; color: var(--ink-soft); margin-top: 2px; }
 .pother summary { cursor: pointer; font-weight: 700; color: var(--ink); width: fit-content; }
 .pother ul { margin: 8px 0 0; padding-left: 20px; display: grid; gap: 4px; }
+.pother ul a, .jumpline a, .watchlink { display: inline-block; padding: 8px 2px; }
 .pother a { font-weight: 700; }
 .pnone { color: var(--ink-soft); }
 .note-buy { font-size: 15px; color: var(--ink-soft); margin-top: 14px; }
