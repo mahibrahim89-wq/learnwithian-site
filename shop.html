@@ -362,6 +362,7 @@ body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; 
     });
   };
   btns.forEach((b) => b.addEventListener('click', () => show(b.dataset.f)));
+  document.querySelectorAll('a[href^="http"]').forEach((a) => { if (a.host !== location.host) { a.target = '_blank'; a.rel = 'noopener'; } });
 })();
 </script>
 </body>
