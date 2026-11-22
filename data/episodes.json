@@ -89,14 +89,19 @@
         "store": "Amazon"
       },
       {
-        "label": "\nShape Hunt printable (Ep3): Ian's Shape Hunt: Coloring & Tracing Pages",
+        "label": "Ian's Shape Hunt – Coloring & Tracing (Ep3)",
         "url": "https://payhip.com/b/zGnMy",
         "store": "Payhip"
       },
       {
-        "label": "\nShape Hunt on Gumroad (Ep3)",
+        "label": "Ian's Shape Hunt – Coloring & Tracing (Ep3)",
         "url": "https://mahibrahim.gumroad.com/l/xdtrd",
         "store": "Gumroad"
+      },
+      {
+        "label": "Trace the ABC with Ian (Amazon paperback)",
+        "url": "https://www.amazon.com/dp/B0HRTMD298",
+        "store": "Amazon"
       },
       {
         "label": "\nAll Ian books in one bundle",
@@ -112,6 +117,11 @@
         "label": "\nZazzle kids T-shirts",
         "url": "https://www.zazzle.com/store/learnwithian",
         "store": "Zazzle"
+      },
+      {
+        "label": "\nTeemill kids T-shirts",
+        "url": "https://learn-with-ian.teemill.com",
+        "store": "Teemill"
       }
     ]
   },
@@ -126,14 +136,61 @@
         "store": "Amazon"
       },
       {
-        "label": "\nNumber Walk printable (Ep4): Ian's Number Walk: Counting Coloring & Tracing Pages",
+        "label": "Ian's Number Walk – Counting Coloring & Tracing (Ep4)",
         "url": "https://payhip.com/b/iZFw1",
         "store": "Payhip"
       },
       {
-        "label": "\nNumber Walk on Gumroad (Ep4)",
+        "label": "Ian's Number Walk – Counting Coloring & Tracing (Ep4)",
         "url": "https://mahibrahim.gumroad.com/l/wjhjys",
         "store": "Gumroad"
+      },
+      {
+        "label": "Trace the ABC with Ian (Amazon paperback)",
+        "url": "https://www.amazon.com/dp/B0HRTMD298",
+        "store": "Amazon"
+      },
+      {
+        "label": "\nAll Ian books in one bundle",
+        "url": "https://mahibrahim.gumroad.com/l/jwxgyp",
+        "store": "Gumroad"
+      },
+      {
+        "label": "\nAll Ian printables & eBooks",
+        "url": "https://payhip.com/LearnWithIan",
+        "store": "Payhip"
+      },
+      {
+        "label": "\nZazzle kids T-shirts",
+        "url": "https://www.zazzle.com/store/learnwithian",
+        "store": "Zazzle"
+      },
+      {
+        "label": "\nTeemill kids T-shirts",
+        "url": "https://learn-with-ian.teemill.com",
+        "store": "Teemill"
+      }
+    ]
+  },
+  {
+    "id": "5Cwxl4TWipE",
+    "title": "Colors for Toddlers | Ian's Color Day | Learn with Ian",
+    "published": "2026-11-22T11:27:13+00:00",
+    "links": [
+      {
+        "label": "Zoo Animals Coloring Book with Ian (Amazon paperback)",
+        "url": "https://www.amazon.com/dp/B0HRRWB3TR",
+        "store": "Amazon"
+      },
+      {
+        "label": "Ian's Color Day (Ep5)",
+        "url": "https://mahibrahim.gumroad.com/l/qnfjgs",
+        "store": "Gumroad"
+      },
+      {
+        "label": "Ian's Color Day (Ep5)",
+        "url": "https://payhip.com/b/m0YS4",
+        "store": "Payhip"
       },
       {
         "label": "\nAll Ian books in one bundle",
