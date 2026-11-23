@@ -31,6 +31,12 @@ STORE_BY_DOMAIN = [
     ("teacherspayteachers.com", "TPT"), ("redbubble.com", "Redbubble"), ("displate.com", "Displate"),
 ]
 SKIP_DOMAINS = ("youtube.com", "youtu.be", "learnwithian.com")
+# Links that are never a store. Any other link in a video description is treated
+# as a store automatically, so a new store needs no code change.
+NOT_STORES = ("instagram.com", "facebook.com", "fb.com", "fb.me", "tiktok.com", "twitter.com", "x.com",
+              "threads.net", "pinterest.com", "linkedin.com", "wa.me", "whatsapp.com", "t.me", "telegram.me",
+              "linktr.ee", "google.com", "goo.gl", "forms.gle", "spotify.com", "discord.com", "discord.gg",
+              "reddit.com", "patreon.com", "snapchat.com", "x.ai", "grok.com", "grok.bot")
 
 
 def esc(s):
@@ -41,7 +47,16 @@ def store_of(url):
     for dom, name in STORE_BY_DOMAIN:
         if dom in url:
             return name
-    return None
+    host = re.sub(r"^https?://", "", url).split("/")[0].split(":")[0].lower()
+    if not host or any(host == d or host.endswith("." + d) for d in NOT_STORES):
+        return None
+    parts = [p for p in host.split(".") if p and p != "www"]
+    if len(parts) < 2:
+        return None
+    name = parts[-2]
+    if name in ("co", "com", "org", "net") and len(parts) >= 3:
+        name = parts[-3]
+    return name.replace("-", " ").title()
 
 
 def fetch_feed(path=None):
@@ -155,7 +170,12 @@ TEE_SVG = ('<svg viewBox="0 0 120 150" role="img" aria-label="Ian T-shirt"><rect
            'font-weight="800" font-size="24" fill="#ffb321" stroke="#1d2b45" stroke-width="1.5">IAN</text></svg>')
 
 
-def format_of(store):
+def format_of(store, label=""):
+    if store not in [n for _, n in STORE_BY_DOMAIN]:
+        if re.search(r"\b(t-?shirts?|tees?|hoodies?)\b", label, re.I):
+            return "tshirt"
+        if re.search(r"\b(paperback|hardcover)\b", label, re.I):
+            return "paperback"
     if store in ("Amazon", "Lulu"):
         return "paperback"
     if store in ("Teemill", "Zazzle", "TeePublic", "Spreadshop", "Redbubble"):
@@ -171,11 +191,11 @@ def group_products(links, image=""):
     if tagged:
         names = sorted((clean_name(l["label"]) for l in tagged), key=len, reverse=True)
         prods.append({"id": slugify(names[0]), "name": names[0], "about": "", "image": image,
-                      "links": [{"format": format_of(l["store"]), "store": l["store"], "url": l["url"]} for l in tagged]})
+                      "links": [{"format": format_of(l["store"], l["label"]), "store": l["store"], "url": l["url"]} for l in tagged]})
     for l in other:
         name = clean_name(l["label"]) or l["store"]
         prods.append({"id": slugify(name), "name": name, "about": "", "image": image,
-                      "links": [{"format": format_of(l["store"]), "store": l["store"], "url": l["url"]}]})
+                      "links": [{"format": format_of(l["store"], l["label"]), "store": l["store"], "url": l["url"]}]})
     return prods
 
 
