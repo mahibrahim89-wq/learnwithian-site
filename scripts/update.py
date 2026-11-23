@@ -121,8 +121,23 @@ def slugify(s):
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")[:40] or "episode"
 
 
+def still_online(vid):
+    """False only when YouTube says the video is gone or private (deleted or replaced)."""
+    url = f"https://www.youtube.com/oembed?format=json&url=https://www.youtube.com/watch?v={vid}"
+    try:
+        urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "learnwithian-site-updater"}), timeout=20)
+        return True
+    except urllib.request.HTTPError as e:
+        return e.code not in (400, 401, 403, 404)
+    except Exception:
+        return True  # network trouble: keep the video
+
+
 def merge_seen(new):
     seen = json.loads(SEEN_PATH.read_text()) if SEEN_PATH.exists() else []
+    feed_ids = {v["id"] for v in new}
+    if feed_ids:  # only prune when the feed itself loaded
+        seen = [v for v in seen if v["id"] in feed_ids or still_online(v["id"])]
     by_id = {v["id"]: v for v in seen}
     for v in new:
         by_id[v["id"]] = v
