@@ -36,7 +36,11 @@ def parse(text):
         out.append(r)
     if not out:
         raise ValueError("lesson sheet is empty")
-    return sorted(out, key=lambda r: int(r["episode"]))
+    # One plan per episode: if an episode was replaced on YouTube, the newest row wins.
+    by_ep = {}
+    for r in out:
+        by_ep[int(r["episode"])] = r
+    return [by_ep[k] for k in sorted(by_ep)]
 
 
 def load():
