@@ -262,5 +262,32 @@
         "store": "Zazzle"
       }
     ]
+  },
+  {
+    "id": "TAyFj_YT8KM",
+    "title": "Christmas for Toddlers | Ian's Christmas Eve | Learn with Ian",
+    "published": "2026-11-23T16:48:30+00:00",
+    "links": [
+      {
+        "label": "Zoo Animals Coloring Book with Ian (Amazon paperback)",
+        "url": "https://www.amazon.com/dp/B0HRRWB3TR",
+        "store": "Amazon"
+      },
+      {
+        "label": "\nAll Ian books in one bundle",
+        "url": "https://mahibrahim.gumroad.com/l/jwxgyp",
+        "store": "Gumroad"
+      },
+      {
+        "label": "\nAll Ian printables & eBooks",
+        "url": "https://payhip.com/LearnWithIan",
+        "store": "Payhip"
+      },
+      {
+        "label": "\nZazzle kids T-shirts",
+        "url": "https://www.zazzle.com/store/learnwithian",
+        "store": "Zazzle"
+      }
+    ]
   }
 ]
