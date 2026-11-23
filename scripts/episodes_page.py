@@ -2,12 +2,12 @@
 
 The homepage shows only the 4 newest episodes (between the AUTO:EPS markers)
 and episodes.html shows every episode, newest first. 1-hour compilations are
-left out here: they live in their own YouTube playlist.
+left out here, and so are bedtime stories: both live in their own YouTube playlists.
 """
 import html
 import re
 
-COMPILATION = re.compile(r"\b1\s*hour\b|\bcompilation\b", re.I)
+COMPILATION = re.compile(r"\b1\s*hour\b|\bcompilation\b|\bbedtime stor(y|ies)\b", re.I)
 HOME_COUNT = 4
 
 
