@@ -16,6 +16,8 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+import lessons
+
 ROOT = Path(__file__).resolve().parent.parent
 SHOP = json.loads((ROOT / "data" / "shop.json").read_text())
 SEEN_PATH = ROOT / "data" / "episodes.json"
@@ -441,6 +443,10 @@ def main():
         index = replace_between(index, "HERO", hero)
     cards = "".join(new_card(e) for e in eps if not e["manual"])
     index = replace_between(index, "NEWEPS", cards)
+    plans = lessons.load()
+    if plans:
+        index = replace_between(index, "LESSONS", lessons.home_block(plans))
+        (ROOT / "lessons.html").write_text(lessons.render_page(plans, style))
     index_path.write_text(index)
     print(f"episodes: {len(eps)}, new cards: {sum(1 for e in eps if not e['manual'])}, latest: {latest and latest['id']}")
 
