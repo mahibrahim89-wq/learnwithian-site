@@ -16,6 +16,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+import episodes_page
 import lessons
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -136,7 +137,7 @@ def episode_entries(allv):
     eps = []
     general_urls = ({l["url"] for g in SHOP["general"] + [SHOP.get("bundle") or {"links": []}] for l in g["links"]}
                     | {s["url"] for s in SHOP["stores"]})
-    known = [v for v in allv]
+    known = [v for v in allv if v["id"] in manual or not episodes_page.is_compilation(v["title"])]
     for vid, m in manual.items():
         if not any(v["id"] == vid for v in known):
             known.append({"id": vid, "title": m["title"], "published": "0", "links": []})
@@ -453,7 +454,8 @@ def main():
     index = index_path.read_text()
     style = re.search(r"<style>(.*?)</style>", index, re.S).group(1)
     (ROOT / "shop.html").write_text(render_shop(eps, style))
-    latest = sorted(allv, key=lambda v: v["published"])[-1] if allv else None
+    real = [v for v in allv if not episodes_page.is_compilation(v["title"])]
+    latest = sorted(real, key=lambda v: v["published"])[-1] if real else None
     if latest:
         t = short_title(latest["title"])
         hero = (f'      <div class="player">\n        <iframe src="https://www.youtube-nocookie.com/embed/{esc(latest["id"])}?rel=0" '
@@ -461,8 +463,8 @@ def main():
                 f'encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n      </div>\n'
                 f'      <p class="player-cap">Newest episode: <b>{esc(t)}</b>.</p>\n')
         index = replace_between(index, "HERO", hero)
-    cards = "".join(new_card(e) for e in eps if not e["manual"])
-    index = replace_between(index, "NEWEPS", cards)
+    index = replace_between(index, "EPS", episodes_page.home_block(eps))
+    (ROOT / "episodes.html").write_text(episodes_page.render_page(eps, style))
     plans = lessons.load()
     if plans:
         index = replace_between(index, "LESSONS", lessons.home_block(plans))
