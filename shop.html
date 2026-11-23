@@ -146,9 +146,17 @@ p { margin: 0; max-width: 62ch; }
 .plan .printbtn { align-self: flex-start; font: inherit; font-weight: 700; font-size: 15px; padding: 8px 16px; border-radius: 999px; border: 2px solid var(--ink); background: #fff; color: var(--ink); cursor: pointer; margin-top: auto; }
 .plan .printbtn:hover { background: var(--sun); }
 @media (max-width: 760px) { .plans { grid-template-columns: 1fr; } }
+.llist { display: grid; gap: 14px; }
+.lplan summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.lplan summary::-webkit-details-marker { display: none; }
+.lplan .open { font-weight: 700; font-size: 15px; border: 2px solid var(--ink); border-radius: 999px; padding: 6px 14px; background: var(--sun); white-space: nowrap; }
+.lplan .o2, .lplan[open] .o1 { display: none; }
+.lplan[open] .o2 { display: inline; }
+.lplan[open] .open { background: #fff; }
+.lplan[hidden] { display: none; }
 @media print {
   body { background: #fff; }
-  body.print-one > header, body.print-one main > *:not(#lessons), body.print-one > footer, body.print-one #lessons .head, body.print-one .plan:not(.printing), body.print-one .printbtn { display: none !important; }
+  body.print-one > header, body.print-one main > *:not(#lessons), body.print-one > footer, body.print-one #lessons .head, body.print-one .plan:not(.printing), body.print-one .printbtn, body.print-one .open, body.print-one #lessons .all { display: none !important; }
   body.print-one #lessons { padding: 0; }
   body.print-one .plan { border: 0; padding: 0; }
 }
