@@ -248,7 +248,7 @@
       },
       {
         "label": "\nAll Ian books in one bundle",
-        "url": "https://mahibrahim.gumroad.com/l/jwxgyp",
+        "url": "https://learnwithian.gumroad.com/l/jwxgyp",
         "store": "Gumroad"
       },
       {
@@ -257,9 +257,34 @@
         "store": "Payhip"
       },
       {
+        "label": "\nEtsy",
+        "url": "https://www.etsy.com/listing/4623898083/winter-counting-worksheets-preschool",
+        "store": "Etsy"
+      },
+      {
         "label": "\nZazzle kids T-shirts",
         "url": "https://www.zazzle.com/store/learnwithian",
         "store": "Zazzle"
+      },
+      {
+        "label": "\nFREE Preschool Math Pack on TPT",
+        "url": "https://www.teacherspayteachers.com/Product/FREE-Preschool-Math-Pack-Counting-1-10-Number-Tracing-Shapes-Learn-with-Ian-18480965",
+        "store": "TPT"
+      },
+      {
+        "label": "\nChristmas & New Year Activity Book, 32 pages (Payhip)",
+        "url": "https://payhip.com/b/wjvQG",
+        "store": "Payhip"
+      },
+      {
+        "label": "\nEtsy",
+        "url": "https://www.etsy.com/listing/4624060235/christmas-activity-book-for-toddlers",
+        "store": "Etsy"
+      },
+      {
+        "label": "\nGumroad",
+        "url": "https://learnwithian.gumroad.com/l/christmas-activity-book",
+        "store": "Gumroad"
       }
     ]
   },
@@ -274,8 +299,38 @@
         "store": "Amazon"
       },
       {
+        "label": "\nIan's Christmas Eve Activity Pack (Payhip)",
+        "url": "https://payhip.com/b/C4uRQ",
+        "store": "Payhip"
+      },
+      {
+        "label": "\nEtsy",
+        "url": "https://www.etsy.com/listing/4624069448/toddler-christmas-worksheets-preschool",
+        "store": "Etsy"
+      },
+      {
+        "label": "\nGumroad",
+        "url": "https://learnwithian.gumroad.com/l/christmas-eve-activity-pack",
+        "store": "Gumroad"
+      },
+      {
+        "label": "\nChristmas & New Year Activity Book, 32 pages (Payhip)",
+        "url": "https://payhip.com/b/wjvQG",
+        "store": "Payhip"
+      },
+      {
+        "label": "\nEtsy",
+        "url": "https://www.etsy.com/listing/4624060235/christmas-activity-book-for-toddlers",
+        "store": "Etsy"
+      },
+      {
+        "label": "\nGumroad",
+        "url": "https://learnwithian.gumroad.com/l/christmas-activity-book",
+        "store": "Gumroad"
+      },
+      {
         "label": "\nAll Ian books in one bundle",
-        "url": "https://mahibrahim.gumroad.com/l/jwxgyp",
+        "url": "https://learnwithian.gumroad.com/l/jwxgyp",
         "store": "Gumroad"
       },
       {
@@ -287,6 +342,11 @@
         "label": "\nZazzle kids T-shirts",
         "url": "https://www.zazzle.com/store/learnwithian",
         "store": "Zazzle"
+      },
+      {
+        "label": "\nFREE Preschool Math Pack on TPT",
+        "url": "https://www.teacherspayteachers.com/Product/FREE-Preschool-Math-Pack-Counting-1-10-Number-Tracing-Shapes-Learn-with-Ian-18480965",
+        "store": "TPT"
       }
     ]
   }
