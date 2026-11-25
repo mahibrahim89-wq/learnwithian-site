@@ -49,6 +49,11 @@
        "store": "Tes",
        "label": "for teachers",
        "url": "https://www.tes.com/teaching-resource/zoo-animals-coloring-book-with-ian-ages-2-5-13659397"
+      },
+      {
+       "format": "printable",
+       "store": "Etsy",
+       "url": "https://www.etsy.com/listing/4624384671"
       }
      ]
     },
@@ -118,6 +123,11 @@
        "store": "Tes",
        "label": "for teachers",
        "url": "https://www.tes.com/teaching-resource/count-with-ian-zoo-counting-1-10-ages-2-5-13659403"
+      },
+      {
+       "format": "printable",
+       "store": "Etsy",
+       "url": "https://www.etsy.com/listing/4623911018"
       }
      ]
     }
@@ -160,6 +170,11 @@
        "store": "Tes",
        "label": "for teachers",
        "url": "https://www.tes.com/teaching-resource/ian-s-little-garden-plant-life-cycle-ages-2-5-13659414"
+      },
+      {
+       "format": "printable",
+       "store": "Etsy",
+       "url": "https://www.etsy.com/listing/4624385213"
       }
      ]
     }
@@ -186,6 +201,11 @@
        "format": "printable",
        "store": "Payhip",
        "url": "https://payhip.com/b/zGnMy"
+      },
+      {
+       "format": "printable",
+       "store": "Etsy",
+       "url": "https://www.etsy.com/listing/4623910028"
       }
      ]
     }
@@ -212,6 +232,11 @@
        "format": "printable",
        "store": "Payhip",
        "url": "https://payhip.com/b/iZFw1"
+      },
+      {
+       "format": "printable",
+       "store": "Etsy",
+       "url": "https://www.etsy.com/listing/4623901905"
       }
      ]
     }
@@ -328,6 +353,16 @@
    "name": "Spreadshop",
    "what": "T-shirts",
    "url": "https://learnwithian.myspreadshop.com/"
+  },
+  {
+   "name": "Etsy",
+   "what": "Printable activity packs",
+   "url": "https://www.etsy.com/shop/LearnWithIanShop"
+  },
+  {
+   "name": "TPT",
+   "what": "For teachers: free and classroom packs",
+   "url": "https://www.teacherspayteachers.com/store/learn-with-ian"
   }
  ]
 }
