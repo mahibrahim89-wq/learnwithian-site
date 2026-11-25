@@ -34,16 +34,18 @@ def main():
         s = re.sub(r'<a class="watchlink" href="' + W + r'">Watch it free on YouTube',
                    lambda m: page(m, '<a class="watchlink" href="ep/{slug}.html">Watch the episode'), s)
         # Episode cards: small "Lesson plan & worksheets" link before "Shop this episode" (once)
-        s = re.sub(r'<p class="shop"><a href="ep/[^"]+">Lesson plan &amp; worksheets</a> &middot; ', '<p class="shop">', s)
+        s = re.sub(r'<p class="shop"><a href="ep/[^"]+"[^>]*>Lesson plan &amp; worksheets</a> &middot; ', '<p class="shop">', s)
         s = re.sub(r'<p class="shop"><a href="shop\.html#([a-z0-9-]+)">Shop this episode</a></p>',
                    lambda m: (f'<p class="shop"><a href="ep/{m.group(1)}.html">Lesson plan &amp; worksheets</a> &middot; '
                               f'<a href="shop.html#{m.group(1)}">Shop this episode</a></p>')
                    if (ROOT / "ep" / f"{m.group(1)}.html").exists() else m.group(0), s)
         # Lesson plans: add the episode page next to the YouTube link (once)
-        s = re.sub(r'<p><a href="ep/[^"]+">Episode page: video, lesson plan &amp; worksheets</a> &middot; ', "<p>", s)
+        s = re.sub(r'<p><a href="ep/[^"]+"[^>]*>Episode page: video, lesson plan &amp; worksheets</a> &middot; ', "<p>", s)
         s = re.sub(r'<p><a href="' + W + r'">Open the episode on YouTube</a></p>',
                    lambda m: page(m, '<p><a href="ep/{slug}.html">Episode page: video, lesson plan &amp; worksheets</a> &middot; '
                                      '<a href="https://www.youtube.com/watch?v={vid}">Open the episode on YouTube</a></p>'), s)
+        # Episode pages open in a new tab (once)
+        s = re.sub(r'href="(ep/[^"]+\.html)"(?! target=)', r'href="\1" target="_blank" rel="noopener"', s)
         if s != before:
             path.write_text(s)
         total += len(re.findall(r'href="ep/[^"]+\.html"', s))
