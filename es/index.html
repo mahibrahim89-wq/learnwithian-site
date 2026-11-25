@@ -264,11 +264,14 @@ body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; 
 .xpage .sbox a, .freebox a:not(.btn), .langs a, .signup a { color: var(--sky); font-weight: 700; }
 .xpage .crumbs, .xpage .small { font-size: 15px; color: var(--ink-soft); }
 .xpage .player { margin: 12px 0 6px; }
+.langbar { background: var(--ink); color: #fff; text-align: center; font-size: 15px; font-weight: 700; padding: 7px 12px; letter-spacing: .01em; }
+.langbar a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.langbar b { color: var(--sun); }
 @media (max-width: 640px) { .nav a.navfree::before, .nav .nf-x { display: none; } .freestrip .fs-links { font-size: 16px; } .signup.signup-mini form { flex-wrap: wrap; } .signup.signup-mini input[type=email] { flex-basis: 100%; } .signup.signup-mini .btn { width: 100%; } .topbar:not(.scrolled) .nav { gap: 4px 12px; } .topbar:not(.scrolled) .nav a { font-size: 14px; white-space: nowrap; } }
 @media print { .noprint, header, footer, .signup { display: none !important; } }
 </style><!--/X:CSS--></head>
 <body>
-<header class="topbar scrolled" id="topbar">
+<!--X:LANG--><div class="langbar noprint"><span aria-hidden="true">🌎</span> <a href="/" hreflang="en" lang="en">English</a> · <b>Español</b> · <a href="/pt/" hreflang="pt" lang="pt">Português</a></div><!--/X:LANG--><header class="topbar scrolled" id="topbar">
   <div class="wrap bar">
     <a class="logo rainbow" translate="no" href="/" aria-label="Learn with Ian, home"><span class="w"><span>L</span><span>E</span><span>A</span><span>R</span><span>N</span></span> <span class="w"><span>W</span><span>I</span><span>T</span><span>H</span></span> <span class="w"><span>I</span><span>A</span><span>N</span></span></a>
     <nav class="nav" aria-label="Main">

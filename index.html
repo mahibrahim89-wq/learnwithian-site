@@ -266,12 +266,15 @@ body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; 
 .xpage .sbox a, .freebox a:not(.btn), .langs a, .signup a { color: var(--sky); font-weight: 700; }
 .xpage .crumbs, .xpage .small { font-size: 15px; color: var(--ink-soft); }
 .xpage .player { margin: 12px 0 6px; }
+.langbar { background: var(--ink); color: #fff; text-align: center; font-size: 15px; font-weight: 700; padding: 7px 12px; letter-spacing: .01em; }
+.langbar a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.langbar b { color: var(--sun); }
 @media (max-width: 640px) { .nav a.navfree::before, .nav .nf-x { display: none; } .freestrip .fs-links { font-size: 16px; } .signup.signup-mini form { flex-wrap: wrap; } .signup.signup-mini input[type=email] { flex-basis: 100%; } .signup.signup-mini .btn { width: 100%; } .topbar:not(.scrolled) .nav { gap: 4px 12px; } .topbar:not(.scrolled) .nav a { font-size: 14px; white-space: nowrap; } }
 @media print { .noprint, header, footer, .signup { display: none !important; } }
 </style><!--/X:CSS--></head>
 <body>
 
-<header class="topbar" id="topbar">
+<!--X:LANG--><div class="langbar noprint"><span aria-hidden="true">🌎</span> <b>English</b> · <a href="/es/" hreflang="es" lang="es">Español</a> · <a href="/pt/" hreflang="pt" lang="pt">Português</a></div><!--/X:LANG--><header class="topbar" id="topbar">
   <div class="wrap bar">
     <a class="logo rainbow" translate="no" href="#top" aria-label="Learn with Ian, back to top"><span class="w"><span>L</span><span>E</span><span>A</span><span>R</span><span>N</span></span> <span class="w"><span>W</span><span>I</span><span>T</span><span>H</span></span> <span class="w"><span>I</span><span>A</span><span>N</span></span></a>
     <nav class="nav" aria-label="Main">
@@ -325,7 +328,7 @@ body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; 
     <p class="ok" hidden>Thank you! You are on the list. Here is the free teacher pack to start: <a href="https://drive.google.com/file/d/1v_QMRmjt9kUwq4TWjq3l_vBXLdii6hn5/view">Teacher Pack (PDF)</a></p>
     <p class="small">Free. One short email a week with a new episode and a printable page. Unsubscribe anytime.</p>
   </section>
-    <p class="fs-more">By topic: <a href="/topic/animals.html">Animals for Toddlers</a> · <a href="/topic/plants.html">How Plants Grow for Kids</a> · <a href="/topic/shapes.html">Shapes for Toddlers</a> · <a href="/topic/numbers.html">Counting for Toddlers</a> · <a href="/topic/colors.html">Colors for Toddlers</a> · <a href="/topic/weather.html">Weather for Toddlers</a> · <a href="/topic/holidays.html">Holidays for Toddlers</a> · <a href="/es/">Español</a> · <a href="/pt/">Português</a></p>
+    <p class="fs-more">By topic: <a href="/topic/animals.html">Animals for Toddlers</a> · <a href="/topic/plants.html">How Plants Grow for Kids</a> · <a href="/topic/shapes.html">Shapes for Toddlers</a> · <a href="/topic/numbers.html">Counting for Toddlers</a> · <a href="/topic/colors.html">Colors for Toddlers</a> · <a href="/topic/weather.html">Weather for Toddlers</a> · <a href="/topic/holidays.html">Holidays for Toddlers</a></p>
   </div></section>
 <!--/X:FREE--><section class="section" id="episodes">
     <div class="wrap">
