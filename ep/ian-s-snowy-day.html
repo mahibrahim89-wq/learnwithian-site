@@ -230,12 +230,54 @@ body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; 
 .crumbs a { color: var(--ink-soft); }
 
 </style>
-</head>
+<!--X:ALT--><link rel="alternate" hreflang="en" href="https://learnwithian.com/ep/ian-s-snowy-day.html"><link rel="alternate" hreflang="es" href="https://learnwithian.com/es/ep/ian-s-snowy-day.html"><link rel="alternate" hreflang="pt" href="https://learnwithian.com/pt/ep/ian-s-snowy-day.html"><!--/X:ALT--><!--X:CSS--><style>
+.badge-free { display: inline-block; background: var(--leaf); color: #fff; font-family: var(--display); font-weight: 800; font-size: 14px; letter-spacing: .04em; padding: 2px 10px; border-radius: 999px; border: 2px solid var(--ink); vertical-align: middle; }
+.nav a.navfree { color: var(--leaf); }
+.nav a.navfree::before { content: "FREE"; background: var(--leaf); color: #fff; font-size: 11px; font-weight: 800; padding: 1px 6px; border-radius: 999px; margin-right: 6px; vertical-align: 2px; }
+.btn-green { background: var(--leaf); color: #fff; }
+.freeband { background: #e6f6e9; border-block: 3px solid var(--ink); padding: 40px 0; }
+.freeband h2, .xpage h1 { font-size: clamp(30px, 5vw, 46px); font-weight: 800; line-height: 1.1; margin: 6px 0 8px; }
+.freegrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin-top: 20px; }
+.freecard { background: #fff; border: 3px solid var(--ink); border-radius: 20px; padding: 18px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 5px 0 var(--ink); }
+.freecard h3 { margin: 0; font-size: 22px; }
+.freecard p { margin: 0; color: var(--ink-soft); }
+.freecard .btn { margin-top: auto; align-self: flex-start; }
+.freecard img { border-radius: 12px; border: 2px solid var(--line); background: #fff; aspect-ratio: 3/4; object-fit: cover; width: 100%; }
+.freebox { background: #e6f6e9; border: 3px solid var(--leaf); border-radius: 20px; padding: 18px 20px; margin-top: 18px; display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+.freebox img { width: 120px; border-radius: 10px; border: 2px solid var(--line); background: #fff; }
+.freebox h2 { margin: 4px 0; font-size: 26px; font-weight: 800; }
+.freebox div { flex: 1 1 240px; }
+.signup { background: #fff; border: 3px solid var(--ink); border-radius: 20px; padding: 20px 22px; margin-top: 22px; }
+.signup h2 { margin: 4px 0 6px; font-size: 26px; font-weight: 800; }
+.signup form { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+.signup input[type=email] { flex: 1 1 220px; font: inherit; padding: 12px 16px; border: 3px solid var(--ink); border-radius: 999px; min-width: 0; }
+.signup button { font: inherit; font-weight: 700; cursor: pointer; }
+.signup .small { font-size: 14px; color: var(--ink-soft); margin-top: 8px; }
+.signup .hp { position: absolute; left: -9999px; }
+.xpage { padding: 24px 0 48px; }
+.xpage .lead { font-size: 20px; margin: 8px 0 0; max-width: 760px; }
+.xlist { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 18px; }
+.xlist a.card { display: block; background: #fff; border: 3px solid var(--ink); border-radius: 18px; overflow: hidden; color: var(--ink); text-decoration: none; }
+.xlist a.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.xlist a.card span { display: block; padding: 12px 14px; font-weight: 700; }
+.steps { counter-reset: s; padding-left: 0; list-style: none; }
+.steps li { counter-increment: s; margin: 10px 0; padding-left: 44px; position: relative; }
+.steps li::before { content: counter(s); position: absolute; left: 0; top: -2px; width: 32px; height: 32px; border-radius: 50%; background: var(--sun); border: 2px solid var(--ink); display: grid; place-items: center; font-weight: 800; }
+.langs { font-size: 15px; margin-top: 8px; }
+.xpage .sbox { background: #fff; border: 3px solid var(--line); border-radius: 20px; padding: 20px 22px; margin-top: 22px; }
+.xpage .sbox h2 { font-size: clamp(22px, 4vw, 30px); font-weight: 800; margin: 4px 0 10px; }
+.xpage .sbox h3 { font-size: 19px; margin: 14px 0 4px; }
+.xpage .sbox a, .freebox a:not(.btn), .langs a, .signup a { color: var(--sky); font-weight: 700; }
+.xpage .crumbs, .xpage .small { font-size: 15px; color: var(--ink-soft); }
+.xpage .player { margin: 12px 0 6px; }
+@media print { .noprint, header, footer, .signup { display: none !important; } }
+</style><!--/X:CSS--></head>
 <body>
 <header class="topbar scrolled" id="topbar">
   <div class="wrap bar">
     <a class="logo rainbow" translate="no" href="/" aria-label="Learn with Ian, home"><span class="w"><span>L</span><span>E</span><span>A</span><span>R</span><span>N</span></span> <span class="w"><span>W</span><span>I</span><span>T</span><span>H</span></span> <span class="w"><span>I</span><span>A</span><span>N</span></span></a>
     <nav class="nav" aria-label="Main">
+      <a class="navfree" href="/free.html">Free printables</a>
       <a href="/episodes.html" aria-current="page">Episodes</a>
       <a href="/lessons.html">Lesson plans</a>
       <a href="/shop.html">Shop</a>
@@ -252,7 +294,7 @@ body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; 
     <iframe src="https://www.youtube-nocookie.com/embed/g-E2RaXlU0s?rel=0" title="Ian&#x27;s Snowy Day, a Learn with Ian episode" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   <p>Free to watch on <a href="https://www.youtube.com/watch?v=g-E2RaXlU0s">YouTube</a>. Calm, simple and made for ages 2 to 6, at home or in class.</p>
-
+<!--X:FREEBOX--><section class="freebox"><img src="https://drive.google.com/thumbnail?id=17RBhxSbImeuH7clWoHVr21URu0bzJSy3&sz=w300" alt="Free printable page preview" loading="lazy" width="120" height="160"><div><span class="badge-free">FREE</span><h2>Free printable page</h2><p>Print it after the episode. Free for home and class.</p><a class="btn btn-green" href="https://drive.google.com/file/d/17RBhxSbImeuH7clWoHVr21URu0bzJSy3/view">Download free PDF</a></div></section><p class="langs">Also in · <a href="/es/ep/ian-s-snowy-day.html" hreflang="es">Español</a> · <a href="/pt/ep/ian-s-snowy-day.html" hreflang="pt">Português</a></p><!--/X:FREEBOX-->
   <section class="sbox" id="lesson-plan">
     <span class="kicker">Free lesson plan</span>
     <h2>Use this episode in class</h2>
@@ -280,7 +322,17 @@ Christmas &amp; New Year Activity Book, 32 pages (Payhip)</a></li><li><a href="h
 Etsy</a></li><li><a href="https://learnwithian.gumroad.com/l/christmas-activity-book">
 Gumroad</a></li><li><a href="https://drive.google.com/file/d/1v_QMRmjt9kUwq4TWjq3l_vBXLdii6hn5/view">Free printable teacher pack</a> <span>Counting, tracing and shapes. Free for every class.</span></li></ul>
     <p><a href="/shop.html#ian-s-snowy-day">See every store for this episode</a></p>
-  </section>
+  </section><!--X:TIPS--><section class="sbox" id="play-at-home"><span class="kicker">For parents</span><h2>Play at home</h2><ul><li>Before going out, let your child name each warm thing they put on.</li><li>Make &#x27;snow&#x27; with cotton balls and count them up to five.</li><li>Talk about the weather every morning: is it hot or cold today?</li></ul></section><section class="signup noprint"><span class="badge-free">FREE</span>
+    <h2>Get a free printable page every week</h2>
+    <form class="signupform" action="https://script.google.com/macros/s/AKfycbwjGNFh65Ps70_1M2Zb3xj_B87JFUUIV2fqu1QFeRZDQcku1mBjtV3TP4QFbYIVLMg/exec" method="post">
+      <input type="email" name="email" required placeholder="Your email" aria-label="Your email">
+      <input type="hidden" name="lang" value="en"><input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="page" value="">
+      <button class="btn btn-green" type="submit">Send me free pages</button>
+    </form>
+    <p class="ok" hidden>Thank you! You are on the list. Here is the free teacher pack to start: <a href="https://drive.google.com/file/d/1v_QMRmjt9kUwq4TWjq3l_vBXLdii6hn5/view">Teacher Pack (PDF)</a></p>
+    <p class="small">Free. One short email a week with a new episode and a printable page. Unsubscribe anytime.</p>
+  </section><!--/X:TIPS-->
   <section class="sbox" id="more">
     <span class="kicker">More episodes</span>
     <h2>Watch next</h2>
@@ -297,5 +349,12 @@ Gumroad</a></li><li><a href="https://drive.google.com/file/d/1v_QMRmjt9kUwq4TWjq
 <script>
 document.querySelectorAll('a[href^="http"]').forEach((a) => { if (a.host !== location.host) { a.target = '_blank'; a.rel = 'noopener'; } });
 </script>
-</body>
+<!--X:JS--><script>
+document.querySelectorAll('form.signupform').forEach((f) => f.addEventListener('submit', (ev) => {
+  ev.preventDefault();
+  const box = f.closest('.signup'); const btn = f.querySelector('button'); btn.disabled = true;
+  fetch(f.action, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(new FormData(f)) })
+    .finally(() => { box.querySelector('.ok').hidden = false; f.hidden = true; });
+}));
+</script><!--/X:JS--></body>
 </html>
