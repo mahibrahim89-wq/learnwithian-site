@@ -27,6 +27,8 @@ def main():
             continue
         s = path.read_text()
         before = s
+        # The Gumroad shop moved from mahibrahim.gumroad.com to learnwithian.gumroad.com (old links give 404)
+        s = s.replace("https://mahibrahim.gumroad.com/", "https://learnwithian.gumroad.com/")
         # Episode cards (homepage and episodes page)
         s = re.sub(r'<a class="cover" href="' + W + '"', lambda m: page(m, '<a class="cover" href="ep/{slug}.html"'), s)
         # Shop: episode picture and "watch" link
