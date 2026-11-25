@@ -44,13 +44,21 @@ L10N = {
            "tips": "Juegos para casa", "free": "Hoja gratis para imprimir", "dl": "Descargar PDF gratis",
            "all": "Todos los episodios", "home": "Inicio", "english": "English", "page": "Episodios de Learn with Ian en español",
            "intro": "Dibujos animados cortos y tranquilos para niños de 2 a 6 años, con planes de clase y hojas gratis.",
-           "note": "El video está en inglés. YouTube puede mostrarlo con audio o subtítulos en español."},
+           "note": "El video está en inglés. YouTube puede mostrarlo con audio o subtítulos en español.",
+           "en_t": "Aprende inglés jugando",
+           "en_1": "Los episodios están en inglés sencillo y lento: colores, números y animales que tu hijo escucha y repite.",
+           "en_2": "El plan de clase y las preguntas están en español, para que puedas acompañarlo.",
+           "words": "Palabras en inglés de este episodio:"},
     "pt": {"lang": "pt", "watch": "Assistir grátis no YouTube", "learns": "Seu filho aprende:", "plan": "Plano de aula grátis",
            "before": "Antes de assistir", "pause": "Pause e pergunte", "after": "Depois do episódio", "activity": "Atividade",
            "tips": "Brincadeiras para casa", "free": "Folha grátis para imprimir", "dl": "Baixar PDF grátis",
            "all": "Todos os episódios", "home": "Início", "english": "English", "page": "Episódios do Learn with Ian em português",
            "intro": "Desenhos curtos e calmos para crianças de 2 a 6 anos, com planos de aula e folhas grátis.",
-           "note": "O vídeo é em inglês. O YouTube pode mostrar com áudio ou legendas em português."},
+           "note": "O vídeo é em inglês. O YouTube pode mostrar com áudio ou legendas em português.",
+           "en_t": "Aprenda inglês brincando",
+           "en_1": "Os episódios são em inglês simples e devagar: cores, números e animais que seu filho ouve e repete.",
+           "en_2": "O plano de aula e as perguntas estão em português, para você acompanhar.",
+           "words": "Palavras em inglês deste episódio:"},
 }
 CSS = """
 .badge-free { display: inline-block; background: var(--leaf); color: #fff; font-family: var(--display); font-weight: 800; font-size: 14px; letter-spacing: .04em; padding: 2px 10px; border-radius: 999px; border: 2px solid var(--ink); vertical-align: middle; }
@@ -105,6 +113,11 @@ CSS = """
 .xpage .sbox a, .freebox a:not(.btn), .langs a, .signup a { color: var(--sky); font-weight: 700; }
 .xpage .crumbs, .xpage .small { font-size: 15px; color: var(--ink-soft); }
 .xpage .player { margin: 12px 0 6px; }
+.enbox { background: #fff6dc; border: 3px solid var(--sun); border-radius: 20px; padding: 16px 20px; margin: 16px 0; }
+.enbox h2 { margin: 0 0 6px; font-size: clamp(22px, 4vw, 28px); font-weight: 800; }
+.enbox p { margin: 4px 0; }
+.enbox .words { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.enbox .words span { background: #fff; border: 2px solid var(--ink); border-radius: 999px; padding: 3px 12px; font-weight: 700; }
 .langbar { background: var(--ink); color: #fff; text-align: center; font-size: 15px; font-weight: 700; padding: 7px 12px; letter-spacing: .01em; }
 .langbar a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
 .langbar b { color: var(--sun); }
@@ -159,8 +172,18 @@ def load_extras():
                     r[lang] = json.loads(r.get(lang) or "{}")
                 except ValueError:
                     r[lang] = {}
+                if isinstance(r[lang], dict) and r.get(f"words_{lang}") and not r[lang].get("words"):
+                    r[lang]["words"] = r[f"words_{lang}"]
             out[r["youtube_id"]] = r
     return out
+
+
+def enbox(lang, words=""):
+    """'Learn English while playing' box for the Spanish and Portuguese pages."""
+    t = L10N[lang]
+    w = [p.strip() for p in (words or "").split("|") if p.strip()]
+    chips = (f'<p class="words"><b>{t["words"]}</b> ' + "".join(f'<span lang="en">{esc(x)}</span>' for x in w) + "</p>") if w else ""
+    return f'<section class="enbox"><h2><span aria-hidden="true">⭐</span> {t["en_t"]}</h2><p>{t["en_1"]}</p><p>{t["en_2"]}</p>{chips}</section>'
 
 
 def signup(lang="en", mini=False):
@@ -354,8 +377,9 @@ def build_pages(eps, plans, xt, style):
             body = f'''<p class="crumbs"><a href="/{lang}/">{t["all"]}</a> · <a href="/ep/{esc(e["slug"])}.html">{t["english"]}</a></p>
   <h1>{esc(x["title"])}</h1>
   <p class="lead"><b>{t["learns"]}</b> {esc(x.get("goal", ""))}</p>
+  {enbox(lang, x.get("words"))}
   <div class="player"><iframe src="https://www.youtube-nocookie.com/embed/{esc(e["id"])}?rel=0&hl={lang}&cc_lang_pref={lang}" title="{esc(x["title"])}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <p class="small">{t["note"]} <a href="https://www.youtube.com/watch?v={esc(e["id"])}">{t["watch"]}</a></p>
+  <p class="small"><a href="https://www.youtube.com/watch?v={esc(e["id"])}">{t["watch"]}</a></p>
   {free}
   <section class="sbox"><span class="badge-free">FREE</span><h2>{t["plan"]}</h2>
     <h3>{t["before"]}</h3><ul>{items(x.get("before"))}</ul><h3>{t["pause"]}</h3><ul>{items(x.get("pause"))}</ul>
@@ -369,7 +393,7 @@ def build_pages(eps, plans, xt, style):
             pages.append(f'{SITE}/{lang}/ep/{e["slug"]}.html')
             listing += (f'<a class="card" href="/{lang}/ep/{esc(e["slug"])}.html"><img src="https://i.ytimg.com/vi/{esc(e["id"])}/mqdefault.jpg" alt="" loading="lazy" width="320" height="180">'
                         f'<span>{esc(x["title"])}</span></a>')
-        body = f'''<h1>{t["page"]}</h1><p class="lead">{t["intro"]}</p><div class="xlist">{listing}</div>{signup(lang)}{SIGNUP_JS}'''
+        body = f'''<h1>{t["page"]}</h1><p class="lead">{t["intro"]}</p>{enbox(lang)}<div class="xlist">{listing}</div>{signup(lang)}{SIGNUP_JS}'''
         (ROOT / lang / "index.html").write_text(shell(t["page"], t["intro"], f"{SITE}/{lang}/", body, style, lang))
         pages.append(f"{SITE}/{lang}/")
     return pages, plan, xtra, topics
