@@ -146,6 +146,37 @@ def write_llms(names):
     (ROOT / "llms.txt").write_text("\n".join(lines))
 
 
+def image_sitemap():
+    """Add the site's own worksheet pictures to sitemap.xml so Google finds them fast."""
+    sm = ROOT / "sitemap.xml"
+    if not sm.exists():
+        return 0
+    text = re.sub(r"<image:image>.*?</image:image>", "", sm.read_text(), flags=re.S)
+    if "xmlns:image=" not in text:
+        text = text.replace('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+                            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+                            'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">', 1)
+    count = 0
+
+    def add(m):
+        nonlocal count
+        url = m.group(1)
+        rel = url[len(SITE):].lstrip("/") or "index.html"
+        if rel.endswith("/"):
+            rel += "index.html"
+        page = ROOT / rel
+        if not page.exists():
+            return m.group(0)
+        pics = sorted(set(re.findall(r'src="(/img/free/[^"]+)"', page.read_text())))
+        count += len(pics)
+        imgs = "".join(f"<image:image><image:loc>{SITE}{p}</image:loc></image:image>" for p in pics)
+        return m.group(0).replace("</url>", imgs + "</url>", 1) if imgs else m.group(0)
+
+    text = re.sub(r"<url><loc>([^<]+)</loc>.*?</url>", add, text)
+    sm.write_text(text)
+    return count
+
+
 def main():
     names = episode_names()
     files = free_files(names)
@@ -180,7 +211,9 @@ def main():
             p.write_text(s)
             changed += 1
     write_llms(names)
-    print(f"pictures on the site: {len(local)} of {len(files)}, pages updated: {changed}, llms.txt written")
+    pics = image_sitemap()
+    print(f"pictures on the site: {len(local)} of {len(files)}, pages updated: {changed}, "
+          f"pictures in sitemap: {pics}, llms.txt written")
 
 
 if __name__ == "__main__":
