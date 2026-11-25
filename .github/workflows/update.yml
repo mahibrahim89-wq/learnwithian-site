@@ -17,6 +17,8 @@ jobs:
         run: python3 scripts/update.py
       - name: Build the search pages (one page per episode, sitemap, robots.txt)
         run: python3 scripts/seo_pages.py
+      - name: Point episode clicks to the episode pages
+        run: python3 scripts/link_pages.py
       - name: Save changes
         run: |
           git config user.name "learnwithian-bot"
