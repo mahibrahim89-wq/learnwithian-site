@@ -57,8 +57,20 @@ CSS = """
 .nav a.navfree { color: var(--leaf); }
 .nav a.navfree::before { content: "FREE"; background: var(--leaf); color: #fff; font-size: 11px; font-weight: 800; padding: 1px 6px; border-radius: 999px; margin-right: 6px; vertical-align: 2px; }
 .btn-green { background: var(--leaf); color: #fff; }
-.freeband { background: #e6f6e9; border-block: 3px solid var(--ink); padding: 40px 0; }
-.freeband h2, .xpage h1 { font-size: clamp(30px, 5vw, 46px); font-weight: 800; line-height: 1.1; margin: 6px 0 8px; }
+.freestrip { background: #eef8f0; border-block: 2px solid var(--line); padding: 16px 0; }
+.freestrip .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; }
+.freestrip .fs-links { flex: 1 1 420px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-size: 17px; }
+.freestrip .fs-links b { font-family: var(--display); font-weight: 800; }
+.freestrip .fs-links a { color: var(--leaf); font-weight: 700; text-decoration: none; border-bottom: 2px solid currentColor; }
+.freestrip .fs-more { flex-basis: 100%; font-size: 14px; color: var(--ink-soft); margin: 0; }
+.freestrip .fs-more a { color: var(--sky); font-weight: 700; }
+.signup.signup-mini { flex: 1 1 300px; max-width: 420px; min-width: 0; margin: 0; padding: 10px 12px; border-width: 2px; border-radius: 16px; }
+.signup.signup-mini h2 { font-size: 16px; margin: 0 0 6px; }
+.signup.signup-mini form { margin: 0; gap: 8px; flex-wrap: nowrap; }
+.signup.signup-mini input[type=email] { padding: 8px 12px; border-width: 2px; flex: 1 1 120px; min-width: 0; }
+.signup.signup-mini .btn { padding: 8px 14px; font-size: 15px; white-space: nowrap; }
+.signup.signup-mini .small { display: none; }
+.xpage h1 { font-size: clamp(30px, 5vw, 46px); font-weight: 800; line-height: 1.1; margin: 6px 0 8px; }
 .freegrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin-top: 20px; }
 .freecard { background: #fff; border: 3px solid var(--ink); border-radius: 20px; padding: 18px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 5px 0 var(--ink); }
 .freecard h3 { margin: 0; font-size: 22px; }
@@ -83,9 +95,9 @@ CSS = """
 .xlist a.card { display: block; background: #fff; border: 3px solid var(--ink); border-radius: 18px; overflow: hidden; color: var(--ink); text-decoration: none; }
 .xlist a.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
 .xlist a.card span { display: block; padding: 12px 14px; font-weight: 700; }
-.steps { counter-reset: s; padding-left: 0; list-style: none; }
-.steps li { counter-increment: s; margin: 10px 0; padding-left: 44px; position: relative; }
-.steps li::before { content: counter(s); position: absolute; left: 0; top: -2px; width: 32px; height: 32px; border-radius: 50%; background: var(--sun); border: 2px solid var(--ink); display: grid; place-items: center; font-weight: 800; }
+.xsteps { counter-reset: s; padding-left: 0; list-style: none; }
+.xsteps li { counter-increment: s; margin: 10px 0; padding-left: 44px; position: relative; }
+.xsteps li::before { content: counter(s); position: absolute; left: 0; top: -2px; width: 32px; height: 32px; border-radius: 50%; background: var(--sun); border: 2px solid var(--ink); display: grid; place-items: center; font-weight: 800; }
 .langs { font-size: 15px; margin-top: 8px; }
 .xpage .sbox { background: #fff; border: 3px solid var(--line); border-radius: 20px; padding: 20px 22px; margin-top: 22px; }
 .xpage .sbox h2 { font-size: clamp(22px, 4vw, 30px); font-weight: 800; margin: 4px 0 10px; }
@@ -93,8 +105,10 @@ CSS = """
 .xpage .sbox a, .freebox a:not(.btn), .langs a, .signup a { color: var(--sky); font-weight: 700; }
 .xpage .crumbs, .xpage .small { font-size: 15px; color: var(--ink-soft); }
 .xpage .player { margin: 12px 0 6px; }
+@media (max-width: 600px) { .nav a.navfree::before, .nav .nf-x { display: none; } .freestrip .fs-links { font-size: 16px; } .signup.signup-mini form { flex-wrap: wrap; } .signup.signup-mini input[type=email] { flex-basis: 100%; } .signup.signup-mini .btn { width: 100%; } .topbar:not(.scrolled) .nav { gap: 4px 12px; } .topbar:not(.scrolled) .nav a { font-size: 14px; white-space: nowrap; } }
 @media print { .noprint, header, footer, .signup { display: none !important; } }
 """
+NAVFREE = '<a class="navfree" href="/free.html">Free<span class="nf-x"> printables</span></a>'
 SIGNUP_JS = """<script>
 document.querySelectorAll('form.signupform').forEach((f) => f.addEventListener('submit', (ev) => {
   ev.preventDefault();
@@ -146,7 +160,7 @@ def load_extras():
     return out
 
 
-def signup(lang="en"):
+def signup(lang="en", mini=False):
     t = {"en": ("Get a free printable page every week", "Your email", "Send me free pages",
                 "Free. One short email a week with a new episode and a printable page. Unsubscribe anytime.",
                 "Thank you! You are on the list. Here is the free teacher pack to start:"),
@@ -156,8 +170,10 @@ def signup(lang="en"):
          "pt": ("Receba uma folha grátis toda semana", "Seu email", "Quero folhas grátis",
                 "Grátis. Um email curto por semana. Cancele quando quiser.",
                 "Obrigado! Você está na lista. Aqui está o pacote grátis para começar:")}[lang]
-    return f'''<section class="signup noprint"><span class="badge-free">FREE</span>
-    <h2>{t[0]}</h2>
+    if mini:
+        t = (t[0].replace("Get a free printable page every week", "Free printable page every week"), t[1], "Send me pages") + t[3:]
+    head = f'<h2>{t[0]}</h2>' if mini else f'<span class="badge-free">FREE</span>\n    <h2>{t[0]}</h2>'
+    return f'''<section class="signup noprint{' signup-mini' if mini else ''}">{head}
     <form class="signupform" action="{FORM}" method="post">
       <input type="email" name="email" required placeholder="{t[1]}" aria-label="{t[1]}">
       <input type="hidden" name="lang" value="{lang}"><input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -273,7 +289,7 @@ def build_pages(eps, plans, xt, style):
     body = f'''<span class="badge-free">FREE</span>
   <h1>Circle Time with Ian: free resources for teachers</h1>
   <p class="lead">Short, calm cartoon lessons for nurseries, preschools, church schools and children's homes. Every episode comes with a free lesson plan and a free printable page.</p>
-  <section class="sbox noprint"><h2>How to use Ian in class</h2><ol class="steps">
+  <section class="sbox noprint"><h2>How to use Ian in class</h2><ol class="xsteps">
     <li>Ask the "before you press play" question to wake up curiosity.</li>
     <li>Play the episode on a classroom screen (5 to 15 minutes). Pause at the questions.</li>
     <li>Do the hands-on activity, then hand out the free printable page.</li></ol>
@@ -376,8 +392,9 @@ def decorate(path, extra_css=True):
     s = path.read_text()
     if extra_css:
         s = between(s, "CSS", f"<style>{CSS}</style>", anchor_before="</head>")
+    s = s.replace('<a class="navfree" href="/free.html">Free printables</a>', NAVFREE)
     if 'class="navfree"' not in s:
-        s = re.sub(r'(<nav class="nav" aria-label="Main">)', r'\1\n      <a class="navfree" href="/free.html">Free printables</a>', s, count=1)
+        s = re.sub(r'(<nav class="nav" aria-label="Main">)', lambda m: m.group(1) + "\n      " + NAVFREE, s, count=1)
     path.write_text(s)
     return s
 
@@ -396,18 +413,11 @@ def main():
     topic_links = " ".join(f'<a href="/topic/{re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-")}.html">{esc(TOPIC_WORDS.get(t, (t,))[0])}</a> ·'
                            for t in topics).rstrip(" ·")
     band = f'''
-  <section class="freeband" id="free"><div class="wrap">
-    <span class="badge-free">FREE</span>
-    <h2>Everything here is free</h2>
-    <p class="lead">Watch, print and play. No sign-up, no ads on this site.</p>
-    <div class="freegrid">
-      <div class="freecard"><span class="badge-free">FREE</span><h3>Cartoon episodes</h3><p>Short, calm lessons for ages 2 to 6. Watch at home or in class.</p><a class="btn btn-green" href="/episodes.html">Watch free</a></div>
-      <div class="freecard"><span class="badge-free">FREE</span><h3>Printable pages</h3><p>A free worksheet for every episode, plus a 6-page Teacher Pack.</p><a class="btn btn-green" href="/free.html">Get free printables</a></div>
-      <div class="freecard"><span class="badge-free">FREE</span><h3>Lesson plans</h3><p>Questions to ask and a hands-on activity for every episode.</p><a class="btn btn-green" href="/teachers.html">For teachers</a></div>
-    </div>
-    <p class="langs">Learn by topic: {topic_links}</p>
-    <p class="langs">En español: <a href="/es/">episodios y hojas gratis</a> · Em português: <a href="/pt/">episódios e folhas grátis</a></p>
-    {signup()}
+  <section class="freestrip" id="free"><div class="wrap">
+    <div class="fs-links"><span class="badge-free">FREE</span> <b>For parents &amp; teachers:</b>
+      <a href="/free.html">Free printables</a> <a href="/lessons.html">Lesson plans</a> <a href="/teachers.html">Teacher guide</a></div>
+    {signup(mini=True)}
+    <p class="fs-more">By topic: {topic_links} · <a href="/es/">Español</a> · <a href="/pt/">Português</a></p>
   </div></section>
 '''
     s = between(s, "FREE", band, anchor_before='<section class="section" id="episodes">')
