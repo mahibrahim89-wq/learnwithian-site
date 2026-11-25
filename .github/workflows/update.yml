@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Add new store links to the first episodes
+        run: python3 scripts/shop_merge.py
       - name: Read the YouTube channel and rebuild the pages
         run: python3 scripts/update.py
       - name: Build the search pages (one page per episode, sitemap, robots.txt)
