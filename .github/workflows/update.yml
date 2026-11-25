@@ -23,6 +23,10 @@ jobs:
         run: python3 scripts/extras.py
       - name: Point episode clicks to the episode pages
         run: python3 scripts/link_pages.py
+      - name: Free activities (bingo, memory, flashcards) and the Pinterest feed
+        run: |
+          git clone --depth 1 https://github.com/mahibrahim89-wq/learnwithian-activities /tmp/acts || true
+          python3 scripts/activities.py
       - name: Worksheet pictures on the site, picture descriptions and llms.txt
         run: python3 scripts/media_seo.py
       - name: Tell Bing about new pages (IndexNow)
