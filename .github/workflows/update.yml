@@ -25,6 +25,8 @@ jobs:
         run: python3 scripts/link_pages.py
       - name: Free printable games (from Drive) and the Pinterest feed
         run: python3 scripts/activities.py
+      - name: Daily Pinterest feeds (a few new Pins every day)
+        run: python3 scripts/pins.py
       - name: Worksheet pictures on the site, picture descriptions and llms.txt
         run: python3 scripts/media_seo.py
       - name: Tell Bing about new pages (IndexNow)
