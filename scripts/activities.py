@@ -1,34 +1,37 @@
-"""Free activities (flashcards, bingo, memory game) made by the activity machine
-in the repo mahibrahim89-wq/learnwithian-activities.
+"""Free activities (story order cards, picture puzzle, memory game) made by
+Claude from the channel's own episode pictures.
 
-The workflow clones that repo to /tmp/acts first. Only episodes that Claude
-approved (column "activities_ok" = yes in the extras sheet) are shown.
+The files live in Google Drive (folder "Learn with Ian - Free activities").
+The list is the tab "activities" of the extras sheet: one row per activity with
+the Drive ids of the Letter PDF, the A4 PDF and the Pinterest picture.
+Only rows with ok = yes are shown.
 
 Adds:
-- a "Free games & flashcards" box on each episode page (under the free page box),
+- a "Free printable games" box on each episode page,
 - the same activities at the top of free.html,
 - activities.xml: an RSS feed that Pinterest reads to make Pins by itself.
-Safe to run many times. If the activities repo is missing, nothing changes.
+Safe to run many times. If the sheet can't be read, nothing changes.
 """
 import csv
 import email.utils
 import html
 import io
 import json
-import os
 import re
-import shutil
 import time
+import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-ACTS = Path(os.environ.get("ACTS_DIR", "/tmp/acts"))
 SITE = "https://learnwithian.com"
-RAW = "https://raw.githubusercontent.com/mahibrahim89-wq/learnwithian-activities/main"
+SHEET = "1oxDQWj9UmokHvhHp05L9GPgZxyOlyMZ3ctli8nORgsc"
+LIST_CSV = f"https://docs.google.com/spreadsheets/d/{SHEET}/gviz/tq?tqx=out:csv&sheet=activities"
+DL = "https://drive.google.com/uc?export=download&id={}"
 IMG = ROOT / "img" / "activities"
 SEEN = ROOT / "data" / "activities_seen.json"
-NAMES = {"flashcards": "Word flashcards", "bingo": "Bingo game", "memory": "Memory game"}
-ORDER = ["bingo", "memory", "flashcards"]
+NAMES = {"story": "Story order cards", "puzzle": "Picture puzzle", "memory": "Memory match game"}
+ORDER = ["story", "puzzle", "memory"]
+UA = {"User-Agent": "Mozilla/5.0 (learnwithian.com site builder)"}
 
 CSS = """<style>
 .actbox { background: #fff; border: 3px solid var(--line); border-radius: 20px; padding: 18px 20px; margin-top: 18px; }
@@ -43,6 +46,12 @@ CSS = """<style>
 .actep { margin: 14px 0 4px; font-size: 18px; }
 .actep a { color: var(--ink); }
 </style>"""
+
+
+def fetch(url):
+    req = urllib.request.Request(url, headers=UA)
+    with urllib.request.urlopen(req, timeout=60) as r:
+        return r.read()
 
 
 def esc(s):
@@ -60,63 +69,53 @@ def between(text, name, content, anchor_before=None):
     return text
 
 
-def approved():
-    cache = ROOT / "data" / "extras.csv"
-    if not cache.exists():
-        return set()
-    out = set()
-    for r in csv.DictReader(io.StringIO(cache.read_text())):
-        if (r.get("activities_ok") or "").strip().lower() in ("yes", "y", "ok", "approved"):
-            out.add((r.get("youtube_id") or "").strip())
-    return out
-
-
 def load():
-    ok = approved()
+    rows = csv.DictReader(io.StringIO(fetch(LIST_CSV).decode("utf-8")))
     acts = []
-    for meta in sorted((ACTS / "output").glob("*/*/meta.json")):
-        try:
-            m = json.loads(meta.read_text())
-        except ValueError:
+    for r in rows:
+        r = {k: (v or "").strip() for k, v in r.items()}
+        if r.get("ok", "").lower() not in ("yes", "y", "ok") or not r.get("slug") or not r.get("pin_id"):
             continue
-        if not m.get("checks_passed") or m.get("youtube_id") not in ok:
-            continue
-        slug, kind = meta.parent.parent.name, meta.parent.name
-        folder = meta.parent
-        pdfs = {s: next(iter(sorted(folder.glob(f"*-{s}.pdf"))), None) for s in ("letter", "a4")}
-        pin = folder / "pin.png"
-        if not pin.exists() or not pdfs["letter"]:
-            continue
-        m.update(slug=slug, kind=kind, folder=folder, pin=pin, pdfs=pdfs)
-        acts.append(m)
+        r["kind"] = r.get("kind") or "activity"
+        acts.append(r)
     return acts
 
 
 def copy_pin(a):
+    """Download the Pinterest picture once into /img/activities. Returns its site path or None."""
     IMG.mkdir(parents=True, exist_ok=True)
     dest = IMG / f'{a["slug"]}-{a["kind"]}.png'
-    if not dest.exists() or dest.read_bytes() != a["pin"].read_bytes():
-        shutil.copyfile(a["pin"], dest)
+    stamp = IMG / f'.{dest.stem}.id'
+    if dest.exists() and stamp.exists() and stamp.read_text() == a["pin_id"]:
+        return f"/img/activities/{dest.name}"
+    try:
+        data = fetch(DL.format(a["pin_id"]))
+    except Exception as e:
+        print("pin download failed", a["slug"], a["kind"], e)
+        return f"/img/activities/{dest.name}" if dest.exists() else None
+    if not data.startswith(b"\x89PNG"):
+        print("pin is not a picture (Drive file not shared?)", a["slug"], a["kind"])
+        return f"/img/activities/{dest.name}" if dest.exists() else None
+    dest.write_bytes(data)
+    stamp.write_text(a["pin_id"])
     return f"/img/activities/{dest.name}"
 
 
 def card(a, img):
-    rel = lambda p: f'{RAW}/{p.relative_to(ACTS).as_posix()}' if p else ""
-    links = f'<a href="{esc(rel(a["pdfs"]["letter"]))}">Letter</a>'
-    if a["pdfs"].get("a4"):
-        links += f' · <a href="{esc(rel(a["pdfs"]["a4"]))}">A4</a>'
+    links = f'<a href="{esc(DL.format(a["letter_id"]))}">Letter</a>'
+    if a.get("a4_id"):
+        links += f' · <a href="{esc(DL.format(a["a4_id"]))}">A4</a>'
     return (f'<div class="actcard" id="free-{esc(a["kind"])}"><img src="{img}" alt="{esc(a.get("title", ""))}" loading="lazy" width="200" height="300">'
             f'<b>{esc(NAMES.get(a["kind"], a["kind"].title()))}</b><span class="dl">Free PDF: {links}</span></div>')
 
 
 def main():
-    if not (ACTS / "output").exists():
-        print("activities repo not found, nothing to do")
-        return
-    acts = load()
+    acts = [a for a in load() if a.get("letter_id")]
     by_ep = {}
     for a in acts:
         a["img"] = copy_pin(a)
+    acts = [a for a in acts if a["img"]]
+    for a in acts:
         by_ep.setdefault(a["slug"], []).append(a)
     for lst in by_ep.values():
         lst.sort(key=lambda a: ORDER.index(a["kind"]) if a["kind"] in ORDER else 9)
@@ -127,8 +126,8 @@ def main():
         if not p.exists():
             continue
         s = p.read_text()
-        box = (f'<section class="actbox noprint" id="free-activities"><span class="badge-free">FREE</span>'
-               f'<h2>Free games and flashcards</h2><p>Print them and play after the episode. Free for home and class.</p>'
+        box = (f'<section class="actbox noprint" id="free-activities">'
+               f'<h2>Free printable games</h2><p>Made from the episode pictures. Print them and play after watching.</p>'
                f'<div class="actgrid">{"".join(card(a, a["img"]) for a in lst)}</div></section>')
         s = between(s, "ACTS", box, anchor_before='\n  <section class="sbox" id="lesson-plan">')
         s = between(s, "ACTCSS", CSS, anchor_before="</head>")
@@ -143,8 +142,8 @@ def main():
             title = lst[0].get("episode_title") or slug
             parts.append(f'<h3 class="actep"><a href="/ep/{esc(slug)}.html">{esc(title)}</a></h3>'
                          f'<div class="actgrid">{"".join(card(a, a["img"]) for a in lst)}</div>')
-        box = (f'<section class="actbox" id="free-activities"><h2>Free games and flashcards</h2>'
-               f'<p>Bingo, memory games and word flashcards for every episode.</p>{"".join(parts)}</section>')
+        box = (f'<section class="actbox" id="free-activities"><h2>Free printable games</h2>'
+               f'<p>Story order cards, picture puzzles and memory games for every episode.</p>{"".join(parts)}</section>')
         s = between(s, "ACTS", box, anchor_before='<div class="freegrid">')
         s = between(s, "ACTCSS", CSS, anchor_before="</head>")
         fp.write_text(s)
@@ -168,7 +167,7 @@ def main():
     <guid isPermaLink="false">learnwithian-{esc(key)}</guid>
     <pubDate>{email.utils.formatdate(seen[key], usegmt=True)}</pubDate>
     <description>{esc(desc)}</description>
-    <enclosure url="{esc(img)}" type="image/png" length="{a["pin"].stat().st_size}"/>
+    <enclosure url="{esc(img)}" type="image/png" length="{(ROOT / a["img"].lstrip("/")).stat().st_size}"/>
     <media:content url="{esc(img)}" medium="image" type="image/png" width="1000" height="1500"/>
   </item>
 '''))
@@ -178,9 +177,9 @@ def main():
     feed = f'''<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
 <channel>
-  <title>Learn with Ian – Free activities for toddlers and preschool</title>
+  <title>Learn with Ian – Free printable games for toddlers and preschool</title>
   <link>{SITE}/free.html</link>
-  <description>Free printable bingo, memory games and flashcards that go with the Learn with Ian episodes. Ages 2 to 6.</description>
+  <description>Free printable story cards, picture puzzles and memory games that go with the Learn with Ian episodes. Ages 2 to 6.</description>
   <language>en-us</language>
 {"".join(i[1] for i in items)}</channel>
 </rss>
