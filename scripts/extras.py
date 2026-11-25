@@ -105,6 +105,9 @@ CSS = """
 .xpage .sbox a, .freebox a:not(.btn), .langs a, .signup a { color: var(--sky); font-weight: 700; }
 .xpage .crumbs, .xpage .small { font-size: 15px; color: var(--ink-soft); }
 .xpage .player { margin: 12px 0 6px; }
+.langbar { background: var(--ink); color: #fff; text-align: center; font-size: 15px; font-weight: 700; padding: 7px 12px; letter-spacing: .01em; }
+.langbar a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.langbar b { color: var(--sun); }
 @media (max-width: 640px) { .nav a.navfree::before, .nav .nf-x { display: none; } .freestrip .fs-links { font-size: 16px; } .signup.signup-mini form { flex-wrap: wrap; } .signup.signup-mini input[type=email] { flex-basis: 100%; } .signup.signup-mini .btn { width: 100%; } .topbar:not(.scrolled) .nav { gap: 4px 12px; } .topbar:not(.scrolled) .nav a { font-size: 14px; white-space: nowrap; } }
 @media print { .noprint, header, footer, .signup { display: none !important; } }
 """
@@ -372,6 +375,27 @@ def build_pages(eps, plans, xt, style):
     return pages, plan, xtra, topics
 
 
+def langbar(path):
+    """Thin bar at the very top of every page: English · Español · Português."""
+    rel = path.relative_to(ROOT).as_posix()
+    cur, rest = "en", rel
+    if rel.split("/")[0] in L10N:
+        cur, rest = rel.split("/")[0], rel.split("/", 1)[1]
+    names = (("en", "English"), ("es", "Español"), ("pt", "Português"))
+    out = []
+    for l, n in names:
+        if l == cur:
+            out.append(f'<b>{n}</b>')
+            continue
+        target = ("/" if l == "en" else f"/{l}/") + rest
+        if rest.startswith("ep/") and (ROOT / target.lstrip("/")).exists():
+            href = target
+        else:
+            href = "/" if l == "en" else f"/{l}/"
+        out.append(f'<a href="{href}" hreflang="{l}" lang="{l}">{n}</a>')
+    return '<div class="langbar noprint"><span aria-hidden="true">🌎</span> ' + " · ".join(out) + "</div>"
+
+
 def between(text, name, content, anchor_after=None, anchor_before=None):
     """Replace <!--X:name-->...<!--/X:name--> or insert it next to an anchor."""
     block = f"<!--X:{name}-->{content}<!--/X:{name}-->"
@@ -393,6 +417,7 @@ def decorate(path, extra_css=True):
     if extra_css:
         s = between(s, "CSS", f"<style>{CSS}</style>", anchor_before="</head>")
     s = s.replace('<a class="navfree" href="/free.html">Free printables</a>', NAVFREE)
+    s = between(s, "LANG", langbar(path), anchor_before='<header class="topbar')
     if 'class="navfree"' not in s:
         s = re.sub(r'(<nav class="nav" aria-label="Main">)', lambda m: m.group(1) + "\n      " + NAVFREE, s, count=1)
     path.write_text(s)
@@ -417,7 +442,7 @@ def main():
     <div class="fs-links"><span class="badge-free">FREE</span> <b>For parents &amp; teachers:</b>
       <a href="/free.html">Free printables</a> <a href="/lessons.html">Lesson plans</a> <a href="/teachers.html">Teacher guide</a></div>
     {signup(mini=True)}
-    <p class="fs-more">By topic: {topic_links} · <a href="/es/">Español</a> · <a href="/pt/">Português</a></p>
+    <p class="fs-more">By topic: {topic_links}</p>
   </div></section>
 '''
     s = between(s, "FREE", band, anchor_before='<section class="section" id="episodes">')
