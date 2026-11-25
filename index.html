@@ -218,8 +218,20 @@ body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; 
 .nav a.navfree { color: var(--leaf); }
 .nav a.navfree::before { content: "FREE"; background: var(--leaf); color: #fff; font-size: 11px; font-weight: 800; padding: 1px 6px; border-radius: 999px; margin-right: 6px; vertical-align: 2px; }
 .btn-green { background: var(--leaf); color: #fff; }
-.freeband { background: #e6f6e9; border-block: 3px solid var(--ink); padding: 40px 0; }
-.freeband h2, .xpage h1 { font-size: clamp(30px, 5vw, 46px); font-weight: 800; line-height: 1.1; margin: 6px 0 8px; }
+.freestrip { background: #eef8f0; border-block: 2px solid var(--line); padding: 16px 0; }
+.freestrip .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; }
+.freestrip .fs-links { flex: 1 1 420px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-size: 17px; }
+.freestrip .fs-links b { font-family: var(--display); font-weight: 800; }
+.freestrip .fs-links a { color: var(--leaf); font-weight: 700; text-decoration: none; border-bottom: 2px solid currentColor; }
+.freestrip .fs-more { flex-basis: 100%; font-size: 14px; color: var(--ink-soft); margin: 0; }
+.freestrip .fs-more a { color: var(--sky); font-weight: 700; }
+.signup.signup-mini { flex: 1 1 300px; max-width: 420px; min-width: 0; margin: 0; padding: 10px 12px; border-width: 2px; border-radius: 16px; }
+.signup.signup-mini h2 { font-size: 16px; margin: 0 0 6px; }
+.signup.signup-mini form { margin: 0; gap: 8px; flex-wrap: nowrap; }
+.signup.signup-mini input[type=email] { padding: 8px 12px; border-width: 2px; flex: 1 1 120px; min-width: 0; }
+.signup.signup-mini .btn { padding: 8px 14px; font-size: 15px; white-space: nowrap; }
+.signup.signup-mini .small { display: none; }
+.xpage h1 { font-size: clamp(30px, 5vw, 46px); font-weight: 800; line-height: 1.1; margin: 6px 0 8px; }
 .freegrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin-top: 20px; }
 .freecard { background: #fff; border: 3px solid var(--ink); border-radius: 20px; padding: 18px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 5px 0 var(--ink); }
 .freecard h3 { margin: 0; font-size: 22px; }
@@ -244,9 +256,9 @@ body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; 
 .xlist a.card { display: block; background: #fff; border: 3px solid var(--ink); border-radius: 18px; overflow: hidden; color: var(--ink); text-decoration: none; }
 .xlist a.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
 .xlist a.card span { display: block; padding: 12px 14px; font-weight: 700; }
-.steps { counter-reset: s; padding-left: 0; list-style: none; }
-.steps li { counter-increment: s; margin: 10px 0; padding-left: 44px; position: relative; }
-.steps li::before { content: counter(s); position: absolute; left: 0; top: -2px; width: 32px; height: 32px; border-radius: 50%; background: var(--sun); border: 2px solid var(--ink); display: grid; place-items: center; font-weight: 800; }
+.xsteps { counter-reset: s; padding-left: 0; list-style: none; }
+.xsteps li { counter-increment: s; margin: 10px 0; padding-left: 44px; position: relative; }
+.xsteps li::before { content: counter(s); position: absolute; left: 0; top: -2px; width: 32px; height: 32px; border-radius: 50%; background: var(--sun); border: 2px solid var(--ink); display: grid; place-items: center; font-weight: 800; }
 .langs { font-size: 15px; margin-top: 8px; }
 .xpage .sbox { background: #fff; border: 3px solid var(--line); border-radius: 20px; padding: 20px 22px; margin-top: 22px; }
 .xpage .sbox h2 { font-size: clamp(22px, 4vw, 30px); font-weight: 800; margin: 4px 0 10px; }
@@ -254,6 +266,7 @@ body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; 
 .xpage .sbox a, .freebox a:not(.btn), .langs a, .signup a { color: var(--sky); font-weight: 700; }
 .xpage .crumbs, .xpage .small { font-size: 15px; color: var(--ink-soft); }
 .xpage .player { margin: 12px 0 6px; }
+@media (max-width: 600px) { .nav a.navfree::before, .nav .nf-x { display: none; } .freestrip .fs-links { font-size: 16px; } .signup.signup-mini form { flex-wrap: wrap; } .signup.signup-mini input[type=email] { flex-basis: 100%; } .signup.signup-mini .btn { width: 100%; } .topbar:not(.scrolled) .nav { gap: 4px 12px; } .topbar:not(.scrolled) .nav a { font-size: 14px; white-space: nowrap; } }
 @media print { .noprint, header, footer, .signup { display: none !important; } }
 </style><!--/X:CSS--></head>
 <body>
@@ -262,7 +275,7 @@ body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; 
   <div class="wrap bar">
     <a class="logo rainbow" translate="no" href="#top" aria-label="Learn with Ian, back to top"><span class="w"><span>L</span><span>E</span><span>A</span><span>R</span><span>N</span></span> <span class="w"><span>W</span><span>I</span><span>T</span><span>H</span></span> <span class="w"><span>I</span><span>A</span><span>N</span></span></a>
     <nav class="nav" aria-label="Main">
-      <a class="navfree" href="/free.html">Free printables</a>
+      <a class="navfree" href="/free.html">Free<span class="nf-x"> printables</span></a>
       <a href="#episodes">Episodes</a>
       <a href="#lessons">Lesson plans</a>
       <a href="shop.html">Shop</a>
@@ -299,28 +312,20 @@ body > footer .wrap { display: flex; justify-content: space-between; gap: 12px; 
   </section>
 
   <!--X:FREE-->
-  <section class="freeband" id="free"><div class="wrap">
-    <span class="badge-free">FREE</span>
-    <h2>Everything here is free</h2>
-    <p class="lead">Watch, print and play. No sign-up, no ads on this site.</p>
-    <div class="freegrid">
-      <div class="freecard"><span class="badge-free">FREE</span><h3>Cartoon episodes</h3><p>Short, calm lessons for ages 2 to 6. Watch at home or in class.</p><a class="btn btn-green" href="/episodes.html">Watch free</a></div>
-      <div class="freecard"><span class="badge-free">FREE</span><h3>Printable pages</h3><p>A free worksheet for every episode, plus a 6-page Teacher Pack.</p><a class="btn btn-green" href="/free.html">Get free printables</a></div>
-      <div class="freecard"><span class="badge-free">FREE</span><h3>Lesson plans</h3><p>Questions to ask and a hands-on activity for every episode.</p><a class="btn btn-green" href="/teachers.html">For teachers</a></div>
-    </div>
-    <p class="langs">Learn by topic: <a href="/topic/animals.html">Animals for Toddlers</a> · <a href="/topic/plants.html">How Plants Grow for Kids</a> · <a href="/topic/shapes.html">Shapes for Toddlers</a> · <a href="/topic/numbers.html">Counting for Toddlers</a> · <a href="/topic/colors.html">Colors for Toddlers</a> · <a href="/topic/weather.html">Weather for Toddlers</a> · <a href="/topic/holidays.html">Holidays for Toddlers</a></p>
-    <p class="langs">En español: <a href="/es/">episodios y hojas gratis</a> · Em português: <a href="/pt/">episódios e folhas grátis</a></p>
-    <section class="signup noprint"><span class="badge-free">FREE</span>
-    <h2>Get a free printable page every week</h2>
+  <section class="freestrip" id="free"><div class="wrap">
+    <div class="fs-links"><span class="badge-free">FREE</span> <b>For parents &amp; teachers:</b>
+      <a href="/free.html">Free printables</a> <a href="/lessons.html">Lesson plans</a> <a href="/teachers.html">Teacher guide</a></div>
+    <section class="signup noprint signup-mini"><h2>Free printable page every week</h2>
     <form class="signupform" action="https://script.google.com/macros/s/AKfycbwjGNFh65Ps70_1M2Zb3xj_B87JFUUIV2fqu1QFeRZDQcku1mBjtV3TP4QFbYIVLMg/exec" method="post">
       <input type="email" name="email" required placeholder="Your email" aria-label="Your email">
       <input type="hidden" name="lang" value="en"><input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="page" value="">
-      <button class="btn btn-green" type="submit">Send me free pages</button>
+      <button class="btn btn-green" type="submit">Send me pages</button>
     </form>
     <p class="ok" hidden>Thank you! You are on the list. Here is the free teacher pack to start: <a href="https://drive.google.com/file/d/1v_QMRmjt9kUwq4TWjq3l_vBXLdii6hn5/view">Teacher Pack (PDF)</a></p>
     <p class="small">Free. One short email a week with a new episode and a printable page. Unsubscribe anytime.</p>
   </section>
+    <p class="fs-more">By topic: <a href="/topic/animals.html">Animals for Toddlers</a> · <a href="/topic/plants.html">How Plants Grow for Kids</a> · <a href="/topic/shapes.html">Shapes for Toddlers</a> · <a href="/topic/numbers.html">Counting for Toddlers</a> · <a href="/topic/colors.html">Colors for Toddlers</a> · <a href="/topic/weather.html">Weather for Toddlers</a> · <a href="/topic/holidays.html">Holidays for Toddlers</a> · <a href="/es/">Español</a> · <a href="/pt/">Português</a></p>
   </div></section>
 <!--/X:FREE--><section class="section" id="episodes">
     <div class="wrap">
