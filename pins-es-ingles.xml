@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+<channel>
+  <title>Learn with Ian – Es Ingles</title>
+  <link>https://learnwithian.com/free.html</link>
+  <description>Es Ingles: free printables and free cartoons from Learn with Ian. Ages 2 to 6.</description>
+  <language>en-us</language>
+  <item>
+    <title>Inglés para niños de preescolar: Navidad (tree, star, bell)</title>
+    <link>https://learnwithian.com/es/ep/ian-s-christmas-eve.html?pin=es-vocab</link>
+    <guid isPermaLink="false">learnwithian-pin-ian-s-christmas-eve/es-vocab</guid>
+    <pubDate>Wed, 25 Nov 2026 09:00:00 GMT</pubDate>
+    <description>Vocabulario en inglés para niños: tree = árbol, star = estrella, bell = campana. Tu hijo las escucha en el dibujo animado gratis «La Nochebuena de Ian», en inglés sencillo y lento. Con plan de clase y hoja para imprimir gratis, en español. De 2 a 6 años.</description>
+    <enclosure url="https://learnwithian.com/img/pins/ian-s-christmas-eve-es-vocab.jpg" type="image/jpeg" length="203978"/>
+    <media:content url="https://learnwithian.com/img/pins/ian-s-christmas-eve-es-vocab.jpg" medium="image" type="image/jpeg" width="1000" height="1500"/>
+  </item>
+</channel>
+</rss>
