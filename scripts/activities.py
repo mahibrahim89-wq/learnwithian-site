@@ -7,7 +7,8 @@ the Drive ids of the Letter PDF, the A4 PDF and the Pinterest picture.
 Only rows with ok = yes are shown.
 
 Adds:
-- a "Free printable games" box on each episode page,
+- a "Free printable <topic> activities" box on each episode page, plus the page's search title,
+  description (tab columns page_title / page_desc) and LearningResource data for search engines,
 - the same activities at the top of free.html,
 - activities.xml: an RSS feed that Pinterest reads to make Pins by itself.
 Safe to run many times. If the sheet can't be read, nothing changes.
@@ -29,7 +30,11 @@ LIST_CSV = f"https://docs.google.com/spreadsheets/d/{SHEET}/gviz/tq?tqx=out:csv&
 DL = "https://drive.google.com/uc?export=download&id={}"
 IMG = ROOT / "img" / "activities"
 SEEN = ROOT / "data" / "activities_seen.json"
-NAMES = {"story": "Story order cards", "puzzle": "Picture puzzle", "memory": "Memory match game"}
+NAMES = {"story": "Story sequencing cards", "puzzle": "Picture puzzle", "memory": "Memory match game"}
+HOW = {"story": "4 pictures to put in order", "puzzle": "6 pieces to cut and build", "memory": "12 cards, find the pairs"}
+FREE_TITLE = "Free Printable Activities for Preschoolers & Toddlers – Learn with Ian"
+FREE_DESC = ("Free printable activities for preschoolers and toddlers (ages 2 to 6): story sequencing cards, picture puzzles, "
+             "memory games and worksheets, each with a free cartoon episode and lesson plan.")
 ORDER = ["story", "puzzle", "memory"]
 UA = {"User-Agent": "Mozilla/5.0 (learnwithian.com site builder)"}
 
@@ -43,6 +48,7 @@ CSS = """<style>
 .actcard b { font-size: 16px; line-height: 1.25; }
 .actcard .dl { font-size: 15px; }
 .actcard .dl a { color: var(--sky); font-weight: 700; }
+.actcard .how { font-size: 14px; color: var(--ink-soft); line-height: 1.3; }
 .actep { margin: 14px 0 4px; font-size: 18px; }
 .actep a { color: var(--ink); }
 </style>"""
@@ -101,12 +107,50 @@ def copy_pin(a):
     return f"/img/activities/{dest.name}"
 
 
+def theme(a):
+    return re.sub(r"^Ian[’']s\s+", "", a.get("episode_title") or a["slug"].replace("-", " ").title())
+
+
+def set_head(s, title, desc):
+    """Search title and description of the page (what Google shows). The look of the page does not change."""
+    put = lambda v: (lambda m: m.group(1) + esc(v) + m.group(2))
+    s = re.sub(r"(<title>).*?(</title>)", put(title), s, count=1, flags=re.S)
+    s = re.sub(r'(<meta name="description" content=")[^"]*(")', put(desc), s, count=1)
+    s = re.sub(r'(<meta property="og:title" content=")[^"]*(")', put(title), s, count=1)
+    s = re.sub(r'(<meta property="og:description" content=")[^"]*(")', put(desc), s, count=1)
+    return s
+
+
+def page_seo(lst):
+    t = theme(lst[0])
+    title = next((a["page_title"] for a in lst if a.get("page_title")), "") or f"{t} Sequencing Cards for Preschool: Free Printable + Video"
+    desc = next((a["page_desc"] for a in lst if a.get("page_desc")), "") or (
+        f"Free printable {t} activities for preschoolers and toddlers: story sequencing cards, a picture puzzle "
+        f"and a memory game (PDF), with a free cartoon and lesson plan.")
+    return title, desc
+
+
+def learning_ld(slug, lst):
+    """Tells search engines what the printables are. Matches what the page shows."""
+    items = [{"@type": "ListItem", "position": i + 1, "item": {
+        "@type": "LearningResource", "name": a.get("title") or NAMES.get(a["kind"], a["kind"]),
+        "description": a.get("description", ""), "url": f'{SITE}/ep/{slug}.html#free-{a["kind"]}',
+        "image": f'{SITE}{a["img"]}', "learningResourceType": "Activity", "educationalLevel": "Preschool",
+        "typicalAgeRange": "2-6", "isAccessibleForFree": True, "inLanguage": "en", "encodingFormat": "application/pdf",
+        "publisher": {"@type": "Organization", "name": "Learn with Ian", "url": SITE}}} for i, a in enumerate(lst)]
+    ld = {"@context": "https://schema.org", "@type": "ItemList",
+          "name": f"Free printable {theme(lst[0])} activities for preschool", "itemListElement": items}
+    return '<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False).replace("</", "<\\/") + "</script>"
+
+
 def card(a, img):
     links = f'<a href="{esc(DL.format(a["letter_id"]))}">Letter</a>'
     if a.get("a4_id"):
         links += f' · <a href="{esc(DL.format(a["a4_id"]))}">A4</a>'
     return (f'<div class="actcard" id="free-{esc(a["kind"])}"><img src="{img}" alt="{esc(a.get("title", ""))}" loading="lazy" width="200" height="300">'
-            f'<b>{esc(NAMES.get(a["kind"], a["kind"].title()))}</b><span class="dl">Free PDF: {links}</span></div>')
+            f'<b>{esc(NAMES.get(a["kind"], a["kind"].title()))}</b>'
+            + (f'<span class="how">{esc(HOW[a["kind"]])}</span>' if a["kind"] in HOW else "")
+            + f'<span class="dl">Free PDF: {links}</span></div>')
 
 
 def main():
@@ -127,10 +171,12 @@ def main():
             continue
         s = p.read_text()
         box = (f'<section class="actbox noprint" id="free-activities">'
-               f'<h2>Free printable games</h2><p>Made from the episode pictures. Print them and play after watching.</p>'
+               f'<h2>Free printable {esc(theme(lst[0]))} activities</h2><p>For preschool and toddlers, made from the episode pictures. Watch the episode, then print and play.</p>'
                f'<div class="actgrid">{"".join(card(a, a["img"]) for a in lst)}</div></section>')
         s = between(s, "ACTS", box, anchor_before='\n  <section class="sbox" id="lesson-plan">')
         s = between(s, "ACTCSS", CSS, anchor_before="</head>")
+        s = between(s, "ACTLD", learning_ld(slug, lst), anchor_before="</head>")
+        s = set_head(s, *page_seo(lst))
         p.write_text(s)
 
     # Free printables page
@@ -143,9 +189,10 @@ def main():
             parts.append(f'<h3 class="actep"><a href="/ep/{esc(slug)}.html">{esc(title)}</a></h3>'
                          f'<div class="actgrid">{"".join(card(a, a["img"]) for a in lst)}</div>')
         box = (f'<section class="actbox" id="free-activities"><h2>Free printable games</h2>'
-               f'<p>Story order cards, picture puzzles and memory games for every episode.</p>{"".join(parts)}</section>')
+               f'<p>Story sequencing cards, picture puzzles and memory games for every episode.</p>{"".join(parts)}</section>')
         s = between(s, "ACTS", box, anchor_before='<div class="freegrid">')
         s = between(s, "ACTCSS", CSS, anchor_before="</head>")
+        s = set_head(s, FREE_TITLE, FREE_DESC)
         fp.write_text(s)
 
     # RSS feed for Pinterest (newest first; each activity once)
