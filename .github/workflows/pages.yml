@@ -26,6 +26,8 @@ jobs:
         run: python3 scripts/pages_write.py
       - name: Build the pages and the sitemap
         run: python3 scripts/pages.py || true
+      - name: The Weaver links the new pages into the site
+        run: python3 scripts/weave.py || true
       - name: Tell Bing about new pages (IndexNow)
         run: python3 scripts/indexnow.py || true
       - name: Save changes

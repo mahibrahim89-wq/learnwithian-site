@@ -188,6 +188,19 @@ def check_translations():
             add("tr-paste-" + yid, f"ترجمة حلقة {e.get('slug')} جاهزة من {e['added']} ولسه ماتلصقتش في يوتيوب ستوديو (جلسة السبت ماعملتهاش).")
 
 
+def check_links():
+    p = ROOT / "data" / "weave_report.json"
+    if not p.exists() or (ROOT / "data" / "PAUSE_WEAVER").exists():
+        return
+    r = json.loads(p.read_text())
+    if r.get("orphans"):
+        add("weave-orphans", "صفحات مفيش لينك يوصّل ليها من الرئيسية (جوجل مش هيديها أهمية): " + "، ".join(r["orphans"][:5])
+            + (f" و{len(r['orphans']) - 5} تانيين" if len(r["orphans"]) > 5 else "") + ". روبوت النسّاج ماربطهاش.")
+    if r.get("broken"):
+        add("weave-broken", "لينكات مكسورة جوه الموقع: " + "، ".join(r["broken"][:5])
+            + (f" و{len(r['broken']) - 5} تانيين" if len(r["broken"]) > 5 else "") + ".")
+
+
 # ---------- the issue ----------
 
 def body_text():
@@ -199,7 +212,7 @@ def body_text():
 
 
 def main():
-    for check in (check_site, check_robots, check_youtube_feed, check_writer, check_pinterest, check_episodes, check_translations):
+    for check in (check_site, check_robots, check_youtube_feed, check_writer, check_pinterest, check_episodes, check_translations, check_links):
         try:
             check()
         except Exception as e:
