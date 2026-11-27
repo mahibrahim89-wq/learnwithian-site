@@ -426,5 +426,226 @@
     "<b>Grupo misto:</b> junte uma criança menor com uma maior. A maior diz os nomes e ajuda a vestir."
    ]
   }
+ },
+ {
+  "id": "animal-sounds-game",
+  "episode": "zoo-day",
+  "ytid": "baG8fJsSXFg",
+  "ep_title": "Ian's Zoo Day",
+  "game_title": {
+   "en": "Zoo Day",
+   "es": "Zoo Day",
+   "pt": "Zoo Day"
+  },
+  "live_from": "2026-11-27",
+  "written_by": "robot",
+  "en": {
+   "slug": "animal-sounds-game",
+   "topic": "Zoo Animals",
+   "title": "Animal Sounds Game for Toddlers: Free 15-Minute Zoo Activity | Learn with Ian",
+   "h1": "Animal Sounds Game for Toddlers: a 15-Minute Zoo Guessing Game",
+   "desc": "A free animal sounds game for toddlers and preschoolers, ages 2 to 6. Make a zoo animal sound, children guess the name in English. Free printable games included.",
+   "learns": "Children name common zoo animals in English (for example lion, elephant and monkey) and say one thing about each.",
+   "words": [
+    "lion",
+    "elephant",
+    "monkey",
+    "penguin",
+    "giraffe",
+    "zebra"
+   ],
+   "need": [
+    "Paper and a crayon to draw 6 simple animal pictures, or animal pictures from a book",
+    "A blanket or a cushion to hold the pictures behind",
+    "The episode Ian&rsquo;s Zoo Day (free on YouTube), if you want to start with a story"
+   ],
+   "steps": [
+    "Watch Ian&rsquo;s Zoo Day together first, or just talk: &ldquo;Who has been to a zoo? Which animals live there?&rdquo;",
+    "Show one picture and say: &ldquo;This is a <b>lion</b>. Roar!&rdquo; Children say the name and make the sound. Do the same for each animal.",
+    "Now hide the pictures behind the blanket. Make an animal sound and ask: &ldquo;Which animal is that?&rdquo; Children say: &ldquo;<b>Lion</b>!&rdquo; Show the picture to check.",
+    "Ask for one more thing: &ldquo;Is the <b>elephant</b> big or small?&rdquo; Children answer: &ldquo;Big!&rdquo; or say the whole sentence.",
+    "Swap roles. A child makes a sound and you guess, maybe a silly wrong guess first. End with an animal walk: &ldquo;Show me a <b>monkey</b>!&rdquo;"
+   ],
+   "easy": [
+    "<b>Younger children:</b> use only three animals (lion, elephant, monkey) and let them point to the picture instead of speaking.",
+    "<b>Older children:</b> ask for the whole sentence: &ldquo;It is a big elephant.&rdquo; Let them be the sound-maker.",
+    "<b>Mixed group:</b> let older children make the sounds and younger children find the matching picture."
+   ]
+  },
+  "es": {
+   "slug": "juego-de-animales-en-ingles",
+   "topic": "Animales",
+   "title": "Juego de Animales en Inglés para Niños: Actividad Gratis de 15 Minutos | Learn with Ian",
+   "h1": "Juego de Animales en Inglés para Niños: Adivina el Animal del Zoo",
+   "desc": "Un juego gratis de animales en inglés para niños de 2 a 6 años. Haces el sonido de un animal del zoo y los niños dicen su nombre. Incluye juegos imprimibles gratis.",
+   "learns": "Los niños dicen en inglés el nombre de animales comunes del zoo (por ejemplo lion, elephant y monkey) y cuentan una cosa de cada uno.",
+   "words": [
+    "lion &middot; león",
+    "elephant &middot; elefante",
+    "monkey &middot; mono",
+    "penguin &middot; pingüino",
+    "giraffe &middot; jirafa",
+    "zebra &middot; cebra"
+   ],
+   "need": [
+    "Papel y un crayón para dibujar 6 animales sencillos, o imágenes de animales de un libro",
+    "Una manta o un cojín para esconder las imágenes detrás",
+    "El episodio Ian&rsquo;s Zoo Day (gratis en YouTube), si quieres empezar con una historia"
+   ],
+   "steps": [
+    "Miren primero Ian&rsquo;s Zoo Day juntos, o simplemente conversen: &ldquo;Who has been to a zoo? Which animals live there?&rdquo;",
+    "Muestra una imagen y di: &ldquo;This is a <b>lion</b>. Roar!&rdquo; Los niños dicen el nombre y hacen el sonido. Haz lo mismo con cada animal.",
+    "Ahora esconde las imágenes detrás de la manta. Haz el sonido de un animal y pregunta: &ldquo;Which animal is that?&rdquo; Los niños dicen: &ldquo;<b>Lion</b>!&rdquo; Muestra la imagen para comprobar.",
+    "Pide una cosa más: &ldquo;Is the <b>elephant</b> big or small?&rdquo; Los niños responden: &ldquo;Big!&rdquo; o dicen la frase completa.",
+    "Cambien de papel. Un niño hace un sonido y tú adivinas, quizás con un error gracioso primero. Termina con una caminata de animales: &ldquo;Show me a <b>monkey</b>!&rdquo;"
+   ],
+   "easy": [
+    "<b>Más pequeños:</b> usa solo tres animales (lion, elephant, monkey) y deja que señalen la imagen en lugar de hablar.",
+    "<b>Mayores:</b> pide la frase completa: &ldquo;It is a big elephant.&rdquo; Deja que ellos hagan los sonidos.",
+    "<b>Grupo mixto:</b> los mayores hacen los sonidos y los más pequeños buscan la imagen que corresponde."
+   ]
+  },
+  "pt": {
+   "slug": "jogo-dos-animais-em-ingles",
+   "topic": "Animais",
+   "title": "Jogo dos Animais em Inglês para Crianças: Atividade Grátis de 15 Minutos | Learn with Ian",
+   "h1": "Jogo dos Animais em Inglês para Crianças: Adivinhe o Bicho do Zoo",
+   "desc": "Um jogo grátis dos animais em inglês para crianças de 2 a 6 anos. Você faz o som de um animal do zoo e as crianças dizem o nome. Inclui jogos para imprimir grátis.",
+   "learns": "As crianças dizem em inglês o nome de animais comuns do zoo (por exemplo lion, elephant e monkey) e contam uma coisa sobre cada um.",
+   "words": [
+    "lion &middot; leão",
+    "elephant &middot; elefante",
+    "monkey &middot; macaco",
+    "penguin &middot; pinguim",
+    "giraffe &middot; girafa",
+    "zebra &middot; zebra"
+   ],
+   "need": [
+    "Papel e um giz de cera para desenhar 6 animais simples, ou figuras de animais de um livro",
+    "Uma manta ou uma almofada para esconder as figuras atrás",
+    "O episódio Ian&rsquo;s Zoo Day (grátis no YouTube), se quiser começar com uma história"
+   ],
+   "steps": [
+    "Assistam primeiro a Ian&rsquo;s Zoo Day juntos, ou simplesmente conversem: &ldquo;Who has been to a zoo? Which animals live there?&rdquo;",
+    "Mostre uma figura e diga: &ldquo;This is a <b>lion</b>. Roar!&rdquo; As crianças dizem o nome e fazem o som. Faça o mesmo com cada animal.",
+    "Agora esconda as figuras atrás da manta. Faça o som de um animal e pergunte: &ldquo;Which animal is that?&rdquo; As crianças dizem: &ldquo;<b>Lion</b>!&rdquo; Mostre a figura para conferir.",
+    "Peça mais uma coisa: &ldquo;Is the <b>elephant</b> big or small?&rdquo; As crianças respondem: &ldquo;Big!&rdquo; ou dizem a frase completa.",
+    "Troquem de papel. Uma criança faz um som e você adivinha, talvez com um erro engraçado primeiro. Termine com uma caminhada de animais: &ldquo;Show me a <b>monkey</b>!&rdquo;"
+   ],
+   "easy": [
+    "<b>Menores:</b> use só três animais (lion, elephant, monkey) e deixe apontar para a figura em vez de falar.",
+    "<b>Maiores:</b> peça a frase completa: &ldquo;It is a big elephant.&rdquo; Deixe que eles façam os sons.",
+    "<b>Grupo misto:</b> os maiores fazem os sons e os menores procuram a figura correspondente."
+   ]
+  }
+ },
+ {
+  "id": "plant-a-seed-activity",
+  "episode": "little-garden",
+  "ytid": "oUq2iLSBxUU",
+  "ep_title": "Ian's Little Garden",
+  "game_title": {
+   "en": "Little Garden",
+   "es": "Little Garden",
+   "pt": "Little Garden"
+  },
+  "live_from": "2026-11-27",
+  "written_by": "robot",
+  "en": {
+   "slug": "plant-a-seed-activity",
+   "topic": "Plants",
+   "title": "Plant a Seed Activity for Preschool: Free 15-Minute Bean Cup Garden | Learn with Ian",
+   "h1": "Plant a Seed Activity for Preschool: a 15-Minute Bean Cup Garden",
+   "desc": "A free plant a seed activity for preschool, ages 2 to 6. Plant a bean in a cup and learn seed, soil, water, sun and plant in English. Free printables included.",
+   "learns": "Children plant a bean seed in a cup, say the words seed, soil, water, sun and plant, and watch it grow over the next days.",
+   "words": [
+    "seed",
+    "soil",
+    "water",
+    "sun",
+    "plant"
+   ],
+   "need": [
+    "A clear cup and a dry bean seed (an adult keeps the bean away from children under 3 and checks that nobody puts it in their mouth)",
+    "A little soil, some water in a small jug, and a sunny window",
+    "The episode Ian&rsquo;s Little Garden (free on YouTube), if you want to start with a story"
+   ],
+   "steps": [
+    "Show the bean and ask: &ldquo;What do you think will grow from this <b>seed</b>?&rdquo; You can watch Ian&rsquo;s Little Garden together first.",
+    "Let each child scoop <b>soil</b> into the cup. Say: &ldquo;Soil. We put soil in the cup.&rdquo; Children say <b>soil</b> back.",
+    "Each child presses the seed into the soil with one finger and covers it. Say: &ldquo;The <b>seed</b> is in the soil.&rdquo;",
+    "Pour in a little <b>water</b> together, then put the cup by the window. Say: &ldquo;Water and <b>sun</b> help the seed grow.&rdquo;",
+    "Check the cup every morning for the next days and ask: &ldquo;What changed?&rdquo; When a green shoot comes up, say: &ldquo;Look, a <b>plant</b>!&rdquo; Children show it growing with their hands."
+   ],
+   "easy": [
+    "<b>Younger children:</b> an adult helps with the bean. Children touch the soil and water, and say just one word at a time, or point.",
+    "<b>Older children:</b> tell the steps in order: &ldquo;Seed, soil, water, sun, plant.&rdquo; Draw the cup each morning to show what changed.",
+    "<b>Mixed group:</b> pair a younger child with an older one. The older child says the word, and the younger child does the action."
+   ]
+  },
+  "es": {
+   "slug": "actividad-de-plantar-semillas",
+   "topic": "Plantas",
+   "title": "Actividad de Plantar Semillas para Niños: Huerto Gratis de 15 Minutos | Learn with Ian",
+   "h1": "Actividad de Plantar Semillas para Niños: un Huerto en un Vaso",
+   "desc": "Una actividad gratis de plantar semillas para niños, de 2 a 6 años. Siembran un frijol en un vaso y aprenden seed, soil, water, sun y plant en inglés.",
+   "learns": "Los niños plantan un frijol en un vaso, dicen las palabras seed, soil, water, sun y plant en inglés, y ven cómo crece durante los días siguientes.",
+   "words": [
+    "seed &middot; semilla",
+    "soil &middot; tierra",
+    "water &middot; agua",
+    "sun &middot; sol",
+    "plant &middot; planta"
+   ],
+   "need": [
+    "Un vaso transparente y un frijol seco (un adulto mantiene el frijol lejos de los menores de 3 años y vigila que nadie se lo meta a la boca)",
+    "Un poco de tierra, agua en una jarra pequeña y una ventana con sol",
+    "El episodio Ian&rsquo;s Little Garden (gratis en YouTube), si quieres empezar con una historia"
+   ],
+   "steps": [
+    "Muestra el frijol y pregunta: &ldquo;What do you think will grow from this <b>seed</b>?&rdquo; Pueden ver Ian&rsquo;s Little Garden juntos primero.",
+    "Deja que cada niño ponga <b>tierra</b> en el vaso con una cuchara. Di: &ldquo;Soil. We put soil in the cup.&rdquo; Los niños repiten <b>soil</b>.",
+    "Cada niño presiona la semilla en la tierra con un dedo y la cubre. Di: &ldquo;The <b>seed</b> is in the soil.&rdquo;",
+    "Echen juntos un poco de agua y pongan el vaso junto a la ventana. Di: &ldquo;Water and <b>sun</b> help the seed grow.&rdquo;",
+    "Revisen el vaso cada mañana durante los días siguientes y pregunta: &ldquo;What changed?&rdquo; Cuando salga un brote verde, di: &ldquo;Look, a <b>plant</b>!&rdquo; Los niños muestran con las manos cómo crece."
+   ],
+   "easy": [
+    "<b>Más pequeños:</b> un adulto ayuda con el frijol. Los niños tocan la tierra y el agua, y dicen una sola palabra a la vez, o señalan.",
+    "<b>Mayores:</b> cuentan los pasos en orden: &ldquo;Seed, soil, water, sun, plant.&rdquo; Dibujan el vaso cada mañana para mostrar qué cambió.",
+    "<b>Grupo mixto:</b> junta a un niño pequeño con uno mayor. El mayor dice la palabra y el pequeño hace la acción."
+   ]
+  },
+  "pt": {
+   "slug": "atividade-de-plantar-sementes",
+   "topic": "Plantas",
+   "title": "Atividade de Plantar Sementes para Crianças: Horta Grátis de 15 Minutos | Learn with Ian",
+   "h1": "Atividade de Plantar Sementes para Crianças: uma Horta no Copo",
+   "desc": "Uma atividade grátis de plantar sementes para crianças, de 2 a 6 anos. Elas plantam um feijão num copo e aprendem seed, soil, water, sun e plant em inglês.",
+   "learns": "As crianças plantam um feijão num copo, dizem as palavras seed, soil, water, sun e plant em inglês, e veem a planta crescer nos dias seguintes.",
+   "words": [
+    "seed &middot; semente",
+    "soil &middot; terra",
+    "water &middot; água",
+    "sun &middot; sol",
+    "plant &middot; planta"
+   ],
+   "need": [
+    "Um copo transparente e um feijão seco (um adulto mantém o feijão longe de menores de 3 anos e fica de olho para ninguém colocar na boca)",
+    "Um pouco de terra, água numa jarra pequena e uma janela com sol",
+    "O episódio Ian&rsquo;s Little Garden (grátis no YouTube), se quiser começar com uma história"
+   ],
+   "steps": [
+    "Mostre o feijão e pergunte: &ldquo;What do you think will grow from this <b>seed</b>?&rdquo; Vocês podem assistir a Ian&rsquo;s Little Garden juntos primeiro.",
+    "Deixe cada criança colocar <b>terra</b> no copo com uma colher. Diga: &ldquo;Soil. We put soil in the cup.&rdquo; As crianças repetem <b>soil</b>.",
+    "Cada criança aperta a semente na terra com um dedo e cobre. Diga: &ldquo;The <b>seed</b> is in the soil.&rdquo;",
+    "Coloquem juntos um pouco de água e deixem o copo perto da janela. Diga: &ldquo;Water and <b>sun</b> help the seed grow.&rdquo;",
+    "Olhem o copo toda manhã nos dias seguintes e pergunte: &ldquo;What changed?&rdquo; Quando surgir um brotinho verde, diga: &ldquo;Look, a <b>plant</b>!&rdquo; As crianças mostram com as mãos a planta crescendo."
+   ],
+   "easy": [
+    "<b>Menores:</b> um adulto ajuda com o feijão. As crianças tocam a terra e a água, e dizem uma palavra de cada vez, ou apontam.",
+    "<b>Maiores:</b> contam os passos em ordem: &ldquo;Seed, soil, water, sun, plant.&rdquo; Desenham o copo toda manhã para mostrar o que mudou.",
+    "<b>Grupo misto:</b> junte uma criança menor com uma maior. A maior diz a palavra e a menor faz a ação."
+   ]
+  }
  }
 ]

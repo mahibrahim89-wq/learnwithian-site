@@ -133,5 +133,394 @@
     "Não corrija a pronúncia. Repita a palavra com calma e continue brincando."
    ]
   }
+ },
+ {
+  "episode": "ian-s-christmas-eve",
+  "live_from": "2026-11-27",
+  "written_by": "robot",
+  "es": {
+   "slug": "navidad-en-ingles",
+   "topic": "Navidad",
+   "title": "La Navidad en inglés para niños: 7 palabras con pronunciación | Learn with Ian",
+   "h1": "La Navidad en inglés para niños",
+   "desc": "La Navidad en inglés para niños de 2 a 6 años: 7 palabras con su significado y cómo se pronuncian, frases fáciles y un dibujo animado gratis para escucharlas.",
+   "lead": "Siete palabras de Navidad en inglés, con lo que significan y cómo se dicen. Lee la lista con tu hijo, mira el episodio y repitan juntos.",
+   "words": [
+    {
+     "en": "star",
+     "tr": "estrella",
+     "say": "star"
+    },
+    {
+     "en": "bell",
+     "tr": "campana",
+     "say": "bel"
+    },
+    {
+     "en": "tree",
+     "tr": "árbol",
+     "say": "tri"
+    },
+    {
+     "en": "bow",
+     "tr": "moño, lazo",
+     "say": "bou"
+    },
+    {
+     "en": "lights",
+     "tr": "luces",
+     "say": "laits"
+    },
+    {
+     "en": "present",
+     "tr": "regalo",
+     "say": "PRÉ-sent"
+    },
+    {
+     "en": "ribbon",
+     "tr": "cinta, listón",
+     "say": "RÍ-bon"
+    }
+   ],
+   "phrases": [
+    [
+     "I see a star.",
+     "Veo una estrella."
+    ],
+    [
+     "A present with a bow.",
+     "Un regalo con un moño."
+    ],
+    [
+     "Lights on the tree.",
+     "Luces en el árbol."
+    ]
+   ],
+   "tips": [
+    "Di la palabra en inglés y haz un gesto: manos arriba para <b>tree</b>, mueve la mano para <b>bell</b>. Tu hijo te imita.",
+    "Una palabra por día: hoy buscamos algo que brille como una <b>star</b>.",
+    "No corrijas la pronunciación. Repite tú la palabra con calma y sigue jugando."
+   ]
+  },
+  "pt": {
+   "slug": "natal-em-ingles",
+   "topic": "Natal",
+   "title": "O Natal em inglês para crianças: 7 palavras com pronúncia | Learn with Ian",
+   "h1": "O Natal em inglês para crianças",
+   "desc": "O Natal em inglês para crianças de 2 a 6 anos: 7 palavras com o significado e como se pronunciam, frases fáceis e um desenho animado grátis para ouvir.",
+   "lead": "Sete palavras de Natal em inglês, com o que significam e como se falam. Leia a lista com seu filho, assistam ao episódio e repitam juntos.",
+   "words": [
+    {
+     "en": "star",
+     "tr": "estrela",
+     "say": "stár"
+    },
+    {
+     "en": "bell",
+     "tr": "sino",
+     "say": "bél"
+    },
+    {
+     "en": "tree",
+     "tr": "árvore",
+     "say": "tri"
+    },
+    {
+     "en": "bow",
+     "tr": "laço",
+     "say": "bou"
+    },
+    {
+     "en": "lights",
+     "tr": "luzes",
+     "say": "láits"
+    },
+    {
+     "en": "present",
+     "tr": "presente",
+     "say": "PRÉ-zent"
+    },
+    {
+     "en": "ribbon",
+     "tr": "fita",
+     "say": "RÍ-bon"
+    }
+   ],
+   "phrases": [
+    [
+     "I see a star.",
+     "Eu vejo uma estrela."
+    ],
+    [
+     "A present with a bow.",
+     "Um presente com um laço."
+    ],
+    [
+     "Lights on the tree.",
+     "Luzes na árvore."
+    ]
+   ],
+   "tips": [
+    "Fale a palavra em inglês e faça um gesto: mãos para cima para <b>tree</b>, balance a mão para <b>bell</b>. Seu filho imita.",
+    "Uma palavra por dia: hoje vamos procurar algo que brilha como uma <b>star</b>.",
+    "Não corrija a pronúncia. Repita a palavra com calma e continue brincando."
+   ]
+  }
+ },
+ {
+  "episode": "ian-s-snowy-day",
+  "live_from": "2026-11-27",
+  "written_by": "robot",
+  "es": {
+   "slug": "invierno-en-ingles",
+   "topic": "Invierno",
+   "title": "El invierno en inglés para niños: 7 palabras con pronunciación | Learn with Ian",
+   "h1": "El invierno en inglés para niños",
+   "desc": "El invierno en inglés para niños de 2 a 6 años: 7 palabras con su significado y cómo se pronuncian, frases fáciles y un dibujo animado gratis para escucharlas.",
+   "lead": "Siete palabras de la ropa de invierno en inglés, con lo que significan y cómo se dicen. Lee la lista con tu hijo, mira el episodio y repitan juntos.",
+   "words": [
+    {
+     "en": "hat",
+     "tr": "gorro",
+     "say": "jat"
+    },
+    {
+     "en": "coat",
+     "tr": "abrigo",
+     "say": "kout"
+    },
+    {
+     "en": "boots",
+     "tr": "botas",
+     "say": "buts"
+    },
+    {
+     "en": "scarf",
+     "tr": "bufanda",
+     "say": "skarf"
+    },
+    {
+     "en": "gloves",
+     "tr": "guantes",
+     "say": "glavs"
+    },
+    {
+     "en": "snow",
+     "tr": "nieve",
+     "say": "snou"
+    },
+    {
+     "en": "cold",
+     "tr": "frío",
+     "say": "kould"
+    }
+   ],
+   "phrases": [
+    [
+     "I wear a hat.",
+     "Yo uso un gorro."
+    ],
+    [
+     "It is cold.",
+     "Hace frío."
+    ],
+    [
+     "Look at the snow!",
+     "¡Mira la nieve!"
+    ]
+   ],
+   "tips": [
+    "Toca tu cabeza y di <b>hat</b>. Tu hijo se toca la cabeza y lo repite.",
+    "Cuando se vistan para salir, nombren cada prenda en inglés: <b>coat</b>, <b>boots</b>.",
+    "No corrijas la pronunciación. Repite tú la palabra con calma y sigue jugando."
+   ]
+  },
+  "pt": {
+   "slug": "inverno-em-ingles",
+   "topic": "Inverno",
+   "title": "O inverno em inglês para crianças: 7 palavras com pronúncia | Learn with Ian",
+   "h1": "O inverno em inglês para crianças",
+   "desc": "O inverno em inglês para crianças de 2 a 6 anos: 7 palavras com o significado e como se pronunciam, frases fáceis e um desenho animado grátis para ouvir.",
+   "lead": "Sete palavras das roupas de inverno em inglês, com o que significam e como se falam. Leia a lista com seu filho, assistam ao episódio e repitam juntos.",
+   "words": [
+    {
+     "en": "hat",
+     "tr": "gorro",
+     "say": "rét"
+    },
+    {
+     "en": "coat",
+     "tr": "casaco",
+     "say": "kout"
+    },
+    {
+     "en": "boots",
+     "tr": "botas",
+     "say": "buts"
+    },
+    {
+     "en": "scarf",
+     "tr": "cachecol",
+     "say": "skarf"
+    },
+    {
+     "en": "gloves",
+     "tr": "luvas",
+     "say": "glâvs"
+    },
+    {
+     "en": "snow",
+     "tr": "neve",
+     "say": "snou"
+    },
+    {
+     "en": "cold",
+     "tr": "frio",
+     "say": "kould"
+    }
+   ],
+   "phrases": [
+    [
+     "I wear a hat.",
+     "Eu uso um gorro."
+    ],
+    [
+     "It is cold.",
+     "Está frio."
+    ],
+    [
+     "Look at the snow!",
+     "Olhe a neve!"
+    ]
+   ],
+   "tips": [
+    "Toque na cabeça e diga <b>hat</b>. Seu filho toca a cabeça e repete.",
+    "Na hora de se vestir para sair, falem cada peça em inglês: <b>coat</b>, <b>boots</b>.",
+    "Não corrija a pronúncia. Repita a palavra com calma e continue brincando."
+   ]
+  }
+ },
+ {
+  "episode": "little-garden",
+  "live_from": "2026-11-27",
+  "written_by": "robot",
+  "es": {
+   "slug": "jardin-en-ingles",
+   "topic": "Jardín",
+   "title": "El jardín en inglés para niños: 6 palabras con pronunciación | Learn with Ian",
+   "h1": "El jardín en inglés para niños",
+   "desc": "Las plantas y el jardín en inglés para niños de 2 a 6 años: 6 palabras con su significado y cómo se pronuncian, frases fáciles y un dibujo animado gratis.",
+   "lead": "Seis palabras en inglés para hablar de cómo crece una planta, con lo que significan y cómo se dicen. Lee la lista con tu hijo, mira el episodio y repitan juntos.",
+   "words": [
+    {
+     "en": "sun",
+     "tr": "sol",
+     "say": "san"
+    },
+    {
+     "en": "seed",
+     "tr": "semilla",
+     "say": "siid"
+    },
+    {
+     "en": "water",
+     "tr": "agua",
+     "say": "UÓ-ter"
+    },
+    {
+     "en": "soil",
+     "tr": "tierra",
+     "say": "soil"
+    },
+    {
+     "en": "plant",
+     "tr": "planta",
+     "say": "plant"
+    },
+    {
+     "en": "grow",
+     "tr": "crecer",
+     "say": "grou"
+    }
+   ],
+   "phrases": [
+    [
+     "I see a seed.",
+     "Veo una semilla."
+    ],
+    [
+     "The plant needs water.",
+     "La planta necesita agua."
+    ],
+    [
+     "The sun helps it grow.",
+     "El sol la ayuda a crecer."
+    ]
+   ],
+   "tips": [
+    "Agáchate como una semilla y di <b>seed</b>. Levántate despacio con los brazos arriba y di <b>grow</b>.",
+    "Cuenta el orden con los dedos: seed, soil, water, sun, plant. Tu hijo lo repite contigo.",
+    "No corrijas la pronunciación. Repite tú la palabra con calma y sigue jugando."
+   ]
+  },
+  "pt": {
+   "slug": "jardim-em-ingles",
+   "topic": "Jardim",
+   "title": "O jardim em inglês para crianças: 6 palavras com pronúncia | Learn with Ian",
+   "h1": "O jardim em inglês para crianças",
+   "desc": "O jardim e as plantas em inglês para crianças de 2 a 6 anos: 6 palavras com o significado e como se pronunciam, frases fáceis e um desenho animado grátis.",
+   "lead": "Seis palavras em inglês para falar de como uma planta cresce, com o que significam e como se falam. Leia a lista com seu filho, assistam ao episódio e repitam juntos.",
+   "words": [
+    {
+     "en": "sun",
+     "tr": "sol",
+     "say": "sân"
+    },
+    {
+     "en": "seed",
+     "tr": "semente",
+     "say": "sid"
+    },
+    {
+     "en": "water",
+     "tr": "água",
+     "say": "UÓ-ter"
+    },
+    {
+     "en": "soil",
+     "tr": "terra",
+     "say": "sóil"
+    },
+    {
+     "en": "plant",
+     "tr": "planta",
+     "say": "plént"
+    },
+    {
+     "en": "grow",
+     "tr": "crescer",
+     "say": "grôu"
+    }
+   ],
+   "phrases": [
+    [
+     "I see a seed.",
+     "Eu vejo uma semente."
+    ],
+    [
+     "The plant needs water.",
+     "A planta precisa de água."
+    ],
+    [
+     "The sun helps it grow.",
+     "O sol ajuda a planta a crescer."
+    ]
+   ],
+   "tips": [
+    "Agache como uma semente e diga <b>seed</b>. Levante devagar com os braços para cima e diga <b>grow</b>.",
+    "Conte a ordem nos dedos: seed, soil, water, sun, plant. Seu filho repete com você.",
+    "Não corrija a pronúncia. Repita a palavra com calma e continue brincando."
+   ]
+  }
  }
 ]
