@@ -29,12 +29,16 @@ jobs:
         run: python3 scripts/link_pages.py
       - name: Free printable games (from Drive) and the Pinterest feed
         run: python3 scripts/activities.py
-      - name: Daily Pinterest feeds (a few new Pins every day)
-        run: python3 scripts/pins.py
       - name: Free activity pages in English, Spanish and Portuguese (never stops the update)
         run: python3 scripts/pages.py || true
       - name: The Weaver links the activity pages into the site (never stops the update)
         run: python3 scripts/weave.py || true
+      - name: Pinterest pictures for the activity pages (never stops the update)
+        run: |
+          python3 -m pip install --quiet pillow || true
+          python3 scripts/pins_auto.py || true
+      - name: Daily Pinterest feeds (a few new Pins every day)
+        run: python3 scripts/pins.py
       - name: Worksheet pictures on the site, picture descriptions and llms.txt
         run: python3 scripts/media_seo.py
       - name: Tell Bing about new pages (IndexNow)

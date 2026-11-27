@@ -9,6 +9,8 @@ makes a few new Pins every day instead of many at once. Pinterest reads the feed
 Feeds: pins-<board>.xml (for example pins-christmas.xml). Rows with board "general"
 (or no board) are added to activities.xml, the feed of the main board.
 Pictures are copied once into /img/pins. Safe to run many times.
+Pins for the free activity pages come from data/pins_auto.json (made by scripts/pins_auto.py,
+pictures already in /img/pins); they are added to the same feeds on their day.
 If the sheet can't be read, nothing changes.
 """
 import csv
@@ -16,6 +18,7 @@ import datetime
 import email.utils
 import html
 import io
+import json
 import os
 import re
 import urllib.request
@@ -75,6 +78,8 @@ def day(s):
 
 def picture(row):
     """Copy the Pin picture once into /img/pins. Returns (site path, type) or None."""
+    if row.get("local"):  # made on GitHub by pins_auto.py, already in the repo
+        return (row["local"], "image/jpeg") if (ROOT / row["local"].lstrip("/")).exists() else None
     IMG.mkdir(parents=True, exist_ok=True)
     stem = f'{row["slug"]}-{row["key"]}'
     stamp = IMG / f".{stem}.id"
@@ -124,6 +129,12 @@ def item(row, titles):
 
 def main():
     rows = [r for r in table(PINS_CSV) if r.get("ok", "").lower() in ("yes", "y", "ok") and r.get("slug") and r.get("key") and r.get("pin_id") and r.get("title")]
+    try:  # Pins for the activity pages (never stops the sheet Pins)
+        auto = json.loads((ROOT / "data" / "pins_auto.json").read_text(encoding="utf-8")).get("pins", [])
+        rows += [{"date": p["date"], "board": p["board"], "slug": p["id"].rsplit("-", 1)[0], "key": p["lang"], "title": p["title"],
+                  "description": p["description"], "link": p["link"], "local": p["img"], "pin_id": "local", "ok": "yes"} for p in auto]
+    except Exception as e:
+        print("no activity-page pins:", e)
     try:
         titles = {a["slug"]: a.get("episode_title", "") for a in table(ACTS_CSV) if a.get("slug")}
     except Exception:
