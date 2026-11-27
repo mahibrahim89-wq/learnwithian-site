@@ -27,6 +27,8 @@ jobs:
         run: python3 scripts/activities.py
       - name: Daily Pinterest feeds (a few new Pins every day)
         run: python3 scripts/pins.py
+      - name: Free activity pages in English, Spanish and Portuguese (never stops the update)
+        run: python3 scripts/pages.py || true
       - name: Worksheet pictures on the site, picture descriptions and llms.txt
         run: python3 scripts/media_seo.py
       - name: Tell Bing about new pages (IndexNow)
