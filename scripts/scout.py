@@ -40,7 +40,7 @@ MAX_NEW_PER_RUN = 3
 QUEUE_CAP = 8            # topics waiting for the writer; above this the scout adds nothing
 MAX_EPISODES_PER_RUN = 12
 MAX_TERMS = 2
-PER_EPISODE_TO_CLAUDE = 18
+PER_EPISODE_TO_CLAUDE = 24
 DRY = os.environ.get("SCOUT_DRY", "").strip().lower() in ("1", "true", "yes")
 UA = "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"
 
@@ -180,7 +180,7 @@ def pick_prompt(room, episodes, found, plan, pages):
         lines = [f"EPISODE {ep} (\"{W.episode_facts(ep)['ep_title']}\", already has {count[ep]} activity topics). It teaches: "
                  + W.episode_text(ep)[:350]]
         for lang in LANGS:
-            top = sorted(found[ep][lang].items(), key=lambda kv: (-len(kv[1]), len(kv[0])))[:PER_EPISODE_TO_CLAUDE]
+            top = sorted(found[ep][lang].items(), key=lambda kv: (-len(kv[1]), -len(kv[0].split()), kv[0]))[:PER_EPISODE_TO_CLAUDE]
             lines.append(f"  real searches ({lang}): " + " | ".join(f"{p} [{len(s)}]" for p, s in top) if top else f"  real searches ({lang}): none")
         blocks.append("\n".join(lines))
     return f"""Below are real search suggestions (what people type into Google, YouTube, Bing and DuckDuckGo), per episode. The number in [ ] is how many services showed the phrase.
@@ -190,6 +190,9 @@ Each topic must:
 - answer a real search from the lists (copy that search exactly into "evidence"; English evidence is required, Spanish and Portuguese evidence when a listed search fits, otherwise ""),
 - be a different activity and a different search phrase from everything already used: {used}
 - be doable with household or classroom things, be true to what the episode teaches, and need no drawing, printing or screen.
+Prefer the longer, more specific searches (4 words or more, e.g. with an age, a place or a kind of game) over the broadest ones: a young site cannot win the broadest phrases.
+The "phrases" must be correctly spelled, with accents (inglés, inglês), even when the copied evidence has none.
+Slugs are short: 3 to 5 words that name the activity or the search (e.g. winter-clothes-game, juego-de-colores-en-ingles).
 If nothing good is left for an episode, skip it. Fewer good topics is better than weak ones.
 Inside the JSON text values never use the double-quote character (write English words the adult says in single quotes).
 
@@ -244,7 +247,7 @@ def main():
     total = sum(len(found[ep][l]) for ep in found for l in LANGS)
     report["sources"] = stats
     report["suggestions"] = total
-    report["top"] = {ep: {l: [p for p, s in sorted(found[ep][l].items(), key=lambda kv: (-len(kv[1]), len(kv[0])))[:8]] for l in LANGS}
+    report["top"] = {ep: {l: [p for p, s in sorted(found[ep][l].items(), key=lambda kv: (-len(kv[1]), -len(kv[0].split()), kv[0]))[:8]] for l in LANGS}
                      for ep in episodes}
     print(f"scout: {total} fitting suggestions for {len(episodes)} episodes; services: "
           + ", ".join(f"{n} {v['ok']} ok/{v['failed']} failed" for n, v in stats.items()))
