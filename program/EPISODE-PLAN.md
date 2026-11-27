@@ -22,7 +22,7 @@ Our first audience is the USA: parents, preschools, Pre-K and church schools. Ev
   4. Cognition (math and science): count, sort, compare, make a pattern, name a shape or a position word; one simple "I wonder" question (Why is the ice melting?).
   5. Perceptual, motor and physical development: one movement moment in every episode (clap, jump, stretch, point).
 - THE WEEK'S STRANDS: every week (A, B, C together) includes ONE letter (the same letter as the Shorts made that week), ONE math skill, ONE feeling or value, and ONE movement game. Episode C is the natural place for the math skill and the letter.
-- THE THEMES are the usual American preschool units: All About Me and My Body, My Family, Feelings, Five Senses, Community Helpers, Farm and Zoo Animals, Pets, Plants and Bugs, Weather and Seasons, Ocean, Transportation, Back to School, Food and Nutrition, Colors, Shapes, Numbers, Holidays kept calm and family-centred.
+- THE THEMES are the usual American preschool units: All About Me and My Body, My Family, Feelings, Five Senses, Community Helpers, Farm and Zoo Animals, Pets, Plants and Bugs, Weather and Seasons, Ocean, Transportation, Back to School, Food and Nutrition, Colors, Shapes, Numbers, Holidays kept calm and family-centered.
 - KINDERGARTEN READINESS, where the three years lead:
   Year 1: about 700 everyday words; count to 10; the basic colors and shapes; follow a one-step direction; name feelings.
   Year 2: short sentences; count to 20; most letters and their sounds; sort and make simple patterns; position words (in, on, under, next to).
@@ -133,7 +133,7 @@ W3 My meals. A: breakfast, lunch, dinner, bread, cheese, egg, rice, milk. B: hun
 W4 Autumn. A = EP 23 "Autumn leaves" (leaves, windy, fall, tree, brown, basket, rake, pile). B: acorn, squirrel, nut, harvest, pumpkin, apple, sweater, cool. C: collect and count the leaves by color.
 
 --- OCTOBER: COLORS, SHAPES AND NUMBERS ---
-W1 Colours. A = DONE "Ian's Color Day" (red, blue, yellow, orange, green, purple). B: pink, black, white, brown, gray, light, dark, color. C: color hunt around the house.
+W1 Colors. A = DONE "Ian's Color Day" (red, blue, yellow, orange, green, purple). B: pink, black, white, brown, gray, light, dark, color. C: color hunt around the house.
 W2 Mixing and painting. A: paint, brush, paper, mix, dot, line, picture, rainbow. B: draw, wet, dry, careful, mess, wash, hang, beautiful. C: mix two colors: what do we get?
 W3 Shapes. A = DONE "Ian's Shape Hunt". B: star, heart, oval, diamond, round, corner, side, shape. C: shape hunt outside.
 W4 Numbers. A = DONE "Ian's Number Walk" (1 to 5). B: zero, eleven, twelve, more, less, how many, count, number. C: count and compare: more or less?
@@ -207,7 +207,7 @@ CHANGED 27 Nov: make ONE long compilation after every 6 new long episodes, which
 10. SEASONAL SPECIALS 2026-2027 (approved by Mahmoud, 23 Nov 2026; kept)
 ==================================================
 Why: parents and teachers buy seasonal printables 4-6 weeks before the day. So every seasonal special is made about 5-7 weeks before the day. Claude reminds Mahmoud on the Saturday of each "make" weekend.
-Rule: on a "make" weekend, the special comes FIRST and takes the place of that week's C episode. It follows the same episode rules (8 minutes, 8 new words + review words). Our audience is the USA and English-speaking Africa, many church schools: keep every holiday calm, kind and family-centred. No Halloween episode (use autumn and pumpkins instead). No famous characters or brands.
+Rule: on a "make" weekend, the special comes FIRST and takes the place of that week's C episode. It follows the same episode rules (8 minutes, 8 new words + review words). Our audience is the USA and English-speaking Africa, many church schools: keep every holiday calm, kind and family-centered. No Halloween episode (use autumn and pumpkins instead). No famous characters or brands.
 
 MAKE WEEKEND (starts Sat) -> PUBLISH BY -> OCCASION -> EPISODE
 - 28 Nov 2026 -> 14 Dec 2026 -> New Year (1 Jan) -> EP 8 Happy New Year! Count down from 10 (this is December W3 A)
