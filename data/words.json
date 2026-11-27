@@ -1,0 +1,137 @@
+[
+ {
+  "episode": "ian-s-color-day",
+  "live_from": "2026-11-27",
+  "written_by": "hand",
+  "es": {
+   "slug": "colores-en-ingles",
+   "topic": "Colores",
+   "title": "Los colores en inglés para niños: 6 palabras con pronunciación | Learn with Ian",
+   "h1": "Los colores en inglés para niños",
+   "desc": "Los colores en inglés para niños de 2 a 6 años: 6 palabras con su significado y cómo se pronuncian, frases fáciles y un dibujo animado gratis para escucharlas.",
+   "lead": "Seis colores en inglés, con lo que significan y cómo se dicen. Lee la lista con tu hijo, mira el episodio y repitan juntos.",
+   "words": [
+    {
+     "en": "red",
+     "tr": "rojo",
+     "say": "red",
+     "color": "#e5484d"
+    },
+    {
+     "en": "blue",
+     "tr": "azul",
+     "say": "blu",
+     "color": "#2f8fe6"
+    },
+    {
+     "en": "yellow",
+     "tr": "amarillo",
+     "say": "YE-lou",
+     "color": "#ffb321"
+    },
+    {
+     "en": "orange",
+     "tr": "naranja",
+     "say": "Ó-rinch",
+     "color": "#f76b15"
+    },
+    {
+     "en": "green",
+     "tr": "verde",
+     "say": "griin",
+     "color": "#3fae5a"
+    },
+    {
+     "en": "purple",
+     "tr": "morado",
+     "say": "PÉR-pol",
+     "color": "#8e4ec6"
+    }
+   ],
+   "phrases": [
+    [
+     "It is red.",
+     "Es rojo."
+    ],
+    [
+     "What color is it?",
+     "¿De qué color es?"
+    ],
+    [
+     "I see something blue.",
+     "Veo algo azul."
+    ]
+   ],
+   "tips": [
+    "Di la palabra en inglés y señala algo de ese color. Tu hijo la repite.",
+    "Un color por día: hoy todo lo rojo es <b>red</b>.",
+    "No corrijas la pronunciación. Repite tú la palabra con calma y sigue jugando."
+   ]
+  },
+  "pt": {
+   "slug": "cores-em-ingles",
+   "topic": "Cores",
+   "title": "As cores em inglês para crianças: 6 palavras com pronúncia | Learn with Ian",
+   "h1": "As cores em inglês para crianças",
+   "desc": "As cores em inglês para crianças de 2 a 6 anos: 6 palavras com o significado e como se pronunciam, frases fáceis e um desenho animado grátis para ouvir.",
+   "lead": "Seis cores em inglês, com o que significam e como se falam. Leia a lista com seu filho, assistam ao episódio e repitam juntos.",
+   "words": [
+    {
+     "en": "red",
+     "tr": "vermelho",
+     "say": "réd",
+     "color": "#e5484d"
+    },
+    {
+     "en": "blue",
+     "tr": "azul",
+     "say": "blu",
+     "color": "#2f8fe6"
+    },
+    {
+     "en": "yellow",
+     "tr": "amarelo",
+     "say": "IÉ-lou",
+     "color": "#ffb321"
+    },
+    {
+     "en": "orange",
+     "tr": "laranja",
+     "say": "Ó-rindj",
+     "color": "#f76b15"
+    },
+    {
+     "en": "green",
+     "tr": "verde",
+     "say": "grin",
+     "color": "#3fae5a"
+    },
+    {
+     "en": "purple",
+     "tr": "roxo",
+     "say": "PÂR-pou",
+     "color": "#8e4ec6"
+    }
+   ],
+   "phrases": [
+    [
+     "It is red.",
+     "É vermelho."
+    ],
+    [
+     "What color is it?",
+     "Que cor é essa?"
+    ],
+    [
+     "I see something blue.",
+     "Eu vejo uma coisa azul."
+    ]
+   ],
+   "tips": [
+    "Fale a palavra em inglês e aponte para algo dessa cor. Seu filho repete.",
+    "Uma cor por dia: hoje tudo o que é vermelho é <b>red</b>.",
+    "Não corrija a pronúncia. Repita a palavra com calma e continue brincando."
+   ]
+  }
+ }
+]

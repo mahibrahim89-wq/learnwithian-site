@@ -24,8 +24,14 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python3 scripts/pages_write.py
+      - name: Write word pages for new episodes with Claude (never stops the site)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 scripts/words_write.py
       - name: Build the pages and the sitemap
         run: python3 scripts/pages.py || true
+      - name: Word pages in Spanish and Portuguese (never stops the site)
+        run: python3 scripts/words.py || true
       - name: The Weaver links the new pages into the site
         run: python3 scripts/weave.py || true
       - name: Tell Bing about new pages (IndexNow)

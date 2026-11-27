@@ -41,6 +41,8 @@ T = {
                lead="Brincadeiras fáceis para fazer em casa ou na sala de aula, para crianças de 2 a 6 anos. Cada uma leva uns 15 minutos, usa coisas que você já tem e vem com um desenho animado curto em inglês e jogos para imprimir grátis."),
 }
 YT = '<a href="https://www.youtube.com/@LearnWithIanKids">YouTube</a>'
+WORDS_DIR = {"es": "es/palabras", "pt": "pt/palavras"}
+WORDS_H = {"es": "Palabras en inglés", "pt": "Palavras em inglês"}
 
 
 def esc(s):
@@ -76,6 +78,19 @@ def live_topics():
             continue
         if all((ROOT / PREFIX[l] / "play" / (tp[l]["slug"] + ".html")).exists() for l in PREFIX):
             out.append(tp)
+    return out
+
+
+def word_pages(lang):
+    """Live word pages of this language (scripts/words.py): [(episode, path, h1)]."""
+    p = ROOT / "data" / "words.json"
+    if lang not in WORDS_DIR or not p.exists():
+        return []
+    out = []
+    for e in json.loads(p.read_text(encoding="utf-8")):
+        f = ROOT / WORDS_DIR[lang] / (e[lang]["slug"] + ".html")
+        if f.exists():
+            out.append((e["episode"], f"/{WORDS_DIR[lang]}/{e[lang]['slug']}.html", e[lang]["h1"]))
     return out
 
 
@@ -115,6 +130,10 @@ def build_hub(lang, topics):
         f'<section class="sbox"><h2>{esc(name)}</h2><ul>' + "".join(
             f'<li><a href="{play_path(lang, tp)}">{esc(tp[lang]["h1"])}</a></li>' for tp in tps) + "</ul></section>\n  "
         for name, tps in groups.items())
+    words = word_pages(lang)
+    if words:
+        boxes = (f'<section class="sbox"><h2>{WORDS_H[lang]}</h2><ul>'
+                 + "".join(f'<li><a href="{path}">{esc(h1)}</a></li>' for _, path, h1 in words) + "</ul></section>\n  ") + boxes
     sm = re.search(r'<section class="signup noprint">.*?</section>', base, re.S)
     main = f'''<main class="wrap xpage">
   <p class="crumbs"><a href="/{PREFIX[lang]}">{t["home"]}</a> › {t["hub"]}</p>
@@ -144,8 +163,9 @@ def weave_episode(lang, slug, topics):
     if not path.exists():
         return False
     text = re.sub(r'<li class="wv">.*?</li>', "", path.read_text(encoding="utf-8"), flags=re.S)
-    items = "".join(f'<li class="wv"><a href="{play_path(lang, tp)}">{esc(tp[lang]["h1"])}</a></li>'
-                    for tp in topics[-MAX_PER_EPISODE:])
+    items = "".join(f'<li class="wv"><a href="{path}">{esc(h1)}</a></li>' for ep, path, h1 in word_pages(lang) if ep == slug)
+    items += "".join(f'<li class="wv"><a href="{play_path(lang, tp)}">{esc(tp[lang]["h1"])}</a></li>'
+                     for tp in topics[-MAX_PER_EPISODE:])
     pat = r"(<h2>" + re.escape(T[lang]["tips"]) + r"</h2>\s*<ul>.*?)(</ul>)"
     return write(path, re.sub(pat, lambda m: m.group(1) + items + m.group(2), text, count=1, flags=re.S))
 
@@ -228,6 +248,8 @@ def main():
         by_ep = {}
         for tp in topics:
             by_ep.setdefault(tp["episode"], []).append(tp)
+        for ep, _, _ in word_pages(lang):
+            by_ep.setdefault(ep, [])
         for slug, tps in by_ep.items():
             changed += weave_episode(lang, slug, tps)
     changed += weave_footers(set(PREFIX))

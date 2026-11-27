@@ -31,6 +31,8 @@ jobs:
         run: python3 scripts/activities.py
       - name: Free activity pages in English, Spanish and Portuguese (never stops the update)
         run: python3 scripts/pages.py || true
+      - name: Word pages in Spanish and Portuguese (never stops the site)
+        run: python3 scripts/words.py || true
       - name: The Weaver links the activity pages into the site (never stops the update)
         run: python3 scripts/weave.py || true
       - name: Pinterest pictures for the activity pages (never stops the update)
