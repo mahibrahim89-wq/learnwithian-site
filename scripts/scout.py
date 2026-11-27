@@ -55,7 +55,17 @@ BANNED = ("coloring", "colouring", "colorear", "colorir", "pintar", "color by", 
           "pdf", "song", "songs", "cancion", "canciones", "musica", "app", "apps", "online", "download", "descargar",
           "baixar", "price", "buy", "comprar", "amazon", "adult", "adultos", "teen", "grade", "primaria", "secundaria",
           "fundamental", "esl adults", "tattoo", "nails", "outfit", "makeup", "wallpaper", "meme", "quiz", "test",
-          "examen", "prova", "halloween", "kahoot", "roblox", "minecraft", "wordwall", "liveworksheets")
+          "examen", "prova", "halloween", "kahoot", "roblox", "minecraft", "wordwall", "liveworksheets",
+          "thrones", "excel", "near me", "senior", "traductor", "traduccion", "traducao", "imprimir", "video",
+          "youtube", "como se dice", "como se escribe", "como se diz", "como fala", "como escreve", "letra", "poema",
+          "mensagem", "mensaje", "frases", "medico", "large group", "party", "office", "work")
+# A suggestion must be about children or about doing something with them.
+ABOUT_US = {
+    "en": ("toddler", "preschool", "kid", "children", "child", "kindergarten", "year old", "activity", "activities",
+           "game", "teach", "learn", "circle time", "at home"),
+    "es": ("nino", "preescolar", "infantil", "juego", "actividad", "aprender", "ensenar", "vocabulario", "kinder"),
+    "pt": ("crianca", "infantil", "jogo", "atividade", "brincadeira", "aprender", "ensinar", "vocabulario", "palavras"),
+}
 
 
 def plain(s):
@@ -138,11 +148,9 @@ def fits(phrase, lang):
         return False
     if re.search(r"\b(19|20)\d\d\b", p):
         return False
-    if lang == "es" and "ingles" not in p:
+    if lang in ("es", "pt") and "ingles" not in p:
         return False
-    if lang == "pt" and "ingles" not in p:
-        return False
-    return True
+    return any(w in p for w in ABOUT_US[lang])
 
 
 # ---------- Claude ----------
@@ -183,6 +191,7 @@ Each topic must:
 - be a different activity and a different search phrase from everything already used: {used}
 - be doable with household or classroom things, be true to what the episode teaches, and need no drawing, printing or screen.
 If nothing good is left for an episode, skip it. Fewer good topics is better than weak ones.
+Inside the JSON text values never use the double-quote character (write English words the adult says in single quotes).
 
 {chr(10).join(blocks)}
 
@@ -255,11 +264,17 @@ def main():
         W.save(REPORT, report)
         print("scout: no key, report only")
         return
-    try:
-        ans = W.parse_json(W.ask_claude(budget, SYSTEM, pick_prompt(room, episodes, found, plan, pages)))
-    except Exception as e:
-        report["note"] = f"Claude did not answer: {str(e)[:150]}"
-        print("scout:", report["note"])
+    ans, err = None, ""
+    for attempt in (1, 2):  # a broken JSON answer gets one more try
+        try:
+            extra = "" if attempt == 1 else f"\n\nYour last answer was not valid JSON ({err}). Send valid JSON only."
+            ans = W.parse_json(W.ask_claude(budget, SYSTEM, pick_prompt(room, episodes, found, plan, pages) + extra))
+            break
+        except Exception as e:
+            err = str(e)[:150]
+            print(f"scout: try {attempt}: {err}")
+    if ans is None:
+        report["note"] = f"Claude did not answer: {err}"
         W.save(REPORT, report)
         return
     used_slugs = ({t.get("slugs", {}).get(l) for t in plan for l in LANGS} | {t["id"] for t in plan}
