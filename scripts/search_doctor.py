@@ -8,7 +8,7 @@
 3. New topics: real searches that bring people to the site but have no page of their own become
    new topics in data/page_plan.json; the writer robot writes them. At most MAX_NEW_TOPICS a week.
 
-Needs two GitHub secrets: GSC_SERVICE_ACCOUNT (the Google key file, JSON) and ANTHROPIC_API_KEY.
+Google login is keyless (see gsc_session); Claude uses the ANTHROPIC_API_KEY secret.
 Without data (a new site) it only writes the report. Off switch: data/PAUSE_DOCTOR.
 Never stops the site: every problem is printed and the robot ends normally.
 """
@@ -41,11 +41,24 @@ def plain(s):
     return "".join(c for c in unicodedata.normalize("NFD", s.lower()) if unicodedata.category(c) != "Mn")
 
 
+SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"]
+
+
+def has_google_login():
+    return bool(os.environ.get("GSC_SERVICE_ACCOUNT") or os.environ.get("GOOGLE_APPLICATION_CREDENTIALS"))
+
+
 def gsc_session():
-    from google.oauth2 import service_account
+    """Keyless login: GitHub proves to Google that this is the learnwithian-site robot (Workload
+    Identity Federation, set up 27 Nov 2026), and Google lets it act as search-doctor@learnwithian-search
+    (read only in Search Console). A JSON key in GSC_SERVICE_ACCOUNT also works but is not used."""
+    import google.auth
     from google.auth.transport.requests import AuthorizedSession
-    info = json.loads(os.environ["GSC_SERVICE_ACCOUNT"])
-    creds = service_account.Credentials.from_service_account_info(info, scopes=["https://www.googleapis.com/auth/webmasters.readonly"])
+    if os.environ.get("GSC_SERVICE_ACCOUNT"):
+        from google.oauth2 import service_account
+        creds = service_account.Credentials.from_service_account_info(json.loads(os.environ["GSC_SERVICE_ACCOUNT"]), scopes=SCOPES)
+    else:
+        creds, _ = google.auth.default(scopes=SCOPES)
     return AuthorizedSession(creds)
 
 
@@ -113,8 +126,8 @@ def main():
     if PAUSE.exists():
         print("doctor: paused (data/PAUSE_DOCTOR exists)")
         return
-    if not os.environ.get("GSC_SERVICE_ACCOUNT"):
-        print("doctor: no Google key yet, nothing to do")
+    if not has_google_login():
+        print("doctor: no Google login yet, nothing to do")
         return
     sess = gsc_session()
     prop = find_property(sess)

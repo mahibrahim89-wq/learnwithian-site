@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write
 
 concurrency:
   group: site-writes
@@ -20,11 +21,15 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+      - name: Log in to Google without a key (only this site's main branch is allowed)
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/569369785612/locations/global/workloadIdentityPools/github/providers/learnwithian-site
+          service_account: search-doctor@learnwithian-search.iam.gserviceaccount.com
       - name: Install the Google helper
         run: pip install -q google-auth requests
       - name: Read Search Console and improve the site (never stops the site)
         env:
-          GSC_SERVICE_ACCOUNT: ${{ secrets.GSC_SERVICE_ACCOUNT }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python3 scripts/search_doctor.py
       - name: Rebuild the activity pages
@@ -33,7 +38,7 @@ jobs:
         run: |
           git config user.name "learnwithian-bot"
           git config user.email "hello@learnwithian.com"
-          git add -A
+          git add -A ':!gha-creds-*.json'
           if git diff --cached --quiet; then
             echo "Nothing new."
           else
