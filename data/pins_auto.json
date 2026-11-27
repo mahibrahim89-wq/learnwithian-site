@@ -152,6 +152,78 @@
    "description": "Uma caça às formas grátis para crianças de 2 a 6 anos. Encontrem círculos, quadrados e triângulos pela casa e digam os nomes em inglês. Inclui jogos para imprimir grátis.",
    "link": "https://learnwithian.com/pt/play/atividade-de-formas-em-ingles.html?pin=pt",
    "img": "/img/pins/play-shape-hunt-activity-pt.jpg"
+  },
+  {
+   "id": "play-animal-sounds-game-en",
+   "lang": "en",
+   "date": "2026-12-02",
+   "topic": "animal-sounds-game",
+   "episode": "zoo-day",
+   "board": "zoo-garden",
+   "title": "Animal Sounds Game for Toddlers: a 15-Minute Zoo Guessing Game",
+   "description": "A free animal sounds game for toddlers and preschoolers, ages 2 to 6. Make a zoo animal sound, children guess the name in English. Free printable games included.",
+   "link": "https://learnwithian.com/play/animal-sounds-game.html?pin=en",
+   "img": "/img/pins/play-animal-sounds-game-en.jpg"
+  },
+  {
+   "id": "play-animal-sounds-game-es",
+   "lang": "es",
+   "date": "2026-12-02",
+   "topic": "animal-sounds-game",
+   "episode": "zoo-day",
+   "board": "es-ingles",
+   "title": "Juego de Animales en Inglés para Niños: Adivina el Animal del Zoo",
+   "description": "Un juego gratis de animales en inglés para niños de 2 a 6 años. Haces el sonido de un animal del zoo y los niños dicen su nombre. Incluye juegos imprimibles gratis.",
+   "link": "https://learnwithian.com/es/play/juego-de-animales-en-ingles.html?pin=es",
+   "img": "/img/pins/play-animal-sounds-game-es.jpg"
+  },
+  {
+   "id": "play-animal-sounds-game-pt",
+   "lang": "pt",
+   "date": "2026-12-02",
+   "topic": "animal-sounds-game",
+   "episode": "zoo-day",
+   "board": "pt-ingles",
+   "title": "Jogo dos Animais em Inglês para Crianças: Adivinhe o Bicho do Zoo",
+   "description": "Um jogo grátis dos animais em inglês para crianças de 2 a 6 anos. Você faz o som de um animal do zoo e as crianças dizem o nome. Inclui jogos para imprimir grátis.",
+   "link": "https://learnwithian.com/pt/play/jogo-dos-animais-em-ingles.html?pin=pt",
+   "img": "/img/pins/play-animal-sounds-game-pt.jpg"
+  },
+  {
+   "id": "play-plant-a-seed-activity-en",
+   "lang": "en",
+   "date": "2026-12-03",
+   "topic": "plant-a-seed-activity",
+   "episode": "little-garden",
+   "board": "zoo-garden",
+   "title": "Plant a Seed Activity for Preschool: a 15-Minute Bean Cup Garden",
+   "description": "A free plant a seed activity for preschool, ages 2 to 6. Plant a bean in a cup and learn seed, soil, water, sun and plant in English. Free printables included.",
+   "link": "https://learnwithian.com/play/plant-a-seed-activity.html?pin=en",
+   "img": "/img/pins/play-plant-a-seed-activity-en.jpg"
+  },
+  {
+   "id": "play-plant-a-seed-activity-es",
+   "lang": "es",
+   "date": "2026-12-03",
+   "topic": "plant-a-seed-activity",
+   "episode": "little-garden",
+   "board": "es-ingles",
+   "title": "Actividad de Plantar Semillas para Niños: un Huerto en un Vaso",
+   "description": "Una actividad gratis de plantar semillas para niños, de 2 a 6 años. Siembran un frijol en un vaso y aprenden seed, soil, water, sun y plant en inglés.",
+   "link": "https://learnwithian.com/es/play/actividad-de-plantar-semillas.html?pin=es",
+   "img": "/img/pins/play-plant-a-seed-activity-es.jpg"
+  },
+  {
+   "id": "play-plant-a-seed-activity-pt",
+   "lang": "pt",
+   "date": "2026-12-03",
+   "topic": "plant-a-seed-activity",
+   "episode": "little-garden",
+   "board": "pt-ingles",
+   "title": "Atividade de Plantar Sementes para Crianças: uma Horta no Copo",
+   "description": "Uma atividade grátis de plantar sementes para crianças, de 2 a 6 anos. Elas plantam um feijão num copo e aprendem seed, soil, water, sun e plant em inglês.",
+   "link": "https://learnwithian.com/pt/play/atividade-de-plantar-sementes.html?pin=pt",
+   "img": "/img/pins/play-plant-a-seed-activity-pt.jpg"
   }
  ]
 }
