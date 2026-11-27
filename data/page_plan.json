@@ -130,6 +130,50 @@
     "es": "moverse como animales en inglés para niños",
     "pt": "mover como os animais em inglês para crianças"
    }
+  },
+  {
+   "id": "plants-activities-for-preschoolers",
+   "episode": "little-garden",
+   "idea": "Children act out how a plant grows in the order seed, soil, water, sun, plant. They curl up like a seed, tuck under a blanket for soil, wiggle fingers for water, stretch their arms to the window for sun, then stand tall as a plant. The adult says each word in English and the children repeat it.",
+   "slugs": {
+    "en": "plants-activities-for-preschoolers",
+    "es": "juego-de-plantas-en-ingles",
+    "pt": "jogo-de-plantas-em-ingles"
+   },
+   "phrases": {
+    "en": "Plants activities for preschoolers",
+    "es": "Juego de plantas en inglés para niños",
+    "pt": "Jogo de plantas em inglês para crianças"
+   },
+   "added_by": "scout",
+   "added": "2026-11-27",
+   "from_suggestions": {
+    "en": "plants activities for preschoolers",
+    "es": "juego de plantas en inglés para niños",
+    "pt": "jogo de plantas em inglês para crianças"
+   }
+  },
+  {
+   "id": "shapes-activities-3-year-olds",
+   "episode": "shape-hunt",
+   "idea": "Children play a mystery bag game. Round, square and triangle things from home or class (a plate, a folded napkin, a folded cloth) go into a pillowcase. Each child feels one without looking and says 'circle', 'square' or 'triangle' before pulling it out.",
+   "slugs": {
+    "en": "shapes-activities-3-year-olds",
+    "es": "figuras-geometricas-en-ingles",
+    "pt": "formas-geometricas-em-ingles"
+   },
+   "phrases": {
+    "en": "Shapes activities for 3 year olds",
+    "es": "Figuras geométricas en inglés para niños de preescolar",
+    "pt": "Formas geométricas em inglês para educação infantil"
+   },
+   "added_by": "scout",
+   "added": "2026-11-27",
+   "from_suggestions": {
+    "en": "shapes activities for 3 year olds",
+    "es": "figuras geometricas en ingles para niños de preescolar",
+    "pt": "formas geométricas em inglês para educação infantil"
+   }
   }
  ]
 }
