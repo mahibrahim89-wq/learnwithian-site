@@ -11,7 +11,8 @@ Safety:
 - At most MAX_TOPICS_PER_RUN topics per run and MAX_TOPICS_PER_WEEK topics in 7 days.
   Topics for new episodes go first and may pass the weekly limit.
 - At most MAX_CALLS_PER_RUN calls to Claude per run, and stops for the month when the
-  estimated cost in data/writer_log.json reaches MONTH_BUDGET_USD.
+  estimated cost in data/writer_log.json reaches MONTH_BUDGET_USD (no cap since 27 Nov:
+  Mahmoud wants no stop in the code; the per-run limits stay).
 - Never touches anything except data/page_plan.json, data/pages.json and data/writer_log.json.
 - Never stops the rest of the site: every problem is printed and the robot ends normally.
 """
@@ -39,7 +40,7 @@ FALLBACK_MODEL = "claude-haiku-5-5"
 MAX_TOPICS_PER_RUN = int(os.environ.get("WRITER_MAX_TOPICS", "2"))
 MAX_TOPICS_PER_WEEK = 7          # 7 topics = 21 pages a week at most (Mahmoud, 27 Nov)
 MAX_CALLS_PER_RUN = 6
-MONTH_BUDGET_USD = 8.0
+MONTH_BUDGET_USD = float("inf")  # no monthly cap in the code (Mahmoud, 27 Nov); the limit lives in the Anthropic Console
 PRICE_PER_MTOK = {"in": 3.0, "out": 15.0}  # used only to estimate the cost (on the high side)
 MAX_OUT_TOKENS = 8000
 
@@ -336,7 +337,7 @@ def main():
     log = load(LOG, {"months": {}, "runs": []})
     log["runs"] = (log.get("runs", []) + [run])[-60:]
     save(LOG, log)
-    print(f"writer: done. this month about ${budget.spent():.2f} of ${MONTH_BUDGET_USD:.0f}")
+    print(f"writer: done. this month about ${budget.spent():.2f} (no monthly cap in the code)")
 
 
 if __name__ == "__main__":

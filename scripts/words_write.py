@@ -133,7 +133,7 @@ def main():
                 print(f"words writer: wrote {ep}: {entry['es']['slug']} / {entry['pt']['slug']} ({', '.join(w['en'] for w in entry['es']['words'])})")
                 break
             print(f"words writer: try {attempt} for {ep}: {problems[:6]}")
-    print(f"words writer: {wrote} new, {len(entries)} in all. this month about ${budget.spent():.2f} of ${W.MONTH_BUDGET_USD:.0f}")
+    print(f"words writer: {wrote} new, {len(entries)} in all. this month about ${budget.spent():.2f}")
 
 
 if __name__ == "__main__":

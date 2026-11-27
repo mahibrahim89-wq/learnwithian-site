@@ -325,7 +325,7 @@ def main():
         W.save(W.PLAN, plan_doc)
     report["note"] = f"{len(report['added'])} topic(s) {'would be ' if DRY else ''}added; {queue} were waiting"
     W.save(REPORT, report)
-    print(f"scout: done. {report['note']}. this month about ${budget.spent():.2f} of ${W.MONTH_BUDGET_USD:.0f}")
+    print(f"scout: done. {report['note']}. this month about ${budget.spent():.2f}")
 
 
 if __name__ == "__main__":

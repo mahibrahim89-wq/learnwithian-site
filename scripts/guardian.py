@@ -126,8 +126,8 @@ def check_writer():
             add("writer-key", "كاتب الصفحات مش قادر يكلّم Claude (غالبًا رصيد مفتاح Anthropic خلص أو المفتاح اتلغى). افتح Anthropic Console وشوف الرصيد.")
     month = TODAY_DUBAI.strftime("%Y-%m")
     usd = log.get("months", {}).get(month, {}).get("usd", 0)
-    if usd >= 6.5:
-        add("writer-budget", f"صرف كاتب الصفحات الشهر ده حوالي ${usd:.2f} من سقف $8. لو وصل للسقف هيقف لحد أول الشهر.")
+    if usd >= 25:  # no cap in the code since 27 Nov; this is only a heads-up, nothing stops
+        add("writer-budget", f"للعلم بس: صرف الروبوتات على مفتاح Anthropic الشهر ده وصل حوالي ${usd:.2f}. مفيش حاجة وقفت.")
 
 
 def newest(board):
