@@ -37,7 +37,7 @@ PAUSE = ROOT / "data" / "PAUSE_WRITER"
 MODEL = os.environ.get("WRITER_MODEL", "claude-sonnet-5-5")
 FALLBACK_MODEL = "claude-haiku-5-5"
 MAX_TOPICS_PER_RUN = int(os.environ.get("WRITER_MAX_TOPICS", "2"))
-MAX_TOPICS_PER_WEEK = 5          # 5 topics = 15 pages a week at most
+MAX_TOPICS_PER_WEEK = 7          # 7 topics = 21 pages a week at most (Mahmoud, 27 Nov)
 MAX_CALLS_PER_RUN = 6
 MONTH_BUDGET_USD = 8.0
 PRICE_PER_MTOK = {"in": 3.0, "out": 15.0}  # used only to estimate the cost (on the high side)
