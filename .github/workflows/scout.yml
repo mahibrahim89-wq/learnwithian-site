@@ -1,0 +1,44 @@
+name: Scout (weekly search ideas for the writer)
+
+# Reads what people type into search (public suggestions of Google, YouTube, Bing, DuckDuckGo)
+# and adds up to 3 new activity topics to data/page_plan.json for the writer robot.
+# Off switch: add an empty file data/PAUSE_SCOUT.
+on:
+  schedule:
+    - cron: "23 5 * * 1"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Look and report only (add nothing to the plan)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-writes
+  cancel-in-progress: false
+
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Find real searches and add topics for the writer (never stops the site)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SCOUT_DRY: ${{ inputs.dry_run && '1' || '' }}
+        run: python3 scripts/scout.py
+      - name: Save changes
+        run: |
+          git config user.name "learnwithian-bot"
+          git config user.email "hello@learnwithian.com"
+          git add data/page_plan.json data/scout_report.json data/scout_seeds.json data/writer_log.json
+          if git diff --cached --quiet; then
+            echo "Nothing new."
+          else
+            git commit -m "Scout: weekly search ideas"
+            for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 20; done
+          fi

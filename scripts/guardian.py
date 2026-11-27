@@ -38,6 +38,7 @@ ROBOTS = [  # workflow file, Arabic name, max hours since last successful run
     ("pages.yml", "روبوت كاتب الصفحات", 30),
     ("search.yml", "دكتور البحث", 8 * 24 + 6),
     ("translations.yml", "سفير اللغات", 30),
+    ("scout.yml", "الكشّاف", 8 * 24 + 6),
 ]
 PAGES = ["/", "/free.html", "/episodes.html", "/sitemap.xml", "/es/", "/pt/", "/play/color-hunt-game.html"]
 ENGLISH_BOARDS = ["christmas", "winter", "basics", "zoo-garden", "videos"]
@@ -201,6 +202,14 @@ def check_links():
             + (f" و{len(r['broken']) - 5} تانيين" if len(r["broken"]) > 5 else "") + ".")
 
 
+def check_scout():
+    p = ROOT / "data" / "scout_report.json"
+    if not p.exists() or (ROOT / "data" / "PAUSE_SCOUT").exists():
+        return
+    r = json.loads(p.read_text())
+    if not r.get("suggestions"):
+        add("scout-blind", f"الكشّاف ماقدرش يقرا اقتراحات البحث في آخر تشغيل ({r.get('date')}): خدمات الاقتراحات ماردّتش.")
+
 # ---------- the issue ----------
 
 def body_text():
@@ -212,7 +221,7 @@ def body_text():
 
 
 def main():
-    for check in (check_site, check_robots, check_youtube_feed, check_writer, check_pinterest, check_episodes, check_translations, check_links):
+    for check in (check_site, check_robots, check_youtube_feed, check_writer, check_pinterest, check_episodes, check_translations, check_links, check_scout):
         try:
             check()
         except Exception as e:

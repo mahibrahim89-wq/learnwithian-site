@@ -1,0 +1,93 @@
+{
+ "zoo-day": {
+  "en": [
+   "zoo animals",
+   "animals"
+  ],
+  "es": [
+   "animales del zoológico",
+   "animales"
+  ],
+  "pt": [
+   "animais do zoológico",
+   "animais"
+  ]
+ },
+ "little-garden": {
+  "en": [
+   "plants",
+   "garden"
+  ],
+  "es": [
+   "plantas",
+   "jardín"
+  ],
+  "pt": [
+   "plantas",
+   "jardim"
+  ]
+ },
+ "shape-hunt": {
+  "en": [
+   "shapes"
+  ],
+  "es": [
+   "figuras geométricas",
+   "formas"
+  ],
+  "pt": [
+   "formas geométricas",
+   "formas"
+  ]
+ },
+ "number-walk": {
+  "en": [
+   "counting",
+   "numbers 1 to 5"
+  ],
+  "es": [
+   "números",
+   "contar"
+  ],
+  "pt": [
+   "números",
+   "contar"
+  ]
+ },
+ "ian-s-color-day": {
+  "en": [
+   "colors"
+  ],
+  "es": [
+   "colores"
+  ],
+  "pt": [
+   "cores"
+  ]
+ },
+ "ian-s-snowy-day": {
+  "en": [
+   "winter",
+   "snow"
+  ],
+  "es": [
+   "invierno",
+   "ropa de invierno"
+  ],
+  "pt": [
+   "inverno",
+   "roupas de inverno"
+  ]
+ },
+ "ian-s-christmas-eve": {
+  "en": [
+   "christmas"
+  ],
+  "es": [
+   "navidad"
+  ],
+  "pt": [
+   "natal"
+  ]
+ }
+}
