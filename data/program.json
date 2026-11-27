@@ -1,0 +1,1564 @@
+{
+ "note": "Year 1 of the Learn with Ian program (Dec 2026 to Nov 2027), made from program/EPISODE-PLAN.md. That file is the full text; Grok reads its copy on Google Drive.",
+ "months": [
+  {
+   "month": 12,
+   "name": "December",
+   "world": "Winter And Christmas",
+   "weeks": [
+    {
+     "week": 1,
+     "topic": "Snow",
+     "A": {
+      "words": [
+       "snow",
+       "cold",
+       "hat",
+       "coat",
+       "boots",
+       "scarf",
+       "gloves"
+      ],
+      "title": "Ian's Snowy Day",
+      "done": "g-E2RaXlU0s"
+     },
+     "B": {
+      "words": [
+       "snowman",
+       "snowflake",
+       "ice",
+       "sled",
+       "white",
+       "freezing",
+       "slide",
+       "catch"
+      ]
+     },
+     "C": {
+      "idea": "build a snowman step by step, name each thing"
+     }
+    },
+    {
+     "week": 2,
+     "topic": "Christmas",
+     "A": {
+      "words": [
+       "tree",
+       "star",
+       "bell",
+       "bow",
+       "lights",
+       "present",
+       "ribbon"
+      ],
+      "title": "Ian's Christmas Eve",
+      "done": "TAyFj_YT8KM"
+     },
+     "B": {
+      "words": [
+       "card",
+       "candle",
+       "cookie",
+       "stocking",
+       "wrap",
+       "give",
+       "open",
+       "share"
+      ]
+     },
+     "C": {
+      "idea": "guess the present by its shape"
+     }
+    },
+    {
+     "week": 3,
+     "topic": "New Year and numbers 6 to 10",
+     "A": {
+      "words": [
+       "six",
+       "seven",
+       "eight",
+       "nine",
+       "ten",
+       "clock",
+       "calendar",
+       "Happy New Year"
+      ],
+      "title": "Happy New Year! Count down from 10"
+     },
+     "B": {
+      "words": [
+       "balloon",
+       "party",
+       "cake",
+       "music",
+       "dance",
+       "clap",
+       "cheer",
+       "midnight"
+      ]
+     },
+     "C": {
+      "idea": "count things for the party from 1 to 10"
+     }
+    },
+    {
+     "week": 4,
+     "topic": "Warm at home",
+     "A": {
+      "words": [
+       "blanket",
+       "fire",
+       "soup",
+       "tea",
+       "pajamas",
+       "slippers",
+       "warm",
+       "cozy"
+      ]
+     },
+     "B": {
+      "words": [
+       "window",
+       "dark",
+       "night",
+       "moon",
+       "lamp",
+       "sleep",
+       "yawn",
+       "hug"
+      ]
+     },
+     "C": {
+      "idea": "get ready for bed, in the right order"
+     }
+    }
+   ]
+  },
+  {
+   "month": 1,
+   "name": "January",
+   "world": "My Body And My Clothes",
+   "weeks": [
+    {
+     "week": 1,
+     "topic": "My body",
+     "A": {
+      "words": [
+       "head",
+       "arms",
+       "hands",
+       "legs",
+       "feet",
+       "fingers",
+       "toes",
+       "tummy"
+      ]
+     },
+     "B": {
+      "words": [
+       "clap",
+       "stamp",
+       "jump",
+       "wave",
+       "stretch",
+       "touch",
+       "shake",
+       "turn"
+      ]
+     },
+     "C": {
+      "idea": "\"Ian says\" movement game"
+     }
+    },
+    {
+     "week": 2,
+     "topic": "My face",
+     "A": {
+      "words": [
+       "eyes",
+       "ears",
+       "nose",
+       "mouth",
+       "hair",
+       "teeth",
+       "cheeks",
+       "chin"
+      ]
+     },
+     "B": {
+      "words": [
+       "see",
+       "hear",
+       "smell",
+       "taste",
+       "smile",
+       "blink",
+       "mirror",
+       "face"
+      ]
+     },
+     "C": {
+      "idea": "touch-your-nose game in the mirror"
+     }
+    },
+    {
+     "week": 3,
+     "topic": "Clothes",
+     "A": {
+      "words": [
+       "shirt",
+       "pants",
+       "dress",
+       "socks",
+       "shoes",
+       "sweater",
+       "jacket",
+       "cap"
+      ]
+     },
+     "B": {
+      "words": [
+       "put on",
+       "take off",
+       "button",
+       "zipper",
+       "pocket",
+       "dirty",
+       "clean",
+       "wear"
+      ]
+     },
+     "C": {
+      "idea": "dress for the weather (uses December words too)"
+     }
+    },
+    {
+     "week": 4,
+     "topic": "Bath time",
+     "A": {
+      "words": [
+       "bath",
+       "soap",
+       "towel",
+       "water",
+       "bubbles",
+       "brush",
+       "toothbrush",
+       "comb"
+      ]
+     },
+     "B": {
+      "words": [
+       "wash",
+       "dry",
+       "wet",
+       "splash",
+       "duck",
+       "sponge",
+       "faucet",
+       "fresh"
+      ]
+     },
+     "C": {
+      "idea": "bath time in the right order"
+     }
+    }
+   ]
+  },
+  {
+   "month": 2,
+   "name": "February",
+   "world": "My Family And My Feelings",
+   "weeks": [
+    {
+     "week": 1,
+     "topic": "My family",
+     "A": {
+      "words": [
+       "mom",
+       "dad",
+       "grandma",
+       "grandpa",
+       "brother",
+       "sister",
+       "baby",
+       "family"
+      ]
+     },
+     "B": {
+      "words": [
+       "photo",
+       "home",
+       "together",
+       "love",
+       "kiss",
+       "cuddle",
+       "visit",
+       "This is my"
+      ]
+     },
+     "C": {
+      "idea": "who is in the photo?"
+     }
+    },
+    {
+     "week": 2,
+     "topic": "Feelings",
+     "A": {
+      "words": [
+       "happy",
+       "sad",
+       "angry",
+       "scared",
+       "tired",
+       "surprised",
+       "shy",
+       "excited"
+      ]
+     },
+     "B": {
+      "words": [
+       "laugh",
+       "cry",
+       "hug",
+       "sorry",
+       "better",
+       "calm",
+       "breathe",
+       "feel"
+      ]
+     },
+     "C": {
+      "idea": "guess the feeling from the face"
+     }
+    },
+    {
+     "week": 3,
+     "topic": "Hello, friends",
+     "A": {
+      "words": [
+       "hello",
+       "hi",
+       "goodbye",
+       "good morning",
+       "good night",
+       "friend",
+       "name",
+       "I'm Ian"
+      ]
+     },
+     "B": {
+      "words": [
+       "please",
+       "thank you",
+       "play",
+       "share",
+       "wait",
+       "turn",
+       "help",
+       "kind"
+      ]
+     },
+     "C": {
+      "idea": "meeting a new friend at the park"
+     }
+    },
+    {
+     "week": 4,
+     "topic": "I can do it",
+     "A": {
+      "words": [
+       "run",
+       "walk",
+       "hop",
+       "climb",
+       "throw",
+       "catch",
+       "kick",
+       "carry"
+      ]
+     },
+     "B": {
+      "words": [
+       "try",
+       "again",
+       "fast",
+       "slow",
+       "careful",
+       "brave",
+       "well done",
+       "I can"
+      ]
+     },
+     "C": {
+      "idea": "a little obstacle course at home"
+     }
+    }
+   ]
+  },
+  {
+   "month": 3,
+   "name": "March",
+   "world": "Animals",
+   "weeks": [
+    {
+     "week": 1,
+     "topic": "Zoo animals",
+     "A": {
+      "words": [],
+      "title": "Ian's Zoo Day",
+      "done": "baG8fJsSXFg"
+     },
+     "B": {
+      "words": [
+       "giraffe",
+       "zebra",
+       "hippo",
+       "tiger",
+       "bear",
+       "tall",
+       "stripes",
+       "roar"
+      ]
+     },
+     "C": {
+      "idea": "whose tail is it?"
+     }
+    },
+    {
+     "week": 2,
+     "topic": "Farm animals",
+     "A": {
+      "words": [
+       "cow",
+       "horse",
+       "pig",
+       "sheep",
+       "hen",
+       "duck",
+       "goat",
+       "farm"
+      ]
+     },
+     "B": {
+      "words": [
+       "milk",
+       "egg",
+       "hay",
+       "barn",
+       "tractor",
+       "feed",
+       "moo",
+       "quack"
+      ]
+     },
+     "C": {
+      "idea": "match the animal and its sound"
+     }
+    },
+    {
+     "week": 3,
+     "topic": "Pets",
+     "A": {
+      "words": [
+       "dog",
+       "cat",
+       "rabbit",
+       "fish",
+       "bird",
+       "hamster",
+       "turtle",
+       "pet"
+      ]
+     },
+     "B": {
+      "words": [
+       "bowl",
+       "bed",
+       "collar",
+       "ball",
+       "stroke",
+       "gentle",
+       "feed",
+       "vet"
+      ]
+     },
+     "C": {
+      "idea": "looking after a pet for a day"
+     }
+    },
+    {
+     "week": 4,
+     "topic": "Baby animals",
+     "A": {
+      "words": [
+       "puppy",
+       "kitten",
+       "chick",
+       "duckling",
+       "lamb",
+       "calf",
+       "foal",
+       "baby"
+      ]
+     },
+     "B": {
+      "words": [
+       "nest",
+       "hatch",
+       "sleep",
+       "tiny",
+       "soft",
+       "mother",
+       "follow",
+       "grow"
+      ]
+     },
+     "C": {
+      "idea": "find the mother"
+     }
+    }
+   ]
+  },
+  {
+   "month": 4,
+   "name": "April",
+   "world": "The Garden And Spring",
+   "weeks": [
+    {
+     "week": 1,
+     "topic": "Plants",
+     "A": {
+      "words": [
+       "sun",
+       "seed",
+       "water",
+       "soil",
+       "plant",
+       "grow"
+      ],
+      "title": "Ian's Little Garden",
+      "done": "oUq2iLSBxUU"
+     },
+     "B": {
+      "words": [
+       "flower",
+       "leaf",
+       "root",
+       "pot",
+       "watering can",
+       "dig",
+       "spade",
+       "green"
+      ]
+     },
+     "C": {
+      "idea": "plant a seed, in order"
+     }
+    },
+    {
+     "week": 2,
+     "topic": "Bugs",
+     "A": {
+      "words": [
+       "bee",
+       "butterfly",
+       "ant",
+       "ladybug",
+       "caterpillar",
+       "snail",
+       "worm",
+       "spider"
+      ]
+     },
+     "B": {
+      "words": [
+       "fly",
+       "crawl",
+       "wings",
+       "web",
+       "honey",
+       "slow",
+       "hide",
+       "look"
+      ]
+     },
+     "C": {
+      "idea": "bug hunt with a counting list"
+     }
+    },
+    {
+     "week": 3,
+     "topic": "Rain and rainbow",
+     "A": {
+      "words": [
+       "rain",
+       "cloud",
+       "umbrella",
+       "puddle",
+       "rainbow",
+       "wet",
+       "drop",
+       "wind"
+      ]
+     },
+     "B": {
+      "words": [
+       "raincoat",
+       "rain boots",
+       "splash",
+       "wait",
+       "stop",
+       "sky",
+       "shine",
+       "dry"
+      ]
+     },
+     "C": {
+      "idea": "jump the puddles by color"
+     }
+    },
+    {
+     "week": 4,
+     "topic": "At the park",
+     "A": {
+      "words": [
+       "tree",
+       "grass",
+       "bird",
+       "swing",
+       "slide",
+       "bench",
+       "path",
+       "pond"
+      ]
+     },
+     "B": {
+      "words": [
+       "push",
+       "high",
+       "low",
+       "picnic",
+       "ball",
+       "kite",
+       "run",
+       "rest"
+      ]
+     },
+     "C": {
+      "idea": "a picnic: what did we bring?"
+     }
+    }
+   ]
+  },
+  {
+   "month": 5,
+   "name": "May",
+   "world": "My Home",
+   "weeks": [
+    {
+     "week": 1,
+     "topic": "Rooms",
+     "A": {
+      "words": [
+       "house",
+       "door",
+       "kitchen",
+       "bedroom",
+       "bathroom",
+       "living room",
+       "garden",
+       "stairs"
+      ]
+     },
+     "B": {
+      "words": [
+       "open",
+       "close",
+       "in",
+       "out",
+       "up",
+       "down",
+       "upstairs",
+       "downstairs"
+      ]
+     },
+     "C": {
+      "idea": "hide and seek at home: where is Ian?"
+     }
+    },
+    {
+     "week": 2,
+     "topic": "Things at home",
+     "A": {
+      "words": [
+       "table",
+       "chair",
+       "couch",
+       "bed",
+       "lamp",
+       "clock",
+       "shelf",
+       "rug"
+      ]
+     },
+     "B": {
+      "words": [
+       "on",
+       "under",
+       "next to",
+       "behind",
+       "sit",
+       "lie",
+       "turn on",
+       "turn off"
+      ]
+     },
+     "C": {
+      "idea": "where is the teddy? (on, under, behind)"
+     }
+    },
+    {
+     "week": 3,
+     "topic": "Toys",
+     "A": {
+      "words": [
+       "ball",
+       "car",
+       "doll",
+       "teddy",
+       "blocks",
+       "puzzle",
+       "train",
+       "robot"
+      ]
+     },
+     "B": {
+      "words": [
+       "play",
+       "build",
+       "roll",
+       "box",
+       "clean up",
+       "mine",
+       "yours",
+       "share"
+      ]
+     },
+     "C": {
+      "idea": "clean-up game: every toy in its place"
+     }
+    },
+    {
+     "week": 4,
+     "topic": "Helping at home",
+     "A": {
+      "words": [
+       "cook",
+       "clean",
+       "wash",
+       "sweep",
+       "fold",
+       "carry",
+       "set the table",
+       "help"
+      ]
+     },
+     "B": {
+      "words": [
+       "plate",
+       "cup",
+       "spoon",
+       "fork",
+       "trash can",
+       "basket",
+       "ready",
+       "thank you"
+      ]
+     },
+     "C": {
+      "idea": "help make lunch, step by step"
+     }
+    }
+   ]
+  },
+  {
+   "month": 6,
+   "name": "June",
+   "world": "Summer And The Sea",
+   "weeks": [
+    {
+     "week": 1,
+     "topic": "A sunny day",
+     "A": {
+      "words": [
+       "sun",
+       "hot",
+       "hat",
+       "sunglasses",
+       "shade",
+       "fan",
+       "drink",
+       "summer"
+      ]
+     },
+     "B": {
+      "words": [
+       "ice cream",
+       "lemonade",
+       "cold",
+       "melt",
+       "lick",
+       "thirsty",
+       "sweet",
+       "cool"
+      ]
+     },
+     "C": {
+      "idea": "keep cool: what do we need?"
+     }
+    },
+    {
+     "week": 2,
+     "topic": "The beach",
+     "A": {
+      "words": [
+       "beach",
+       "sand",
+       "sea",
+       "wave",
+       "shell",
+       "bucket",
+       "spade",
+       "towel"
+      ]
+     },
+     "B": {
+      "words": [
+       "dig",
+       "swim",
+       "float",
+       "build",
+       "sandcastle",
+       "wet",
+       "dry",
+       "footprints"
+      ]
+     },
+     "C": {
+      "idea": "build a sandcastle and count the shells"
+     }
+    },
+    {
+     "week": 3,
+     "topic": "Sea animals",
+     "A": {
+      "words": [
+       "fish",
+       "crab",
+       "whale",
+       "dolphin",
+       "octopus",
+       "starfish",
+       "turtle",
+       "shark"
+      ]
+     },
+     "B": {
+      "words": [
+       "swim",
+       "dive",
+       "deep",
+       "bubbles",
+       "big",
+       "tiny",
+       "tail",
+       "fin"
+      ]
+     },
+     "C": {
+      "idea": "who lives in the sea?"
+     }
+    },
+    {
+     "week": 4,
+     "topic": "Water play",
+     "A": {
+      "words": [
+       "pool",
+       "hose",
+       "bottle",
+       "boat",
+       "sink",
+       "float",
+       "pour",
+       "full"
+      ]
+     },
+     "B": {
+      "words": [
+       "empty",
+       "spray",
+       "drip",
+       "bubbles",
+       "wet",
+       "towel",
+       "shiver",
+       "laugh"
+      ]
+     },
+     "C": {
+      "idea": "does it float or sink?"
+     }
+    }
+   ]
+  },
+  {
+   "month": 7,
+   "name": "July",
+   "world": "On The Go",
+   "weeks": [
+    {
+     "week": 1,
+     "topic": "Cars and trucks",
+     "A": {
+      "words": [
+       "car",
+       "truck",
+       "bus",
+       "bike",
+       "wheel",
+       "road",
+       "horn",
+       "seat belt"
+      ]
+     },
+     "B": {
+      "words": [
+       "go",
+       "stop",
+       "fast",
+       "slow",
+       "drive",
+       "ride",
+       "beep",
+       "park"
+      ]
+     },
+     "C": {
+      "idea": "red light, green light"
+     }
+    },
+    {
+     "week": 2,
+     "topic": "Trains, planes and boats",
+     "A": {
+      "words": [
+       "train",
+       "plane",
+       "boat",
+       "helicopter",
+       "rocket",
+       "station",
+       "ticket",
+       "pilot"
+      ]
+     },
+     "B": {
+      "words": [
+       "fly",
+       "sail",
+       "track",
+       "sky",
+       "wings",
+       "far",
+       "near",
+       "wait"
+      ]
+     },
+     "C": {
+      "idea": "how do we get there?"
+     }
+    },
+    {
+     "week": 3,
+     "topic": "In the street",
+     "A": {
+      "words": [
+       "street",
+       "store",
+       "traffic light",
+       "crosswalk",
+       "sidewalk",
+       "corner",
+       "bridge",
+       "sign"
+      ]
+     },
+     "B": {
+      "words": [
+       "look",
+       "listen",
+       "hold hands",
+       "cross",
+       "left",
+       "right",
+       "safe",
+       "careful"
+      ]
+     },
+     "C": {
+      "idea": "a safe walk to the store"
+     }
+    },
+    {
+     "week": 4,
+     "topic": "A little trip",
+     "A": {
+      "words": [
+       "bag",
+       "map",
+       "hat",
+       "snack",
+       "camera",
+       "tent",
+       "flashlight",
+       "picnic"
+      ]
+     },
+     "B": {
+      "words": [
+       "pack",
+       "ready",
+       "walk",
+       "climb",
+       "rest",
+       "far",
+       "home",
+       "tired"
+      ]
+     },
+     "C": {
+      "idea": "pack the bag: what is missing?"
+     }
+    }
+   ]
+  },
+  {
+   "month": 8,
+   "name": "August",
+   "world": "School",
+   "weeks": [
+    {
+     "week": 1,
+     "topic": "My school bag",
+     "A": {
+      "words": [
+       "bag",
+       "book",
+       "pencil",
+       "pen",
+       "eraser",
+       "ruler",
+       "crayon",
+       "lunch box"
+      ],
+      "title": "My school bag"
+     },
+     "B": {
+      "words": [
+       "paper",
+       "glue",
+       "scissors",
+       "paint",
+       "draw",
+       "write",
+       "cut",
+       "stick"
+      ]
+     },
+     "C": {
+      "idea": "what is in the bag?"
+     }
+    },
+    {
+     "week": 2,
+     "topic": "My classroom",
+     "A": {
+      "words": [
+       "teacher",
+       "class",
+       "desk",
+       "board",
+       "door",
+       "window",
+       "bell",
+       "friend"
+      ]
+     },
+     "B": {
+      "words": [
+       "sit down",
+       "stand up",
+       "listen",
+       "look",
+       "hands up",
+       "line up",
+       "quiet",
+       "neat"
+      ]
+     },
+     "C": {
+      "idea": "a first day at preschool"
+     }
+    },
+    {
+     "week": 3,
+     "topic": "Letters and books",
+     "A": {
+      "words": [
+       "letter",
+       "word",
+       "book",
+       "page",
+       "story",
+       "picture",
+       "library",
+       "read"
+      ]
+     },
+     "B": {
+      "words": [
+       "A",
+       "B",
+       "C",
+       "sound",
+       "point",
+       "turn",
+       "find",
+       "the end"
+      ]
+     },
+     "C": {
+      "idea": "find the letter around the room"
+     }
+    },
+    {
+     "week": 4,
+     "topic": "The playground",
+     "A": {
+      "words": [
+       "swing",
+       "slide",
+       "seesaw",
+       "sandbox",
+       "ball",
+       "rope",
+       "hoop",
+       "game"
+      ]
+     },
+     "B": {
+      "words": [
+       "my turn",
+       "your turn",
+       "share",
+       "wait",
+       "together",
+       "win",
+       "try again",
+       "friend"
+      ]
+     },
+     "C": {
+      "idea": "playing fair: a game with turns"
+     }
+    }
+   ]
+  },
+  {
+   "month": 9,
+   "name": "September",
+   "world": "Food",
+   "weeks": [
+    {
+     "week": 1,
+     "topic": "Fruit",
+     "A": {
+      "words": [
+       "apple",
+       "banana",
+       "orange",
+       "grapes",
+       "strawberry",
+       "pear",
+       "melon",
+       "lemon"
+      ]
+     },
+     "B": {
+      "words": [
+       "peel",
+       "cut",
+       "juice",
+       "sweet",
+       "sour",
+       "ripe",
+       "bowl",
+       "yummy"
+      ]
+     },
+     "C": {
+      "idea": "make a fruit salad and count"
+     }
+    },
+    {
+     "week": 2,
+     "topic": "Vegetables",
+     "A": {
+      "words": [
+       "carrot",
+       "tomato",
+       "potato",
+       "cucumber",
+       "corn",
+       "peas",
+       "onion",
+       "pumpkin"
+      ]
+     },
+     "B": {
+      "words": [
+       "wash",
+       "chop",
+       "cook",
+       "crunchy",
+       "soft",
+       "soup",
+       "try",
+       "healthy"
+      ]
+     },
+     "C": {
+      "idea": "what is in the soup?"
+     }
+    },
+    {
+     "week": 3,
+     "topic": "My meals",
+     "A": {
+      "words": [
+       "breakfast",
+       "lunch",
+       "dinner",
+       "bread",
+       "cheese",
+       "egg",
+       "rice",
+       "milk"
+      ]
+     },
+     "B": {
+      "words": [
+       "hungry",
+       "full",
+       "more",
+       "please",
+       "enough",
+       "spoon",
+       "plate",
+       "delicious"
+      ]
+     },
+     "C": {
+      "idea": "set the table for dinner"
+     }
+    },
+    {
+     "week": 4,
+     "topic": "Autumn",
+     "A": {
+      "words": [
+       "leaves",
+       "windy",
+       "fall",
+       "tree",
+       "brown",
+       "basket",
+       "rake",
+       "pile"
+      ],
+      "title": "Autumn leaves"
+     },
+     "B": {
+      "words": [
+       "acorn",
+       "squirrel",
+       "nut",
+       "harvest",
+       "pumpkin",
+       "apple",
+       "sweater",
+       "cool"
+      ]
+     },
+     "C": {
+      "idea": "collect and count the leaves by color"
+     }
+    }
+   ]
+  },
+  {
+   "month": 10,
+   "name": "October",
+   "world": "Colors, Shapes And Numbers",
+   "weeks": [
+    {
+     "week": 1,
+     "topic": "Colours",
+     "A": {
+      "words": [
+       "red",
+       "blue",
+       "yellow",
+       "orange",
+       "green",
+       "purple"
+      ],
+      "title": "Ian's Color Day",
+      "done": "5Cwxl4TWipE"
+     },
+     "B": {
+      "words": [
+       "pink",
+       "black",
+       "white",
+       "brown",
+       "gray",
+       "light",
+       "dark",
+       "color"
+      ]
+     },
+     "C": {
+      "idea": "color hunt around the house"
+     }
+    },
+    {
+     "week": 2,
+     "topic": "Mixing and painting",
+     "A": {
+      "words": [
+       "paint",
+       "brush",
+       "paper",
+       "mix",
+       "dot",
+       "line",
+       "picture",
+       "rainbow"
+      ]
+     },
+     "B": {
+      "words": [
+       "draw",
+       "wet",
+       "dry",
+       "careful",
+       "mess",
+       "wash",
+       "hang",
+       "beautiful"
+      ]
+     },
+     "C": {
+      "idea": "mix two colors: what do we get?"
+     }
+    },
+    {
+     "week": 3,
+     "topic": "Shapes",
+     "A": {
+      "words": [],
+      "title": "Ian's Shape Hunt",
+      "done": "E2k4atUZDsg"
+     },
+     "B": {
+      "words": [
+       "star",
+       "heart",
+       "oval",
+       "diamond",
+       "round",
+       "corner",
+       "side",
+       "shape"
+      ]
+     },
+     "C": {
+      "idea": "shape hunt outside"
+     }
+    },
+    {
+     "week": 4,
+     "topic": "Numbers",
+     "A": {
+      "words": [
+       "1 to 5"
+      ],
+      "title": "Ian's Number Walk",
+      "done": "_5Jwth51cnc"
+     },
+     "B": {
+      "words": [
+       "zero",
+       "eleven",
+       "twelve",
+       "more",
+       "less",
+       "how many",
+       "count",
+       "number"
+      ]
+     },
+     "C": {
+      "idea": "count and compare: more or less?"
+     }
+    }
+   ]
+  },
+  {
+   "month": 11,
+   "name": "November",
+   "world": "My Day And Thank You",
+   "weeks": [
+    {
+     "week": 1,
+     "topic": "My morning",
+     "A": {
+      "words": [
+       "wake up",
+       "get up",
+       "wash",
+       "brush",
+       "get dressed",
+       "eat",
+       "morning",
+       "ready"
+      ]
+     },
+     "B": {
+      "words": [
+       "early",
+       "late",
+       "hurry",
+       "sun",
+       "alarm",
+       "kiss",
+       "bye",
+       "let's go"
+      ]
+     },
+     "C": {
+      "idea": "Ian's morning in the right order"
+     }
+    },
+    {
+     "week": 2,
+     "topic": "My evening",
+     "A": {
+      "words": [
+       "evening",
+       "dinner",
+       "bath",
+       "pajamas",
+       "story",
+       "bed",
+       "night",
+       "sleep"
+      ]
+     },
+     "B": {
+      "words": [
+       "tired",
+       "quiet",
+       "moon",
+       "stars",
+       "dream",
+       "lullaby",
+       "light off",
+       "good night"
+      ]
+     },
+     "C": {
+      "idea": "bedtime in the right order"
+     }
+    },
+    {
+     "week": 3,
+     "topic": "People who help us",
+     "A": {
+      "words": [
+       "doctor",
+       "nurse",
+       "firefighter",
+       "police officer",
+       "teacher",
+       "farmer",
+       "baker",
+       "driver"
+      ]
+     },
+     "B": {
+      "words": [
+       "help",
+       "fix",
+       "carry",
+       "safe",
+       "uniform",
+       "tool",
+       "thank",
+       "job"
+      ]
+     },
+     "C": {
+      "idea": "who helps us? Match the helper and the tool"
+     }
+    },
+    {
+     "week": 4,
+     "topic": "Thank you",
+     "A": {
+      "words": [
+       "thankful",
+       "share",
+       "table",
+       "food",
+       "family",
+       "friends",
+       "together",
+       "thank you"
+      ],
+      "title": "Thank You Day with Ian"
+     },
+     "B": {
+      "words": [
+       "give",
+       "invite",
+       "cook",
+       "serve",
+       "pass",
+       "enjoy",
+       "kind",
+       "welcome"
+      ]
+     },
+     "C": {
+      "idea": "a thank-you card for someone"
+     }
+    }
+   ]
+  }
+ ]
+}

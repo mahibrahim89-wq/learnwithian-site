@@ -39,6 +39,7 @@ ROBOTS = [  # workflow file, Arabic name, max hours since last successful run
     ("search.yml", "دكتور البحث", 8 * 24 + 6),
     ("translations.yml", "سفير اللغات", 30),
     ("scout.yml", "الكشّاف", 8 * 24 + 6),
+    ("planner.yml", "مخطّط الحلقات", 30),
 ]
 PAGES = ["/", "/free.html", "/episodes.html", "/sitemap.xml", "/es/", "/pt/", "/play/color-hunt-game.html"]
 ENGLISH_BOARDS = ["christmas", "winter", "basics", "zoo-garden", "videos"]
@@ -210,6 +211,13 @@ def check_scout():
     if not r.get("suggestions"):
         add("scout-blind", f"الكشّاف ماقدرش يقرا اقتراحات البحث في آخر تشغيل ({r.get('date')}): خدمات الاقتراحات ماردّتش.")
 
+def check_program():
+    p = ROOT / "data" / "program_status.json"
+    if not p.exists() or (ROOT / "data" / "PAUSE_PLANNER").exists():
+        return
+    for x in json.loads(p.read_text()).get("problems", []):
+        add("program-" + x["key"], "المنهج: " + x["text"])
+
 # ---------- the issue ----------
 
 def body_text():
@@ -221,7 +229,7 @@ def body_text():
 
 
 def main():
-    for check in (check_site, check_robots, check_youtube_feed, check_writer, check_pinterest, check_episodes, check_translations, check_links, check_scout):
+    for check in (check_site, check_robots, check_youtube_feed, check_writer, check_pinterest, check_episodes, check_translations, check_links, check_scout, check_program):
         try:
             check()
         except Exception as e:

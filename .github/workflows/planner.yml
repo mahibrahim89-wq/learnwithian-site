@@ -1,0 +1,41 @@
+name: Episode planner (keeps the channel on its program)
+
+# Checks every episode against the long-term program (data/program.json, program/EPISODE-PLAN.md):
+# which slot it fills, that it is 8 minutes or more, what comes next. From the 20th it opens an
+# issue with next month's episodes. Off switch: add an empty file data/PAUSE_PLANNER.
+on:
+  schedule:
+    - cron: "53 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: site-writes
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the episodes against the program (never stops the site)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python3 scripts/planner.py
+      - name: Save changes
+        run: |
+          git config user.name "learnwithian-bot"
+          git config user.email "hello@learnwithian.com"
+          git add data/program_status.json data/writer_log.json
+          if git diff --cached --quiet; then
+            echo "Nothing new."
+          else
+            git commit -m "Episode planner: program status"
+            for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 20; done
+          fi
