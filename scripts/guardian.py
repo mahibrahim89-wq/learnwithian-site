@@ -211,6 +211,42 @@ def check_scout():
     if not r.get("suggestions"):
         add("scout-blind", f"الكشّاف ماقدرش يقرا اقتراحات البحث في آخر تشغيل ({r.get('date')}): خدمات الاقتراحات ماردّتش.")
 
+def check_stores():
+    """Every product link on the shop page still opens (this used to be the shop bot's store review).
+    Only a clear "gone" answer (404 or 410) counts. Stores that refuse robots (403, 429, 5xx) are skipped."""
+    if (ROOT / "data" / "PAUSE_STORES").exists():
+        return
+    links = {}
+
+    def walk(o, name=""):
+        if isinstance(o, dict):
+            name = o.get("name") or name
+            if o.get("url") and o.get("store"):
+                links.setdefault(o["url"], (o["store"], name))
+            for v in o.values():
+                walk(v, name)
+        elif isinstance(o, list):
+            for v in o:
+                walk(v, name)
+
+    walk(json.loads((ROOT / "data" / "shop.json").read_text()))
+    dead, skipped = [], 0
+    for url, (store, name) in sorted(links.items()):
+        try:
+            http(url)
+        except urllib.error.HTTPError as e:
+            if e.code in (404, 410):
+                dead.append((url, store, name))
+            else:
+                skipped += 1
+        except Exception:
+            skipped += 1
+    print(f"guardian: stores: {len(links)} links, {len(dead)} dead, {skipped} could not be checked")
+    for url, store, name in dead:
+        add("store-dead-" + re.sub(r"[^a-z0-9]+", "-", url.lower())[-50:],
+            f"لينك منتج مش بيفتح على {store} ({name or 'منتج'}): {url} . المنتج اتشال أو اللينك اتغيّر، والزائر هيلاقي صفحة فاضية.")
+
+
 def check_program():
     p = ROOT / "data" / "program_status.json"
     if not p.exists() or (ROOT / "data" / "PAUSE_PLANNER").exists():
@@ -229,7 +265,7 @@ def body_text():
 
 
 def main():
-    for check in (check_site, check_robots, check_youtube_feed, check_writer, check_pinterest, check_episodes, check_translations, check_links, check_scout, check_program):
+    for check in (check_site, check_robots, check_youtube_feed, check_writer, check_pinterest, check_episodes, check_translations, check_links, check_scout, check_program, check_stores):
         try:
             check()
         except Exception as e:
