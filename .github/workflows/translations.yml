@@ -1,0 +1,37 @@
+name: Language Ambassador (YouTube titles in Spanish and Portuguese)
+
+# For each new episode, writes Spanish and Portuguese YouTube titles and descriptions
+# into data/youtube_es_pt.json. The video stays in English. Off switch: data/PAUSE_TRANSLATIONS.
+on:
+  schedule:
+    - cron: "13 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-writes
+  cancel-in-progress: false
+
+jobs:
+  write:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Write titles for new episodes (never stops the site)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 scripts/yt_translations.py
+      - name: Save changes
+        run: |
+          git config user.name "learnwithian-bot"
+          git config user.email "hello@learnwithian.com"
+          git add data/youtube_es_pt.json data/writer_log.json
+          if git diff --cached --quiet; then
+            echo "Nothing new."
+          else
+            git commit -m "Spanish and Portuguese YouTube titles for new episodes"
+            for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 20; done
+          fi

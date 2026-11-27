@@ -1,0 +1,103 @@
+{
+ "note": "Spanish and Portuguese YouTube titles and descriptions, one entry per episode. Written by scripts/yt_translations.py (the Language Ambassador robot). The video stays in English. 'ready' entries are pasted into YouTube Studio > Languages by Claude's Saturday task; it skips a language that is already there.",
+ "episodes": {
+  "baG8fJsSXFg": {
+   "slug": "zoo-day",
+   "added": "2026-11-27",
+   "status": "done",
+   "done": "2026-11-27",
+   "es": {
+    "title": "Animales del zoo en inglés para niños | El día en el zoo de Ian | Learn with Ian",
+    "description": "Aprende inglés jugando con Ian. El video está en inglés: tu hijo escucha y repite las palabras en inglés.\n\nLos niños nombran animales del zoo y dicen una cosa de cada uno.\nPara niños de 2 a 6 años, en casa o en clase.\n\n🎲 Juegos imprimibles gratis y plan de clase en español: https://learnwithian.com/es/ep/zoo-day.html\n\nLearn with Ian: dibujos animados cortos y tranquilos para aprender inglés."
+   },
+   "pt": {
+    "title": "Animais do zoológico em inglês para crianças | O dia no zoológico do Ian | Learn with Ian",
+    "description": "Aprenda inglês brincando com o Ian. O vídeo é em inglês: seu filho escuta e repete as palavras em inglês.\n\nAs crianças nomeiam animais do zoológico e dizem uma coisa sobre cada um.\nPara crianças de 2 a 6 anos, em casa ou na escola.\n\n🎲 Jogos para imprimir grátis e plano de aula em português: https://learnwithian.com/pt/ep/zoo-day.html\n\nLearn with Ian: desenhos curtos e calmos para aprender inglês."
+   }
+  },
+  "oUq2iLSBxUU": {
+   "slug": "little-garden",
+   "added": "2026-11-27",
+   "status": "done",
+   "done": "2026-11-27",
+   "es": {
+    "title": "Cómo crecen las plantas en inglés para niños | El pequeño jardín de Ian | Learn with Ian",
+    "description": "Aprende inglés jugando con Ian. El video está en inglés: tu hijo escucha y repite las palabras en inglés.\n\nLos niños dicen el orden: semilla, tierra, agua, sol, planta.\nPara niños de 2 a 6 años, en casa o en clase.\n\n🎲 Juegos imprimibles gratis y plan de clase en español: https://learnwithian.com/es/ep/little-garden.html\n\nLearn with Ian: dibujos animados cortos y tranquilos para aprender inglés."
+   },
+   "pt": {
+    "title": "Como as plantas crescem em inglês para crianças | O pequeno jardim do Ian | Learn with Ian",
+    "description": "Aprenda inglês brincando com o Ian. O vídeo é em inglês: seu filho escuta e repete as palavras em inglês.\n\nAs crianças dizem a ordem: semente, terra, água, sol, planta.\nPara crianças de 2 a 6 anos, em casa ou na escola.\n\n🎲 Jogos para imprimir grátis e plano de aula em português: https://learnwithian.com/pt/ep/little-garden.html\n\nLearn with Ian: desenhos curtos e calmos para aprender inglês."
+   }
+  },
+  "E2k4atUZDsg": {
+   "slug": "shape-hunt",
+   "added": "2026-11-27",
+   "status": "done",
+   "done": "2026-11-27",
+   "es": {
+    "title": "Las formas en inglés para niños | La búsqueda de formas de Ian | Learn with Ian",
+    "description": "Aprende inglés jugando con Ian. El video está en inglés: tu hijo escucha y repite las palabras en inglés.\n\nLos niños reconocen y nombran un círculo, un cuadrado y un triángulo.\nPara niños de 2 a 6 años, en casa o en clase.\n\n🎲 Juegos imprimibles gratis y plan de clase en español: https://learnwithian.com/es/ep/shape-hunt.html\n✏️ Actividad gratis de 15 minutos: https://learnwithian.com/es/play/actividad-de-formas-en-ingles.html\n\nLearn with Ian: dibujos animados cortos y tranquilos para aprender inglés."
+   },
+   "pt": {
+    "title": "Formas em inglês para crianças | A caça às formas do Ian | Learn with Ian",
+    "description": "Aprenda inglês brincando com o Ian. O vídeo é em inglês: seu filho escuta e repete as palavras em inglês.\n\nAs crianças reconhecem e nomeiam um círculo, um quadrado e um triângulo.\nPara crianças de 2 a 6 anos, em casa ou na escola.\n\n🎲 Jogos para imprimir grátis e plano de aula em português: https://learnwithian.com/pt/ep/shape-hunt.html\n✏️ Atividade grátis de 15 minutos: https://learnwithian.com/pt/play/atividade-de-formas-em-ingles.html\n\nLearn with Ian: desenhos curtos e calmos para aprender inglês."
+   }
+  },
+  "_5Jwth51cnc": {
+   "slug": "number-walk",
+   "added": "2026-11-27",
+   "status": "done",
+   "done": "2026-11-27",
+   "es": {
+    "title": "Contar del 1 al 5 en inglés para niños | El paseo de los números de Ian | Learn with Ian",
+    "description": "Aprende inglés jugando con Ian. El video está en inglés: tu hijo escucha y repite las palabras en inglés.\n\nLos niños cuentan objetos del 1 al 5, un número para cada objeto.\nPara niños de 2 a 6 años, en casa o en clase.\n\n🎲 Juegos imprimibles gratis y plan de clase en español: https://learnwithian.com/es/ep/number-walk.html\n\nLearn with Ian: dibujos animados cortos y tranquilos para aprender inglés."
+   },
+   "pt": {
+    "title": "Contar de 1 a 5 em inglês para crianças | O passeio dos números do Ian | Learn with Ian",
+    "description": "Aprenda inglês brincando com o Ian. O vídeo é em inglês: seu filho escuta e repete as palavras em inglês.\n\nAs crianças contam objetos de 1 a 5, um número para cada objeto.\nPara crianças de 2 a 6 anos, em casa ou na escola.\n\n🎲 Jogos para imprimir grátis e plano de aula em português: https://learnwithian.com/pt/ep/number-walk.html\n\nLearn with Ian: desenhos curtos e calmos para aprender inglês."
+   }
+  },
+  "5Cwxl4TWipE": {
+   "slug": "ian-s-color-day",
+   "added": "2026-11-27",
+   "status": "done",
+   "done": "2026-11-27",
+   "es": {
+    "title": "Los colores en inglés para niños | El día de los colores de Ian | Learn with Ian",
+    "description": "Aprende inglés jugando con Ian. El video está en inglés: tu hijo escucha y repite las palabras en inglés.\n\nLos niños nombran seis colores: rojo, azul, amarillo, naranja, verde y morado.\nPara niños de 2 a 6 años, en casa o en clase.\n\n🎲 Juegos imprimibles gratis y plan de clase en español: https://learnwithian.com/es/ep/ian-s-color-day.html\n✏️ Actividad gratis de 15 minutos: https://learnwithian.com/es/play/juego-de-colores-en-ingles.html\n\nLearn with Ian: dibujos animados cortos y tranquilos para aprender inglés."
+   },
+   "pt": {
+    "title": "Cores em inglês para crianças | O dia das cores do Ian | Learn with Ian",
+    "description": "Aprenda inglês brincando com o Ian. O vídeo é em inglês: seu filho escuta e repete as palavras em inglês.\n\nAs crianças nomeiam seis cores: vermelho, azul, amarelo, laranja, verde e roxo.\nPara crianças de 2 a 6 anos, em casa ou na escola.\n\n🎲 Jogos para imprimir grátis e plano de aula em português: https://learnwithian.com/pt/ep/ian-s-color-day.html\n✏️ Atividade grátis de 15 minutos: https://learnwithian.com/pt/play/jogo-de-cores-em-ingles.html\n\nLearn with Ian: desenhos curtos e calmos para aprender inglês."
+   }
+  },
+  "g-E2RaXlU0s": {
+   "slug": "ian-s-snowy-day",
+   "added": "2026-11-27",
+   "status": "done",
+   "done": "2026-11-27",
+   "es": {
+    "title": "Ropa de invierno en inglés para niños | El día de nieve de Ian | Learn with Ian",
+    "description": "Aprende inglés jugando con Ian. El video está en inglés: tu hijo escucha y repite las palabras en inglés.\n\nLos niños nombran ropa de invierno (gorro, bufanda, guantes, botas, abrigo) y dicen por qué la usamos cuando hace frío.\nPara niños de 2 a 6 años, en casa o en clase.\n\n🎲 Juegos imprimibles gratis y plan de clase en español: https://learnwithian.com/es/ep/ian-s-snowy-day.html\n✏️ Actividad gratis de 15 minutos: https://learnwithian.com/es/play/ropa-de-invierno-en-ingles.html\n\nLearn with Ian: dibujos animados cortos y tranquilos para aprender inglés."
+   },
+   "pt": {
+    "title": "Roupas de inverno em inglês para crianças | O dia de neve do Ian | Learn with Ian",
+    "description": "Aprenda inglês brincando com o Ian. O vídeo é em inglês: seu filho escuta e repete as palavras em inglês.\n\nAs crianças nomeiam roupas de inverno (gorro, cachecol, luvas, botas, casaco) e dizem por que usamos quando está frio.\nPara crianças de 2 a 6 anos, em casa ou na escola.\n\n🎲 Jogos para imprimir grátis e plano de aula em português: https://learnwithian.com/pt/ep/ian-s-snowy-day.html\n✏️ Atividade grátis de 15 minutos: https://learnwithian.com/pt/play/roupas-de-inverno-em-ingles.html\n\nLearn with Ian: desenhos curtos e calmos para aprender inglês."
+   }
+  },
+  "TAyFj_YT8KM": {
+   "slug": "ian-s-christmas-eve",
+   "added": "2026-11-27",
+   "status": "done",
+   "done": "2026-11-27",
+   "es": {
+    "title": "Navidad en inglés para niños | La Nochebuena de Ian | Learn with Ian",
+    "description": "Aprende inglés jugando con Ian. El video está en inglés: tu hijo escucha y repite las palabras en inglés.\n\nLos niños nombran cosas de Navidad en inglés: tree, star, bell, lights, present y ribbon.\nPara niños de 2 a 6 años, en casa o en clase.\n\n🎲 Juegos imprimibles gratis y plan de clase en español: https://learnwithian.com/es/ep/ian-s-christmas-eve.html\n✏️ Actividad gratis de 15 minutos: https://learnwithian.com/es/play/palabras-de-navidad-en-ingles.html\n\nLearn with Ian: dibujos animados cortos y tranquilos para aprender inglés."
+   },
+   "pt": {
+    "title": "Natal em inglês para crianças | A véspera de Natal do Ian | Learn with Ian",
+    "description": "Aprenda inglês brincando com o Ian. O vídeo é em inglês: seu filho escuta e repete as palavras em inglês.\n\nAs crianças nomeiam coisas de Natal em inglês: tree, star, bell, lights, present e ribbon.\nPara crianças de 2 a 6 anos, em casa ou na escola.\n\n🎲 Jogos para imprimir grátis e plano de aula em português: https://learnwithian.com/pt/ep/ian-s-christmas-eve.html\n✏️ Atividade grátis de 15 minutos: https://learnwithian.com/pt/play/palavras-de-natal-em-ingles.html\n\nLearn with Ian: desenhos curtos e calmos para aprender inglês."
+   }
+  }
+ }
+}

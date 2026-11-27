@@ -37,6 +37,7 @@ ROBOTS = [  # workflow file, Arabic name, max hours since last successful run
     ("update.yml", "روبوت تحديث الموقع", 9),
     ("pages.yml", "روبوت كاتب الصفحات", 30),
     ("search.yml", "دكتور البحث", 8 * 24 + 6),
+    ("translations.yml", "سفير اللغات", 30),
 ]
 PAGES = ["/", "/free.html", "/episodes.html", "/sitemap.xml", "/es/", "/pt/", "/play/color-hunt-game.html"]
 ENGLISH_BOARDS = ["christmas", "winter", "basics", "zoo-garden", "videos"]
@@ -173,6 +174,20 @@ def check_episodes():
             add("ep-" + slug, f"حلقة {slug} على الموقع من أكتر من يومين وناقصها: {'، '.join(missing)}. (المهام المجدولة في Claude ممكن تكون وقفت.)")
 
 
+def check_translations():
+    p = ROOT / "data" / "youtube_es_pt.json"
+    if not p.exists() or (ROOT / "data" / "PAUSE_TRANSLATIONS").exists():
+        return
+    eps = json.loads(p.read_text()).get("episodes", {})
+    have = {e.get("slug") for e in eps.values()}
+    for f in sorted((ROOT / "ep").glob("*.html")):
+        if f.stem not in have and added_days_ago(f"ep/{f.stem}.html") >= 3 and (ROOT / "es" / "ep" / f.name).exists():
+            add("tr-" + f.stem, f"حلقة {f.stem} لسه مالهاش عنوان ووصف بالإسباني والبرتغالي (روبوت سفير اللغات ماكتبهمش).")
+    for yid, e in eps.items():
+        if e.get("status") == "ready" and e.get("added") and (TODAY_DUBAI - datetime.date.fromisoformat(e["added"])).days >= 9:
+            add("tr-paste-" + yid, f"ترجمة حلقة {e.get('slug')} جاهزة من {e['added']} ولسه ماتلصقتش في يوتيوب ستوديو (جلسة السبت ماعملتهاش).")
+
+
 # ---------- the issue ----------
 
 def body_text():
@@ -184,7 +199,7 @@ def body_text():
 
 
 def main():
-    for check in (check_site, check_robots, check_youtube_feed, check_writer, check_pinterest, check_episodes):
+    for check in (check_site, check_robots, check_youtube_feed, check_writer, check_pinterest, check_episodes, check_translations):
         try:
             check()
         except Exception as e:
