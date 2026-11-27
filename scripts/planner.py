@@ -57,6 +57,20 @@ def seconds_of(vid):
         return None
 
 
+def lesson_minutes():
+    """Fallback when YouTube does not show the length to a robot: the minutes written in the lesson sheet."""
+    out = {}
+    try:
+        import csv
+        with open(ROOT / "data" / "lessons.csv", encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                if (r.get("minutes") or "").strip().isdigit():
+                    out[r["youtube_id"].strip()] = int(r["minutes"]) * 60
+    except Exception:
+        pass
+    return out
+
+
 def page_text(vid):
     for p in (ROOT / "ep").glob("*.html"):
         s = p.read_text(encoding="utf-8")
@@ -133,7 +147,7 @@ def main():
             except Exception as ex:
                 print(f"planner: could not match {e['title']}: {ex}")
         if rec.get("seconds") is None:
-            rec["seconds"] = seconds_of(e["id"])
+            rec["seconds"] = seconds_of(e["id"]) or lesson_minutes().get(e["id"])
 
     problems = []
     for vid, rec in slots.items():
