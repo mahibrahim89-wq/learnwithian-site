@@ -296,7 +296,8 @@ def main():
     # New episodes go first (newest first): a page is most useful while the episode is new.
     # They may pass the weekly limit (never the per-run limit); older topics wait for room.
     fresh = sorted([t for t in todo if t.get("added_by") == "robot"], key=lambda t: t.get("added", ""), reverse=True)
-    older = [t for t in todo if t.get("added_by") != "robot"]
+    # then topics the Search Doctor found in real Google searches, then the rest of the plan
+    older = [t for t in todo if t.get("added_by") == "doctor"] + [t for t in todo if t.get("added_by") not in ("robot", "doctor")]
     picks = (fresh + older[:max(0, room - len(fresh))])[:MAX_TOPICS_PER_RUN]
     print(f"writer: {len(todo)} topics waiting ({len(fresh)} for new episodes), {this_week} written in the last 7 days, room for {room} now")
 
