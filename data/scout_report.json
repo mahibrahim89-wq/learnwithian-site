@@ -1,8 +1,39 @@
 {
  "date": "2026-11-27",
  "dry_run": true,
- "added": [],
- "note": "Claude did not answer: Expecting ',' delimiter: line 1 column 747 (char 746)",
+ "added": [
+  {
+   "id": "wrap-a-present-christmas-activity-toddlers",
+   "episode": "ian-s-christmas-eve",
+   "phrases": {
+    "en": "christmas activities for toddlers",
+    "es": "actividades de navidad en inglés para niños",
+    "pt": "atividades de natal em inglês para educação infantil"
+   },
+   "evidence": {
+    "en": "christmas activities for toddlers",
+    "es": "actividades de navidad en inglés para niños",
+    "pt": "atividades de natal em inglês para educação infantil"
+   },
+   "idea": "Children wrap a small box with a cloth or scrap paper, a ribbon and a bow, while the adult says the English words ('ribbon', 'bow', 'present') and what we do with them ('tie the ribbon', 'put on the bow'). Then they put the present under a pretend tree made from a chair or cushions."
+  },
+  {
+   "id": "grow-like-a-plant-activity-preschoolers",
+   "episode": "little-garden",
+   "phrases": {
+    "en": "plants activities for preschoolers",
+    "es": "actividades de plantas en ingles",
+    "pt": "atividades de plantas em ingles"
+   },
+   "evidence": {
+    "en": "plants activities for preschoolers",
+    "es": "actividades de plantas en ingles",
+    "pt": "atividades de plantas em ingles"
+   },
+   "idea": "Children act out how a plant grows with their whole body, in the order from the episode: curl up as a seed, pat the soil, pretend to pour water, reach up to the sun, and stand tall as a plant. The adult says each English word ('seed', 'soil', 'water', 'sun', 'plant') as they move."
+  }
+ ],
+ "note": "2 topic(s) would be added; 6 were waiting",
  "sources": {
   "google": {
    "ok": 140,
@@ -13,46 +44,78 @@
    "failed": 0
   },
   "bing": {
-   "ok": 140,
-   "failed": 0
+   "ok": 0,
+   "failed": 8
   },
   "duckduckgo": {
    "ok": 140,
    "failed": 0
   }
  },
- "suggestions": 1702,
+ "suggestions": 1055,
  "top": {
+  "ian-s-christmas-eve": {
+   "en": [
+    "christmas for toddlers",
+    "christmas game for kids",
+    "christmas activities for kids",
+    "christmas activities for toddlers",
+    "christmas game for family",
+    "christmas for toddlers shows",
+    "christmas for toddlers movies",
+    "christmas game for kindergarten"
+   ],
+   "es": [
+    "navidad en ingles para niños",
+    "juego de navidad en inglés gratis",
+    "feliz navidad en ingles para niños",
+    "juego de navidad en inglés",
+    "juegos de navidad en inglés",
+    "actividades en inglés de navidad",
+    "actividades de navidad en ingles",
+    "actividades de navidad en inglés"
+   ],
+   "pt": [
+    "atividades de natal em ingles",
+    "jogo de natal em inglês",
+    "palavras de natal em inglês",
+    "ensinar inglês para criança",
+    "atividade de inglês de natal",
+    "ensinar ingles para crianças",
+    "atividades de natal em inglês",
+    "natal em inglês para crianças"
+   ]
+  },
   "ian-s-snowy-day": {
    "en": [
-    "snow game of thrones",
     "snow activities for kids",
     "winter activities for kids",
     "snow activities for toddlers",
     "winter activities for toddlers",
     "winter activities for preschoolers",
+    "winter forever game",
     "winter for toddlers",
     "winter game for kids"
    ],
    "es": [
-    "cómo se escribe invierno en inglés",
-    "juegos de ropa en inglés",
-    "ropa de invierno en inglés",
-    "invierno en inglés traducción",
     "invierno en ingles para niños",
+    "ropa de invierno en inglés para niños",
+    "actividades de ropa de invierno en ingles",
+    "ingles para niños clima",
+    "juegos de ropa en inglés",
     "invierno en inglés para niños",
-    "cómo se dice invierno en inglés",
-    "que comen los ingleses en invierno"
+    "enseñar invierno en inglés a1",
+    "actividades de invierno en ingles"
    ],
    "pt": [
-    "roupas de inverno em inglês",
-    "roupas de verão em inglês",
-    "inverno em inglês tradução",
-    "inverno em inglês é winter",
-    "jardim de inverno em inglês",
-    "como se diz roupas em inglês",
-    "como se diz inverno em inglês",
-    "esportes de inverno em inglês"
+    "atividades de inverno em ingles",
+    "inverno em inglês para crianças",
+    "atividades de roupas de inverno em ingles",
+    "atividades de roupas de inverno em inglês",
+    "roupas de inverno em inglês para crianças",
+    "atividade de roupas em inglês",
+    "atividades de inverno em inglês",
+    "ensinar inverno em inglês para crianças"
    ]
   },
   "little-garden": {
@@ -67,24 +130,24 @@
     "toia teaching garden"
    ],
    "es": [
-    "jardín en inglés",
-    "regar plantas en inglés",
+    "plantas en ingles para niños",
+    "actividades de plantas en ingles",
+    "juego de plantas en inglés gratis",
+    "partes de las plantas en ingles para niños",
+    "juego de jardin en ingles",
     "jardín de niños en inglés",
-    "tipos de plantas en inglés",
-    "plantas en inglés y español",
-    "regar las plantas en inglés",
-    "juegos para jugar en inglés",
-    "enseñar en inglés traductor"
+    "jardín infantil en inglés",
+    "juego de plantas en ingles"
    ],
    "pt": [
+    "atividades de jardim em ingles",
+    "atividades de jardim em inglês",
+    "jardim em inglês para crianças",
+    "atividades de plantas em ingles",
     "jogo de inglês grátis",
-    "o poema jardim inglês",
-    "planta baixa em inglês",
-    "jardim pálido em inglês",
-    "planta de casa em inglês",
-    "plantão médico em inglês",
-    "muda de planta em inglês",
-    "anão de jardim em inglês"
+    "jogo em ingles para jogar",
+    "atividade de inglês jardim 2",
+    "atividade de inglês jardim 1"
    ]
   },
   "shape-hunt": {
@@ -99,56 +162,24 @@
     "shapes for toddlers to learn"
    ],
    "es": [
-    "figuras geométricas en inglés para imprimir",
+    "formas en ingles para niños",
+    "actividades de formas en ingles",
+    "formas de saludar en ingles para niños",
+    "figuras geometricas en ingles para niños",
+    "juego de figuras geométricas en inglés y español",
     "juegos de inglés básico",
     "juegos gratis en inglés",
-    "juegos en inglés fáciles",
-    "formas de aprender inglés",
-    "maneras de aprender inglés",
-    "juegos de inglés para jugar",
-    "juegos para jugar en inglés"
+    "juegos en inglés fáciles"
    ],
    "pt": [
+    "atividades de formas em ingles",
+    "atividades de formas em inglês",
+    "atividades de formas geométricas em inglês",
+    "atividades de formas geométricas em ingles",
+    "formas geométricas em inglês para crianças",
     "jogo de inglês grátis",
-    "como e para em inglês",
     "palavras em inglês jogo",
-    "letra de forma em inglês",
-    "como se ensina em inglês",
-    "jogo em ingles para jogar",
-    "formas de aprender inglês",
-    "como é aprender em inglês"
-   ]
-  },
-  "ian-s-christmas-eve": {
-   "en": [
-    "christmas for toddlers",
-    "christmas game for kids",
-    "christmas activities for kids",
-    "christmas activities for toddlers",
-    "christmas game for family",
-    "christmas game for large group",
-    "christmas for toddlers near me",
-    "christmas activities for seniors"
-   ],
-   "es": [
-    "juegos de navidad en inglés",
-    "navidad en inglés traductor",
-    "navidad en ingles para niños",
-    "cómo se dice navidad en inglés",
-    "cómo se dice en inglés navidad",
-    "vocabulario de navidad en inglés",
-    "juego de navidad en inglés gratis",
-    "navidad en inglés cómo se escribe"
-   ],
-   "pt": [
-    "como é natal em inglês",
-    "como fala natal em inglês",
-    "canções de natal em inglês",
-    "palavras de natal em inglês",
-    "mensagem de natal em inglês",
-    "atividade de inglês de natal",
-    "como escreve natal em inglês",
-    "atividades de natal em inglês"
+    "jogo em ingles para jogar"
    ]
   },
   "ian-s-color-day": {
@@ -165,22 +196,22 @@
    "es": [
     "juego de colores en inglés",
     "colores en inglés para niños",
-    "colores en inglés para imprimir",
     "actividades de colores en ingles",
     "colores en inglés para preescolar",
+    "enseñar colores en ingles a niños",
     "juego de colores en inglés para niños",
-    "colores en inglés para niños de preescolar",
-    "aprender colores en inglés"
+    "colores en inglés para niños de 6 años",
+    "colores en inglés para niños de 5 años"
    ],
    "pt": [
     "atividades de cores em inglês",
     "jogo de cores em inglês",
     "cores em inglês para crianças",
-    "cores em inglês para imprimir",
-    "atividades de cores em ingles 1 ano",
-    "10 cores em inglês",
-    "atividades em inglês cores",
-    "cores em inglês e português"
+    "cores em inglês para criança aprender",
+    "cores em ingles para educação infantil",
+    "cores em inglês para criança de 4 anos",
+    "ensinar cores em ingles",
+    "ensinar cores em inglês"
    ]
   },
   "number-walk": {
@@ -196,23 +227,23 @@
    ],
    "es": [
     "juego de números en inglés",
+    "contar en ingles para niños",
     "numeros en ingles para niños",
-    "números en inglés para fechas",
-    "números en inglés para imprimir",
-    "números en inglés para escribir",
+    "números en inglés para aprender",
     "actividades de números en inglés",
-    "verbo contar en inglés",
-    "contar en inglés excel"
+    "contar numeros en ingles para niños",
+    "enseñar numeros en ingles",
+    "aprender números en inglés"
    ],
    "pt": [
     "atividades de números em inglês",
-    "números em inglês para imprimir",
-    "como contar em inglês",
-    "contar em inglês excel",
+    "números em inglês para criança",
+    "atividades de contar em ingles",
+    "contar em inglês para crianças",
     "palavras em inglês jogo",
-    "números em inglês palavra",
-    "jogo em ingles para jogar",
-    "aprender numeros em ingles"
+    "jogo de números em inglês",
+    "ensinar numeros em ingles",
+    "jogo em ingles para jogar"
    ]
   },
   "zoo-day": {
@@ -221,30 +252,30 @@
     "animals game for kids",
     "zoo animals for toddlers",
     "animals activities for kids",
-    "animals for toddlers videos",
     "animals activities for toddlers",
     "zoo animals activities for toddlers",
-    "animals activities for kindergarten"
+    "animals activities for kindergarten",
+    "zoo animals activities for preschoolers"
    ],
    "es": [
     "juego de animales en inglés",
     "animales en ingles para niños",
-    "animales del zoológico en inglés",
     "actividades de animales en ingles",
-    "animales con e en inglés",
-    "animales en inglés juegos",
-    "animales en inglés y español",
-    "animales en inglés para niños"
+    "enseñar animales en ingles a niños",
+    "actividades de animales en ingles para niños",
+    "actividades de animales del zoológico en ingles",
+    "enseñar animales del zoológico en inglés para niños",
+    "actividades de animales del zoológico en ingles para niños"
    ],
    "pt": [
     "atividades de animais em inglês",
-    "animais em inglês para imprimir",
     "animais em inglês para crianças",
-    "20 animais em inglês",
-    "animais com j em inglês",
-    "animais com o em inglês",
-    "animais em inglês lista",
-    "animais com y em inglês"
+    "jogo da memória de animais em inglês",
+    "atividades de animais do zoológico em ingles",
+    "atividades de animais do zoológico em inglês",
+    "animais do zoológico em inglês para crianças",
+    "como ensinar animais em inglês para educação infantil",
+    "jogo de animais em inglês"
    ]
   }
  }
