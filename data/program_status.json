@@ -1,0 +1,59 @@
+{
+ "slots": {
+  "g-E2RaXlU0s": {
+   "slot": "12-W1-A",
+   "title": "Snow for Toddlers | Ian's Snowy Day | Learn with Ian",
+   "published": "2026-11-23",
+   "seconds": null
+  },
+  "TAyFj_YT8KM": {
+   "slot": "12-W2-A",
+   "title": "Christmas for Toddlers | Ian's Christmas Eve | Learn with Ian",
+   "published": "2026-11-23",
+   "seconds": null
+  },
+  "baG8fJsSXFg": {
+   "slot": "03-W1-A",
+   "title": "Zoo Animals for Toddlers | Learn Animal Names with Baby Ian",
+   "published": "2026-11-13",
+   "seconds": null
+  },
+  "oUq2iLSBxUU": {
+   "slot": "04-W1-A",
+   "title": "How Plants Grow for Kids | Ian's Little Garden | Learn with Ian",
+   "published": "2026-11-14",
+   "seconds": null
+  },
+  "5Cwxl4TWipE": {
+   "slot": "10-W1-A",
+   "title": "Colors for Toddlers | Ian's Color Day | Learn with Ian",
+   "published": "2026-11-22",
+   "seconds": null
+  },
+  "E2k4atUZDsg": {
+   "slot": "10-W3-A",
+   "title": "Learn Shapes for Toddlers | Ian's Shape Hunt | Learn with Ian",
+   "published": "2026-11-15",
+   "seconds": null
+  },
+  "_5Jwth51cnc": {
+   "slot": "10-W4-A",
+   "title": "Counting 1 to 5 for Toddlers | Ian's Number Walk | Learn with Ian",
+   "published": "2026-11-15",
+   "seconds": null
+  }
+ },
+ "problems": [],
+ "updated": "2026-11-27",
+ "month": {
+  "month": 12,
+  "name_ar": "ديسمبر",
+  "world": "Winter And Christmas",
+  "made": 2,
+  "of": 12,
+  "next": {
+   "slot": "12-W1-B",
+   "what": "Snow: snowman, snowflake, ice, sled, white, freezing, slide, catch"
+  }
+ }
+}
