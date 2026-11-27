@@ -222,7 +222,9 @@ def check_stores():
         if isinstance(o, dict):
             name = o.get("name") or name
             if o.get("url") and o.get("store"):
-                links.setdefault(o["url"], (o["store"], name))
+                # same fix link_pages.py makes on the live pages (the Gumroad shop moved)
+                u = o["url"].replace("https://mahibrahim.gumroad.com/", "https://learnwithian.gumroad.com/")
+                links.setdefault(u, (o["store"], name))
             for v in o.values():
                 walk(v, name)
         elif isinstance(o, list):
