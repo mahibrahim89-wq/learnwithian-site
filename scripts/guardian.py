@@ -242,6 +242,15 @@ def check_stores():
         except Exception:
             skipped += 1
     print(f"guardian: stores: {len(links)} links, {len(dead)} dead, {skipped} could not be checked")
+    by_store, totals = {}, {}
+    for url, store, name in dead:
+        by_store.setdefault(store, []).append(url)
+    for store, _ in links.values():
+        totals[store] = totals.get(store, 0) + 1
+    for store, urls in by_store.items():
+        if len(urls) >= 3 and len(urls) == totals[store]:  # the whole store, not one product
+            add("store-down-" + store.lower(), f"كل لينكات {store} ({len(urls)}) ردّت على الحارس بـ\"مش موجود\". يا المتجر واقف، يا المتجر بيرفض الروبوتات. افتح لينك واحد من موبايلك وقول لـ Claude النتيجة.")
+            dead = [d for d in dead if d[1] != store]
     for url, store, name in dead:
         add("store-dead-" + re.sub(r"[^a-z0-9]+", "-", url.lower())[-50:],
             f"لينك منتج مش بيفتح على {store} ({name or 'منتج'}): {url} . المنتج اتشال أو اللينك اتغيّر، والزائر هيلاقي صفحة فاضية.")
