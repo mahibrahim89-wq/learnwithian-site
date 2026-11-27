@@ -9,6 +9,7 @@
 Safety:
 - Stops at once if the file data/PAUSE_WRITER exists (the off switch).
 - At most MAX_TOPICS_PER_RUN topics per run and MAX_TOPICS_PER_WEEK topics in 7 days.
+  Topics for new episodes go first and may pass the weekly limit.
 - At most MAX_CALLS_PER_RUN calls to Claude per run, and stops for the month when the
   estimated cost in data/writer_log.json reaches MONTH_BUDGET_USD.
 - Never touches anything except data/page_plan.json, data/pages.json and data/writer_log.json.
@@ -292,10 +293,15 @@ def main():
     this_week = sum(1 for t in pages if t.get("live_from", "") >= week_ago)
     room = max(0, min(MAX_TOPICS_PER_RUN, MAX_TOPICS_PER_WEEK - this_week))
     todo = [t for t in plan if t["id"] not in written and not t.get("done_by_hand") and t.get("idea") and not t.get("failed")]
-    print(f"writer: {len(todo)} topics waiting, {this_week} written in the last 7 days, room for {room} now")
+    # New episodes go first (newest first): a page is most useful while the episode is new.
+    # They may pass the weekly limit (never the per-run limit); older topics wait for room.
+    fresh = sorted([t for t in todo if t.get("added_by") == "robot"], key=lambda t: t.get("added", ""), reverse=True)
+    older = [t for t in todo if t.get("added_by") != "robot"]
+    picks = (fresh + older[:max(0, room - len(fresh))])[:MAX_TOPICS_PER_RUN]
+    print(f"writer: {len(todo)} topics waiting ({len(fresh)} for new episodes), {this_week} written in the last 7 days, room for {room} now")
 
     # 3) write
-    for ptp in todo[:room]:
+    for ptp in picks:
         if not budget.can_call():
             print("writer: call limit or monthly budget reached, stopping")
             break
