@@ -1,0 +1,157 @@
+{
+ "boards": {
+  "ian-s-christmas-eve": "christmas",
+  "ian-s-snowy-day": "winter",
+  "shape-hunt": "basics",
+  "little-garden": "zoo-garden",
+  "number-walk": "basics",
+  "ian-s-color-day": "basics",
+  "zoo-day": "zoo-garden"
+ },
+ "pins": [
+  {
+   "id": "play-christmas-words-game-en",
+   "lang": "en",
+   "date": "2026-11-28",
+   "topic": "christmas-words-game",
+   "episode": "ian-s-christmas-eve",
+   "board": "christmas",
+   "title": "Christmas Words Game for Preschool: What Is Missing?",
+   "description": "A free Christmas words game for preschool, ages 2 to 6. Learn six Christmas words in English with a 15-minute memory game. Free printable activities included.",
+   "link": "https://learnwithian.com/play/christmas-words-game.html?pin=en",
+   "img": "/img/pins/play-christmas-words-game-en.jpg"
+  },
+  {
+   "id": "play-christmas-words-game-es",
+   "lang": "es",
+   "date": "2026-11-28",
+   "topic": "christmas-words-game",
+   "episode": "ian-s-christmas-eve",
+   "board": "es-ingles",
+   "title": "Palabras de Navidad en Inglés para Niños: ¿Qué Falta?",
+   "description": "Un juego gratis con palabras de Navidad en inglés para niños de 2 a 6 años. Aprenden seis palabras y juegan a ¿qué falta? Incluye juegos imprimibles gratis.",
+   "link": "https://learnwithian.com/es/play/palabras-de-navidad-en-ingles.html?pin=es",
+   "img": "/img/pins/play-christmas-words-game-es.jpg"
+  },
+  {
+   "id": "play-christmas-words-game-pt",
+   "lang": "pt",
+   "date": "2026-11-28",
+   "topic": "christmas-words-game",
+   "episode": "ian-s-christmas-eve",
+   "board": "pt-ingles",
+   "title": "Palavras de Natal em Inglês para Crianças: O Que Falta?",
+   "description": "Um jogo grátis com palavras de Natal em inglês para crianças de 2 a 6 anos. Aprendem seis palavras e brincam de o que falta? Inclui jogos para imprimir grátis.",
+   "link": "https://learnwithian.com/pt/play/palavras-de-natal-em-ingles.html?pin=pt",
+   "img": "/img/pins/play-christmas-words-game-pt.jpg"
+  },
+  {
+   "id": "play-winter-clothes-game-en",
+   "lang": "en",
+   "date": "2026-11-29",
+   "topic": "winter-clothes-game",
+   "episode": "ian-s-snowy-day",
+   "board": "winter",
+   "title": "Winter Clothes Game for Toddlers: a 15-Minute Dress-Up Activity",
+   "description": "A free winter clothes game for toddlers and preschoolers, ages 2 to 6. Dress up and name hat, scarf, gloves, coat and boots in English. Free printable games included.",
+   "link": "https://learnwithian.com/play/winter-clothes-game.html?pin=en",
+   "img": "/img/pins/play-winter-clothes-game-en.jpg"
+  },
+  {
+   "id": "play-winter-clothes-game-es",
+   "lang": "es",
+   "date": "2026-11-29",
+   "topic": "winter-clothes-game",
+   "episode": "ian-s-snowy-day",
+   "board": "es-ingles",
+   "title": "Ropa de Invierno en Inglés para Niños: Juego de Disfraces",
+   "description": "Juego gratis de ropa de invierno en inglés para niños de 2 a 6 años. Se disfrazan y dicen hat, scarf, gloves, coat y boots. Incluye juegos imprimibles gratis.",
+   "link": "https://learnwithian.com/es/play/ropa-de-invierno-en-ingles.html?pin=es",
+   "img": "/img/pins/play-winter-clothes-game-es.jpg"
+  },
+  {
+   "id": "play-winter-clothes-game-pt",
+   "lang": "pt",
+   "date": "2026-11-29",
+   "topic": "winter-clothes-game",
+   "episode": "ian-s-snowy-day",
+   "board": "pt-ingles",
+   "title": "Roupas de Inverno em Inglês para Crianças: Jogo de Fantasia",
+   "description": "Jogo grátis de roupas de inverno em inglês para crianças de 2 a 6 anos. Elas se vestem e dizem hat, scarf, gloves, coat e boots. Inclui jogos para imprimir grátis.",
+   "link": "https://learnwithian.com/pt/play/roupas-de-inverno-em-ingles.html?pin=pt",
+   "img": "/img/pins/play-winter-clothes-game-pt.jpg"
+  },
+  {
+   "id": "play-color-hunt-game-en",
+   "lang": "en",
+   "date": "2026-11-30",
+   "topic": "color-hunt-game",
+   "episode": "ian-s-color-day",
+   "board": "basics",
+   "title": "Color Hunt Game for Toddlers: a 15-Minute Preschool Activity",
+   "description": "A free color hunt game for toddlers and preschoolers, ages 2 to 6. Name six colors in English and find each one around the room. Free printable games included.",
+   "link": "https://learnwithian.com/play/color-hunt-game.html?pin=en",
+   "img": "/img/pins/play-color-hunt-game-en.jpg"
+  },
+  {
+   "id": "play-color-hunt-game-es",
+   "lang": "es",
+   "date": "2026-11-30",
+   "topic": "color-hunt-game",
+   "episode": "ian-s-color-day",
+   "board": "es-ingles",
+   "title": "Juego de Colores en Inglés para Niños de Preescolar",
+   "description": "Un juego gratis para aprender los colores en inglés, de 2 a 6 años. Los niños dicen seis colores y los buscan por la habitación. Incluye juegos imprimibles gratis.",
+   "link": "https://learnwithian.com/es/play/juego-de-colores-en-ingles.html?pin=es",
+   "img": "/img/pins/play-color-hunt-game-es.jpg"
+  },
+  {
+   "id": "play-color-hunt-game-pt",
+   "lang": "pt",
+   "date": "2026-11-30",
+   "topic": "color-hunt-game",
+   "episode": "ian-s-color-day",
+   "board": "pt-ingles",
+   "title": "Jogo de Cores em Inglês para Crianças da Educação Infantil",
+   "description": "Um jogo grátis para aprender as cores em inglês, de 2 a 6 anos. As crianças dizem seis cores e procuram cada uma pela sala. Inclui jogos para imprimir grátis.",
+   "link": "https://learnwithian.com/pt/play/jogo-de-cores-em-ingles.html?pin=pt",
+   "img": "/img/pins/play-color-hunt-game-pt.jpg"
+  },
+  {
+   "id": "play-shape-hunt-activity-en",
+   "lang": "en",
+   "date": "2026-12-01",
+   "topic": "shape-hunt-activity",
+   "episode": "shape-hunt",
+   "board": "basics",
+   "title": "Shape Hunt Activity for Preschoolers at Home",
+   "description": "A free shape hunt for preschoolers, ages 2 to 6. Find circles, squares and triangles around the house and say the names in English. Free printable games included.",
+   "link": "https://learnwithian.com/play/shape-hunt-activity.html?pin=en",
+   "img": "/img/pins/play-shape-hunt-activity-en.jpg"
+  },
+  {
+   "id": "play-shape-hunt-activity-es",
+   "lang": "es",
+   "date": "2026-12-01",
+   "topic": "shape-hunt-activity",
+   "episode": "shape-hunt",
+   "board": "es-ingles",
+   "title": "Actividad de Formas en Inglés para Niños de Preescolar",
+   "description": "Una búsqueda de formas gratis para niños de 2 a 6 años. Encuentren círculos, cuadrados y triángulos por la casa y digan los nombres en inglés. Incluye juegos imprimibles gratis.",
+   "link": "https://learnwithian.com/es/play/actividad-de-formas-en-ingles.html?pin=es",
+   "img": "/img/pins/play-shape-hunt-activity-es.jpg"
+  },
+  {
+   "id": "play-shape-hunt-activity-pt",
+   "lang": "pt",
+   "date": "2026-12-01",
+   "topic": "shape-hunt-activity",
+   "episode": "shape-hunt",
+   "board": "pt-ingles",
+   "title": "Atividade de Formas em Inglês para Crianças da Educação Infantil",
+   "description": "Uma caça às formas grátis para crianças de 2 a 6 anos. Encontrem círculos, quadrados e triângulos pela casa e digam os nomes em inglês. Inclui jogos para imprimir grátis.",
+   "link": "https://learnwithian.com/pt/play/atividade-de-formas-em-ingles.html?pin=pt",
+   "img": "/img/pins/play-shape-hunt-activity-pt.jpg"
+  }
+ ]
+}
