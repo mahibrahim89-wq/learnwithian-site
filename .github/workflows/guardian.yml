@@ -1,0 +1,27 @@
+name: Guardian (daily check)
+
+# Looks at the whole system every morning (8:13 Dubai). Never changes the site.
+# Opens an Issue assigned to the owner (GitHub emails him) only when something is wrong,
+# and closes it by itself when everything works again.
+on:
+  schedule:
+    - cron: "13 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check everything
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/guardian.py

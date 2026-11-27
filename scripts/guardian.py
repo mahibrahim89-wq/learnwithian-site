@@ -1,0 +1,221 @@
+"""Guardian: every morning checks that the whole Learn with Ian system still works.
+
+It only LOOKS, it never changes the site. When something is wrong it opens one GitHub Issue
+(assigned to the owner, so GitHub emails him), adds a comment when a NEW problem appears, and
+closes the issue by itself when everything is fine again. When all is fine it stays silent.
+
+Checks:
+1. The website and its main pages open.
+2. The three site robots (update, pages writer, Search Doctor) ran and succeeded recently.
+3. The YouTube feed was read successfully in the last day (data/feed_status.json, written by update.py).
+4. The pages writer: ran recently, no Claude API errors (empty key credit), monthly budget not near the cap.
+5. Pinterest feeds get new pictures (English lane daily, Spanish/Portuguese lane every day or two).
+6. Every episode page on the site has its Spanish and Portuguese pages and its free games (after 2 days).
+"""
+import datetime
+import email.utils
+import json
+import os
+import re
+import subprocess
+import sys
+import urllib.error
+import urllib.request
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+SITE = "https://learnwithian.com"
+REPO = os.environ.get("GITHUB_REPOSITORY", "mahibrahim89-wq/learnwithian-site")
+OWNER = REPO.split("/")[0]
+TOKEN = os.environ.get("GITHUB_TOKEN", "")
+TITLE = "🚨 الحارس: فيه مشكلة في السيستم"
+UA = {"User-Agent": "learnwithian-guardian"}
+NOW = datetime.datetime.now(datetime.timezone.utc)
+TODAY_DUBAI = (NOW + datetime.timedelta(hours=4)).date()
+
+ROBOTS = [  # workflow file, Arabic name, max hours since last successful run
+    ("update.yml", "روبوت تحديث الموقع", 9),
+    ("pages.yml", "روبوت كاتب الصفحات", 30),
+    ("search.yml", "دكتور البحث", 8 * 24 + 6),
+]
+PAGES = ["/", "/free.html", "/episodes.html", "/sitemap.xml", "/es/", "/pt/", "/play/color-hunt-game.html"]
+ENGLISH_BOARDS = ["christmas", "winter", "basics", "zoo-garden", "videos"]
+LANG_BOARDS = ["es-ingles", "es-videos", "pt-ingles", "pt-videos"]
+
+problems = []  # (key, Arabic text)
+
+
+def add(key, text):
+    problems.append((key, text))
+
+
+def http(url, data=None, method=None, api=False):
+    headers = dict(UA)
+    if api:
+        headers.update({"Authorization": f"Bearer {TOKEN}", "Accept": "application/vnd.github+json"})
+    if data is not None:
+        data = json.dumps(data).encode()
+        headers["Content-Type"] = "application/json"
+    req = urllib.request.Request(url, data=data, headers=headers, method=method)
+    with urllib.request.urlopen(req, timeout=40) as r:
+        return r.status, r.read()
+
+
+def gh(path, data=None, method=None):
+    status, body = http("https://api.github.com/repos/" + REPO + path, data, method, api=True)
+    return json.loads(body or b"null")
+
+
+# ---------- checks ----------
+
+def check_site():
+    for p in PAGES:
+        try:
+            status, body = http(SITE + p)
+            if status != 200 or len(body) < 1000:
+                add("site" + p, f"صفحة الموقع {SITE}{p} بترجع رد غريب (كود {status}، حجم {len(body)}).")
+        except Exception as e:
+            add("site" + p, f"صفحة الموقع {SITE}{p} مش بتفتح ({str(e)[:80]}).")
+
+
+def check_robots():
+    for wf, name, hours in ROBOTS:
+        try:
+            runs = gh(f"/actions/workflows/{wf}/runs?per_page=10").get("workflow_runs", [])
+        except Exception as e:
+            add("robot-" + wf, f"مش قادر أشوف حالة {name} ({str(e)[:80]}).")
+            continue
+        done = [r for r in runs if r.get("status") == "completed"]
+        if not done:
+            continue  # new robot, never ran yet
+        last = done[0]
+        if last.get("conclusion") != "success":
+            add("robot-" + wf, f"{name} آخر تشغيل ليه فشل ({last.get('conclusion')}). التفاصيل: {last.get('html_url')}")
+        ok = [r for r in done if r.get("conclusion") == "success"]
+        if ok:
+            t = datetime.datetime.fromisoformat(ok[0]["updated_at"].replace("Z", "+00:00"))
+            age = (NOW - t).total_seconds() / 3600
+            if age > hours:
+                add("late-" + wf, f"{name} مانجحش من {int(age)} ساعة (المفروض كل {hours} ساعة بالكتير).")
+
+
+def check_youtube_feed():
+    st = json.loads((ROOT / "data" / "feed_status.json").read_text()) if (ROOT / "data" / "feed_status.json").exists() else {}
+    last = st.get("youtube_feed_ok")
+    if not last:
+        return  # not written yet (first days)
+    days = (TODAY_DUBAI - datetime.date.fromisoformat(last)).days
+    if days >= 2:
+        add("youtube-feed", f"روبوت الموقع مش قادر يقرا قناة يوتيوب من {days} يوم (آخر مرة نجح: {last}). الموقع شغّال بآخر بيانات، بس الحلقات الجديدة مش هتظهر لحد ما يرجع.")
+
+
+def check_writer():
+    log_p = ROOT / "data" / "writer_log.json"
+    if (ROOT / "data" / "PAUSE_WRITER").exists() or not log_p.exists():
+        return
+    log = json.loads(log_p.read_text())
+    runs = log.get("runs", [])
+    if runs:
+        last = datetime.date.fromisoformat(runs[-1]["date"])
+        if (TODAY_DUBAI - last).days >= 3:
+            add("writer-late", f"كاتب الصفحات ماكتبش في الدفتر من {(TODAY_DUBAI - last).days} أيام.")
+        errs = [s for r in runs[-3:] for s in r.get("skipped", []) for w in s.get("why", []) if "API error" in w or "credit" in w.lower()]
+        if errs:
+            add("writer-key", "كاتب الصفحات مش قادر يكلّم Claude (غالبًا رصيد مفتاح Anthropic خلص أو المفتاح اتلغى). افتح Anthropic Console وشوف الرصيد.")
+    month = TODAY_DUBAI.strftime("%Y-%m")
+    usd = log.get("months", {}).get(month, {}).get("usd", 0)
+    if usd >= 6.5:
+        add("writer-budget", f"صرف كاتب الصفحات الشهر ده حوالي ${usd:.2f} من سقف $8. لو وصل للسقف هيقف لحد أول الشهر.")
+
+
+def newest(board):
+    p = ROOT / ("activities.xml" if board == "general" else f"pins-{board}.xml")
+    if not p.exists():
+        return None
+    ds = [email.utils.parsedate_to_datetime(d).date() for d in re.findall(r"<pubDate>([^<]+)", p.read_text())]
+    return max(ds) if ds else None
+
+
+def check_pinterest():
+    en = [d for d in (newest(b) for b in ENGLISH_BOARDS) if d]
+    if en and (TODAY_DUBAI - max(en)).days >= 3:
+        add("pins-en", f"مفيش صور Pinterest إنجليزي جديدة من {max(en)}. مهمة الألعاب و Pinterest ممكن تكون وقفت، أو الجدول خلص.")
+    la = [d for d in (newest(b) for b in LANG_BOARDS) if d]
+    if la and (TODAY_DUBAI - max(la)).days >= 4:
+        add("pins-lang", f"مفيش صور Pinterest إسباني أو برتغالي جديدة من {max(la)}. الجدول ممكن يكون خلص.")
+
+
+def added_days_ago(path):
+    try:
+        out = subprocess.run(["git", "log", "--diff-filter=A", "--format=%ct", "--", path], cwd=ROOT,
+                             capture_output=True, text=True, timeout=30).stdout.split()
+        if out:
+            t = datetime.datetime.fromtimestamp(int(out[-1]), datetime.timezone.utc)
+            return (NOW - t).days
+    except Exception:
+        pass
+    return 0
+
+
+def check_episodes():
+    for p in sorted((ROOT / "ep").glob("*.html")):
+        slug = p.stem
+        if added_days_ago(f"ep/{slug}.html") < 2:
+            continue  # a new episode gets 2 days to get everything
+        missing = []
+        if not (ROOT / "es" / "ep" / f"{slug}.html").exists():
+            missing.append("الصفحة الإسباني")
+        if not (ROOT / "pt" / "ep" / f"{slug}.html").exists():
+            missing.append("الصفحة البرتغالي")
+        if not (ROOT / "img" / "activities" / f"{slug}-story.png").exists():
+            missing.append("الألعاب المجانية")
+        if missing:
+            add("ep-" + slug, f"حلقة {slug} على الموقع من أكتر من يومين وناقصها: {'، '.join(missing)}. (المهام المجدولة في Claude ممكن تكون وقفت.)")
+
+
+# ---------- the issue ----------
+
+def body_text():
+    lines = [f"الحارس لقى المشاكل دي يوم {TODAY_DUBAI} (الصبح بتوقيت دبي):", ""]
+    lines += [f"- {t}" for _, t in problems]
+    lines += ["", "مش لازم تعمل حاجة بنفسك: ابعت لـ Claude \"شوف تذكرة الحارس\" وهو يتصرف.",
+              "التذكرة دي بتتقفل لوحدها لما كل حاجة ترجع تشتغل.", "", "<!-- keys: " + ",".join(sorted(k for k, _ in problems)) + " -->"]
+    return "\n".join(lines)
+
+
+def main():
+    for check in (check_site, check_robots, check_youtube_feed, check_writer, check_pinterest, check_episodes):
+        try:
+            check()
+        except Exception as e:
+            add("guardian-" + check.__name__, f"الحارس نفسه ماقدرش يعمل فحص {check.__name__} ({str(e)[:80]}).")
+    print(f"guardian: {len(problems)} problem(s)")
+    for k, t in problems:
+        print(" -", k, t)
+    if not TOKEN:
+        print("guardian: no GITHUB_TOKEN, not touching issues")
+        return
+    open_issues = [i for i in gh("/issues?state=open&per_page=50") if i.get("title") == TITLE and "pull_request" not in i]
+    issue = open_issues[0] if open_issues else None
+    if problems:
+        keys = set(k for k, _ in problems)
+        if not issue:
+            new = gh("/issues", {"title": TITLE, "body": body_text(), "assignees": [OWNER]}, "POST")
+            print("guardian: opened issue", new.get("html_url"))
+        else:
+            old_keys = set((re.search(r"<!-- keys: (.*?) -->", issue.get("body") or "") or [None, ""])[1].split(","))
+            gh(f"/issues/{issue['number']}", {"body": body_text()}, "PATCH")
+            fresh = keys - old_keys
+            if fresh:  # a comment makes GitHub email the owner again
+                gh(f"/issues/{issue['number']}/comments", {"body": "مشكلة جديدة:\n" + "\n".join(f"- {t}" for k, t in problems if k in fresh)}, "POST")
+            print("guardian: updated issue", issue.get("html_url"))
+    elif issue:
+        gh(f"/issues/{issue['number']}/comments", {"body": f"✅ كل حاجة رجعت تشتغل ({TODAY_DUBAI}). الحارس قفل التذكرة."}, "POST")
+        gh(f"/issues/{issue['number']}", {"state": "closed"}, "PATCH")
+        print("guardian: all good, closed issue")
+    else:
+        print("guardian: all good")
+
+
+if __name__ == "__main__":
+    main()

@@ -477,6 +477,12 @@ def main():
     if feed is None:
         print("WARNING: YouTube feed is down; keeping the current pages and moving on.")
         return
+    if len(sys.argv) <= 1:  # remember the last day YouTube answered (the Guardian robot reads it)
+        import datetime
+        day = (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=4)).date().isoformat()
+        st = ROOT / "data" / "feed_status.json"
+        if not st.exists() or json.loads(st.read_text()).get("youtube_feed_ok") != day:
+            st.write_text(json.dumps({"youtube_feed_ok": day}) + "\n")
     allv = merge_seen(parse_feed(feed))
     eps = episode_entries(allv)
     index_path = ROOT / "index.html"
