@@ -1,0 +1,21 @@
+{
+ "months": {
+  "2026-11": {
+   "usd": 0.2024,
+   "calls": 2,
+   "in": 8344,
+   "out": 11823
+  }
+ },
+ "runs": [
+  {
+   "date": "2026-11-27",
+   "written": [
+    "christmas-words-game",
+    "winter-clothes-game"
+   ],
+   "skipped": [],
+   "planned": []
+  }
+ ]
+}

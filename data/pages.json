@@ -205,5 +205,226 @@
     "<b>Maiores:</b> contem quantas formas de cada tipo encontraram, ou procurem uma forma que não esteja nas folhas."
    ]
   }
+ },
+ {
+  "id": "christmas-words-game",
+  "episode": "ian-s-christmas-eve",
+  "ytid": "TAyFj_YT8KM",
+  "ep_title": "Ian's Christmas Eve",
+  "game_title": {
+   "en": "Christmas Eve",
+   "es": "Christmas Eve",
+   "pt": "Christmas Eve"
+  },
+  "live_from": "2026-11-27",
+  "written_by": "robot",
+  "en": {
+   "slug": "christmas-words-game",
+   "topic": "Christmas",
+   "title": "Christmas Words Game for Preschool: Free 15-Minute Activity | Learn with Ian",
+   "h1": "Christmas Words Game for Preschool: What Is Missing?",
+   "desc": "A free Christmas words game for preschool, ages 2 to 6. Learn six Christmas words in English with a 15-minute memory game. Free printable activities included.",
+   "learns": "Children name six Christmas things (tree, star, bell, lights, present and ribbon) and say which one is missing.",
+   "words": [
+    "tree",
+    "star",
+    "bell",
+    "lights",
+    "present",
+    "ribbon"
+   ],
+   "need": [
+    "6 Christmas things or drawings, for example a bell, a ribbon, a small wrapped box, and drawings of a tree, a star and lights",
+    "A towel or a cloth to hide one thing at a time",
+    "The episode Ian&rsquo;s Christmas Eve (free on YouTube), if you want to start with a story"
+   ],
+   "steps": [
+    "Watch Ian&rsquo;s Christmas Eve together first, or just show the six things and say their names: tree, star, bell, lights, present, ribbon.",
+    "Lay the six things on the floor. Point to one and say: &ldquo;This is a <b>star</b>.&rdquo; Children say it back. Do all six. Stay close if you use small things with children under 3.",
+    "Ask: &ldquo;Can you find the <b>bell</b>?&rdquo; Children point to it or hold it up. Repeat with two or three other words.",
+    "Say: &ldquo;Close your eyes!&rdquo; Hide one thing under the cloth. Then say: &ldquo;Open your eyes. What is <b>missing</b>?&rdquo; Children say or point: &ldquo;The star!&rdquo;",
+    "Show the hidden thing and say it together: &ldquo;Yes! The star is missing.&rdquo; Play again. Let a child be the one who hides. At the end ask: &ldquo;What would you put on the tree?&rdquo;"
+   ],
+   "easy": [
+    "<b>Younger children:</b> start with three things (tree, star, bell) and let them point instead of speaking.",
+    "<b>Older children:</b> hide two things at once, or ask for the whole sentence: &ldquo;The ribbon is missing.&rdquo;",
+    "<b>Mixed group:</b> pair a younger child with an older one. The older child hides, and the younger child points."
+   ]
+  },
+  "es": {
+   "slug": "palabras-de-navidad-en-ingles",
+   "topic": "Navidad",
+   "title": "Palabras de Navidad en Inglés para Niños: Juego Gratis de 15 Minutos | Learn with Ian",
+   "h1": "Palabras de Navidad en Inglés para Niños: ¿Qué Falta?",
+   "desc": "Un juego gratis con palabras de Navidad en inglés para niños de 2 a 6 años. Aprenden seis palabras y juegan a ¿qué falta? Incluye juegos imprimibles gratis.",
+   "learns": "Los niños dicen seis cosas de Navidad en inglés (tree, star, bell, lights, present y ribbon) y dicen cuál falta.",
+   "words": [
+    "tree &middot; árbol",
+    "star &middot; estrella",
+    "bell &middot; campana",
+    "lights &middot; luces",
+    "present &middot; regalo",
+    "ribbon &middot; cinta"
+   ],
+   "need": [
+    "6 cosas de Navidad o dibujos, por ejemplo una campana, una cinta, una cajita envuelta, y dibujos de un árbol, una estrella y luces",
+    "Una toalla o una tela para esconder una cosa a la vez",
+    "El episodio Ian&rsquo;s Christmas Eve (gratis en YouTube), si quieres empezar con una historia"
+   ],
+   "steps": [
+    "Miren primero Ian&rsquo;s Christmas Eve juntos, o simplemente muestra las seis cosas y di sus nombres: tree, star, bell, lights, present, ribbon.",
+    "Pon las seis cosas en el suelo. Señala una y di: &ldquo;This is a <b>star</b>.&rdquo; Los niños lo repiten. Hagan las seis. Quédate cerca si usas cosas pequeñas con niños menores de 3 años.",
+    "Pregunta: &ldquo;Can you find the <b>bell</b>?&rdquo; Los niños la señalan o la levantan. Repite con otras dos o tres palabras.",
+    "Di: &ldquo;Close your eyes!&rdquo; Esconde una cosa bajo la tela. Luego di: &ldquo;Open your eyes. What is <b>missing</b>?&rdquo; Los niños dicen o señalan: &ldquo;The star!&rdquo;",
+    "Muestra la cosa escondida y díganlo juntos: &ldquo;Yes! The star is missing.&rdquo; Jueguen otra vez. Deja que un niño sea quien esconde. Al final pregunta: &ldquo;What would you put on the tree?&rdquo;"
+   ],
+   "easy": [
+    "<b>Más pequeños:</b> empieza con tres cosas (tree, star, bell) y deja que señalen en lugar de hablar.",
+    "<b>Mayores:</b> esconde dos cosas a la vez, o pide la frase completa: &ldquo;The ribbon is missing.&rdquo;",
+    "<b>Grupo mixto:</b> junta a un niño pequeño con uno mayor. El mayor esconde y el pequeño señala."
+   ]
+  },
+  "pt": {
+   "slug": "palavras-de-natal-em-ingles",
+   "topic": "Natal",
+   "title": "Palavras de Natal em Inglês para Crianças: Jogo Grátis de 15 Minutos | Learn with Ian",
+   "h1": "Palavras de Natal em Inglês para Crianças: O Que Falta?",
+   "desc": "Um jogo grátis com palavras de Natal em inglês para crianças de 2 a 6 anos. Aprendem seis palavras e brincam de o que falta? Inclui jogos para imprimir grátis.",
+   "learns": "As crianças dizem seis coisas de Natal em inglês (tree, star, bell, lights, present e ribbon) e dizem qual está faltando.",
+   "words": [
+    "tree &middot; árvore",
+    "star &middot; estrela",
+    "bell &middot; sino",
+    "lights &middot; luzinhas",
+    "present &middot; presente",
+    "ribbon &middot; fita"
+   ],
+   "need": [
+    "6 coisas de Natal ou desenhos, por exemplo um sino, uma fita, uma caixinha embrulhada, e desenhos de uma árvore, uma estrela e luzinhas",
+    "Uma toalha ou um pano para esconder uma coisa de cada vez",
+    "O episódio Ian&rsquo;s Christmas Eve (grátis no YouTube), se quiser começar com uma história"
+   ],
+   "steps": [
+    "Assistam primeiro a Ian&rsquo;s Christmas Eve juntos, ou simplesmente mostre as seis coisas e diga os nomes: tree, star, bell, lights, present, ribbon.",
+    "Coloque as seis coisas no chão. Aponte para uma e diga: &ldquo;This is a <b>star</b>.&rdquo; As crianças repetem. Façam as seis. Fique por perto se usar coisas pequenas com crianças menores de 3 anos.",
+    "Pergunte: &ldquo;Can you find the <b>bell</b>?&rdquo; As crianças apontam ou levantam o sino. Repita com mais duas ou três palavras.",
+    "Diga: &ldquo;Close your eyes!&rdquo; Esconda uma coisa debaixo do pano. Depois diga: &ldquo;Open your eyes. What is <b>missing</b>?&rdquo; As crianças dizem ou apontam: &ldquo;The star!&rdquo;",
+    "Mostre a coisa escondida e digam juntos: &ldquo;Yes! The star is missing.&rdquo; Brinquem de novo. Deixe uma criança esconder. No final pergunte: &ldquo;What would you put on the tree?&rdquo;"
+   ],
+   "easy": [
+    "<b>Menores:</b> comece com três coisas (tree, star, bell) e deixe apontar em vez de falar.",
+    "<b>Maiores:</b> esconda duas coisas ao mesmo tempo, ou peça a frase completa: &ldquo;The ribbon is missing.&rdquo;",
+    "<b>Grupo misto:</b> junte uma criança menor com uma maior. A maior esconde e a menor aponta."
+   ]
+  }
+ },
+ {
+  "id": "winter-clothes-game",
+  "episode": "ian-s-snowy-day",
+  "ytid": "g-E2RaXlU0s",
+  "ep_title": "Ian's Snowy Day",
+  "game_title": {
+   "en": "Snowy Day",
+   "es": "Snowy Day",
+   "pt": "Snowy Day"
+  },
+  "live_from": "2026-11-27",
+  "written_by": "robot",
+  "en": {
+   "slug": "winter-clothes-game",
+   "topic": "Winter clothes",
+   "title": "Winter Clothes Game for Toddlers: Free 15-Minute Dress-Up Activity | Learn with Ian",
+   "h1": "Winter Clothes Game for Toddlers: a 15-Minute Dress-Up Activity",
+   "desc": "A free winter clothes game for toddlers and preschoolers, ages 2 to 6. Dress up and name hat, scarf, gloves, coat and boots in English. Free printable games included.",
+   "learns": "Children name five winter clothes (hat, scarf, gloves, coat and boots) and say why we wear them when it is cold.",
+   "words": [
+    "hat",
+    "scarf",
+    "gloves",
+    "coat",
+    "boots"
+   ],
+   "need": [
+    "A hat, a scarf, a pair of gloves, a coat and a pair of boots from home or class (big ones are fine)",
+    "A clear space on the floor and a chair for sitting down to put on the boots",
+    "The episode Ian&rsquo;s Snowy Day (free on YouTube), if you want to start with a story"
+   ],
+   "steps": [
+    "Watch Ian&rsquo;s Snowy Day together first, or just hold up a hat and ask: &ldquo;When do we wear a <b>hat</b>? Is it a hot day or a cold day?&rdquo;",
+    "Put all five clothes in a pile. Hold up one at a time and say: &ldquo;This is a <b>scarf</b>.&rdquo; Children say it back.",
+    "Give each child a turn. Ask: &ldquo;Can you find the <b>coat</b>?&rdquo; The child picks it up and puts it on. An adult helps and keeps the scarf loose, never tight.",
+    "Say it together: &ldquo;I am wearing <b>boots</b>!&rdquo; Then count the items the child is wearing: &ldquo;One, two, three!&rdquo;",
+    "When everyone has had a turn, ask: &ldquo;Why do we wear a <b>coat</b>?&rdquo; Help them answer: &ldquo;Because it is cold.&rdquo; Then take everything off: &ldquo;Hat off!&rdquo;"
+   ],
+   "easy": [
+    "<b>Younger children:</b> start with two items (hat and gloves), stay close and let them point instead of speaking.",
+    "<b>Older children:</b> ask for the whole sentence: &ldquo;I am wearing a hat and gloves because it is cold.&rdquo;",
+    "<b>Mixed group:</b> pair a younger child with an older one. The older child names the clothes and helps to dress."
+   ]
+  },
+  "es": {
+   "slug": "ropa-de-invierno-en-ingles",
+   "topic": "Invierno",
+   "title": "Ropa de Invierno en Inglés para Niños: Juego Gratis de 15 Minutos | Learn with Ian",
+   "h1": "Ropa de Invierno en Inglés para Niños: Juego de Disfraces",
+   "desc": "Juego gratis de ropa de invierno en inglés para niños de 2 a 6 años. Se disfrazan y dicen hat, scarf, gloves, coat y boots. Incluye juegos imprimibles gratis.",
+   "learns": "Los niños dicen cinco prendas de invierno en inglés (hat, scarf, gloves, coat y boots) y explican por qué las usamos cuando hace frío.",
+   "words": [
+    "hat &middot; gorro",
+    "scarf &middot; bufanda",
+    "gloves &middot; guantes",
+    "coat &middot; abrigo",
+    "boots &middot; botas"
+   ],
+   "need": [
+    "Un gorro, una bufanda, un par de guantes, un abrigo y un par de botas de casa o del salón (las grandes sirven)",
+    "Un espacio libre en el suelo y una silla para sentarse a ponerse las botas",
+    "El episodio Ian&rsquo;s Snowy Day (gratis en YouTube), si quieres empezar con una historia"
+   ],
+   "steps": [
+    "Miren primero Ian&rsquo;s Snowy Day juntos, o simplemente muestra un gorro y pregunta: &ldquo;When do we wear a <b>hat</b>? Is it a hot day or a cold day?&rdquo;",
+    "Pon las cinco prendas en un montón. Levanta una por una y di: &ldquo;This is a <b>scarf</b>.&rdquo; Los niños lo repiten.",
+    "Cada niño tiene su turno. Pregunta: &ldquo;Can you find the <b>coat</b>?&rdquo; El niño lo toma y se lo pone. Un adulto ayuda y deja la bufanda floja, nunca apretada.",
+    "Díganlo juntos: &ldquo;I am wearing <b>boots</b>!&rdquo; Luego cuenten las prendas que lleva puestas: &ldquo;One, two, three!&rdquo;",
+    "Cuando todos hayan tenido su turno, pregunta: &ldquo;Why do we wear a <b>coat</b>?&rdquo; Ayúdales a responder: &ldquo;Because it is cold.&rdquo; Después quítense todo: &ldquo;Hat off!&rdquo;"
+   ],
+   "easy": [
+    "<b>Más pequeños:</b> empieza con dos prendas (hat y gloves), quédate cerca y deja que señalen en lugar de hablar.",
+    "<b>Mayores:</b> pide la frase completa: &ldquo;I am wearing a hat and gloves because it is cold.&rdquo;",
+    "<b>Grupo mixto:</b> junta a un niño pequeño con uno mayor. El mayor dice los nombres y ayuda a vestirse."
+   ]
+  },
+  "pt": {
+   "slug": "roupas-de-inverno-em-ingles",
+   "topic": "Inverno",
+   "title": "Roupas de Inverno em Inglês para Crianças: Jogo Grátis de 15 Minutos | Learn with Ian",
+   "h1": "Roupas de Inverno em Inglês para Crianças: Jogo de Fantasia",
+   "desc": "Jogo grátis de roupas de inverno em inglês para crianças de 2 a 6 anos. Elas se vestem e dizem hat, scarf, gloves, coat e boots. Inclui jogos para imprimir grátis.",
+   "learns": "As crianças dizem cinco roupas de inverno em inglês (hat, scarf, gloves, coat e boots) e explicam por que as usamos quando está frio.",
+   "words": [
+    "hat &middot; gorro",
+    "scarf &middot; cachecol",
+    "gloves &middot; luvas",
+    "coat &middot; casaco",
+    "boots &middot; botas"
+   ],
+   "need": [
+    "Um gorro, um cachecol, um par de luvas, um casaco e um par de botas de casa ou da sala (as grandes servem)",
+    "Um espaço livre no chão e uma cadeira para sentar e calçar as botas",
+    "O episódio Ian&rsquo;s Snowy Day (grátis no YouTube), se quiser começar com uma história"
+   ],
+   "steps": [
+    "Assistam primeiro a Ian&rsquo;s Snowy Day juntos, ou simplesmente mostre um gorro e pergunte: &ldquo;When do we wear a <b>hat</b>? Is it a hot day or a cold day?&rdquo;",
+    "Coloque as cinco peças em um monte. Levante uma de cada vez e diga: &ldquo;This is a <b>scarf</b>.&rdquo; As crianças repetem.",
+    "Cada criança tem a sua vez. Pergunte: &ldquo;Can you find the <b>coat</b>?&rdquo; A criança pega e veste. Um adulto ajuda e deixa o cachecol folgado, nunca apertado.",
+    "Digam juntos: &ldquo;I am wearing <b>boots</b>!&rdquo; Depois contem as peças que ela está usando: &ldquo;One, two, three!&rdquo;",
+    "Quando todos tiverem tido a sua vez, pergunte: &ldquo;Why do we wear a <b>coat</b>?&rdquo; Ajude a responder: &ldquo;Because it is cold.&rdquo; Depois tirem tudo: &ldquo;Hat off!&rdquo;"
+   ],
+   "easy": [
+    "<b>Menores:</b> comece com duas peças (hat e gloves), fique por perto e deixe apontar em vez de falar.",
+    "<b>Maiores:</b> peça a frase completa: &ldquo;I am wearing a hat and gloves because it is cold.&rdquo;",
+    "<b>Grupo misto:</b> junte uma criança menor com uma maior. A maior diz os nomes e ajuda a vestir."
+   ]
+  }
  }
 ]
