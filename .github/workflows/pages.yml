@@ -1,0 +1,41 @@
+name: Free activity pages writer
+
+# Writes new free activity pages with Claude (data/page_plan.json -> data/pages.json),
+# then builds them. Off switch: add an empty file data/PAUSE_WRITER.
+on:
+  schedule:
+    - cron: "43 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-writes
+  cancel-in-progress: false
+
+jobs:
+  write:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Write new topics with Claude (never stops the site)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 scripts/pages_write.py
+      - name: Build the pages and the sitemap
+        run: python3 scripts/pages.py || true
+      - name: Tell Bing about new pages (IndexNow)
+        run: python3 scripts/indexnow.py || true
+      - name: Save changes
+        run: |
+          git config user.name "learnwithian-bot"
+          git config user.email "hello@learnwithian.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing new."
+          else
+            git commit -m "New free activity pages"
+            for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 20; done
+          fi
