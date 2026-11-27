@@ -12,6 +12,7 @@ import html
 import json
 import re
 import sys
+import time
 import urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -63,9 +64,19 @@ def store_of(url):
 def fetch_feed(path=None):
     if path:
         return Path(path).read_text()
+    # YouTube sometimes answers "503 Service Unavailable" for a short time.
+    # Try 3 times, one minute apart. If it is still down, return None so the
+    # rest of the robot (Pinterest, pages, Bing) still runs with the last data.
     req = urllib.request.Request(FEED, headers={"User-Agent": "learnwithian-site-updater"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return r.read().decode("utf-8")
+    for attempt in range(1, 4):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return r.read().decode("utf-8")
+        except Exception as e:  # network error or YouTube down
+            print(f"YouTube feed try {attempt}/3 failed: {e}")
+            if attempt < 3:
+                time.sleep(60)
+    return None
 
 
 def description_links(desc):
@@ -463,6 +474,9 @@ def replace_between(text, name, content):
 
 def main():
     feed = fetch_feed(sys.argv[1] if len(sys.argv) > 1 else None)
+    if feed is None:
+        print("WARNING: YouTube feed is down; keeping the current pages and moving on.")
+        return
     allv = merge_seen(parse_feed(feed))
     eps = episode_entries(allv)
     index_path = ROOT / "index.html"
