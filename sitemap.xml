@@ -54,6 +54,9 @@
   <url><loc>https://learnwithian.com/play/plant-a-seed-activity.html</loc><priority>0.7</priority></url>
   <url><loc>https://learnwithian.com/es/play/actividad-de-plantar-semillas.html</loc><priority>0.7</priority></url>
   <url><loc>https://learnwithian.com/pt/play/atividade-de-plantar-sementes.html</loc><priority>0.7</priority></url>
+  <url><loc>https://learnwithian.com/play/counting-walk-activity.html</loc><priority>0.7</priority></url>
+  <url><loc>https://learnwithian.com/es/play/contar-hasta-5-en-ingles.html</loc><priority>0.7</priority></url>
+  <url><loc>https://learnwithian.com/pt/play/contar-ate-5-em-ingles.html</loc><priority>0.7</priority></url>
   <url><loc>https://learnwithian.com/es/palabras/colores-en-ingles.html</loc><priority>0.7</priority></url>
   <url><loc>https://learnwithian.com/pt/palavras/cores-em-ingles.html</loc><priority>0.7</priority></url>
   <url><loc>https://learnwithian.com/es/palabras/navidad-en-ingles.html</loc><priority>0.7</priority></url>
@@ -62,16 +65,13 @@
   <url><loc>https://learnwithian.com/pt/palavras/inverno-em-ingles.html</loc><priority>0.7</priority></url>
   <url><loc>https://learnwithian.com/es/palabras/jardin-en-ingles.html</loc><priority>0.7</priority></url>
   <url><loc>https://learnwithian.com/pt/palavras/jardim-em-ingles.html</loc><priority>0.7</priority></url>
-  <url><loc>https://learnwithian.com/play/</loc><priority>0.8</priority></url>
-  <url><loc>https://learnwithian.com/es/play/</loc><priority>0.8</priority></url>
-  <url><loc>https://learnwithian.com/pt/play/</loc><priority>0.8</priority></url>
-  <url><loc>https://learnwithian.com/play/counting-walk-activity.html</loc><priority>0.7</priority></url>
-  <url><loc>https://learnwithian.com/es/play/contar-hasta-5-en-ingles.html</loc><priority>0.7</priority></url>
-  <url><loc>https://learnwithian.com/pt/play/contar-ate-5-em-ingles.html</loc><priority>0.7</priority></url>
   <url><loc>https://learnwithian.com/es/palabras/numeros-en-ingles.html</loc><priority>0.7</priority></url>
   <url><loc>https://learnwithian.com/pt/palavras/numeros-em-ingles.html</loc><priority>0.7</priority></url>
   <url><loc>https://learnwithian.com/es/palabras/formas-en-ingles.html</loc><priority>0.7</priority></url>
   <url><loc>https://learnwithian.com/pt/palavras/formas-em-ingles.html</loc><priority>0.7</priority></url>
   <url><loc>https://learnwithian.com/es/palabras/zoologico-en-ingles.html</loc><priority>0.7</priority></url>
   <url><loc>https://learnwithian.com/pt/palavras/zoologico-em-ingles.html</loc><priority>0.7</priority></url>
+  <url><loc>https://learnwithian.com/play/</loc><priority>0.8</priority></url>
+  <url><loc>https://learnwithian.com/es/play/</loc><priority>0.8</priority></url>
+  <url><loc>https://learnwithian.com/pt/play/</loc><priority>0.8</priority></url>
 </urlset>

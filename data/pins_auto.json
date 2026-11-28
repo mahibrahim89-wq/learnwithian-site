@@ -224,6 +224,42 @@
    "description": "Uma atividade grátis de plantar sementes para crianças, de 2 a 6 anos. Elas plantam um feijão num copo e aprendem seed, soil, water, sun e plant em inglês.",
    "link": "https://learnwithian.com/pt/play/atividade-de-plantar-sementes.html?pin=pt",
    "img": "/img/pins/play-plant-a-seed-activity-pt.jpg"
+  },
+  {
+   "id": "play-counting-walk-activity-en",
+   "lang": "en",
+   "date": "2026-12-04",
+   "topic": "counting-walk-activity",
+   "episode": "number-walk",
+   "board": "basics",
+   "title": "Counting Walk Activity for Toddlers: Count 1 to 5 in English",
+   "description": "A free counting walk activity for toddlers and preschoolers, ages 2 to 6. Find and count 1 to 5 things in English around the room or garden. Free printables included.",
+   "link": "https://learnwithian.com/play/counting-walk-activity.html?pin=en",
+   "img": "/img/pins/play-counting-walk-activity-en.jpg"
+  },
+  {
+   "id": "play-counting-walk-activity-es",
+   "lang": "es",
+   "date": "2026-12-04",
+   "topic": "counting-walk-activity",
+   "episode": "number-walk",
+   "board": "es-ingles",
+   "title": "Contar hasta 5 en Inglés para Niños: Paseo de los Números",
+   "description": "Una actividad gratis para contar hasta 5 en inglés, para niños de 2 a 6 años. Buscan 1, 2, 3, 4 y 5 cosas por la casa o el jardín. Incluye juegos imprimibles gratis.",
+   "link": "https://learnwithian.com/es/play/contar-hasta-5-en-ingles.html?pin=es",
+   "img": "/img/pins/play-counting-walk-activity-es.jpg"
+  },
+  {
+   "id": "play-counting-walk-activity-pt",
+   "lang": "pt",
+   "date": "2026-12-04",
+   "topic": "counting-walk-activity",
+   "episode": "number-walk",
+   "board": "pt-ingles",
+   "title": "Contar até 5 em Inglês para Crianças: Passeio dos Números",
+   "description": "Uma atividade grátis para contar até 5 em inglês, para crianças de 2 a 6 anos. Procuram 1, 2, 3, 4 e 5 coisas pela casa ou jardim. Inclui jogos para imprimir grátis.",
+   "link": "https://learnwithian.com/pt/play/contar-ate-5-em-ingles.html?pin=pt",
+   "img": "/img/pins/play-counting-walk-activity-pt.jpg"
   }
  ]
 }
