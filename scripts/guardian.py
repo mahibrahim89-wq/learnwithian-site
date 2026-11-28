@@ -232,7 +232,7 @@ def check_stores():
                 walk(v, name)
 
     walk(json.loads((ROOT / "data" / "shop.json").read_text()))
-    dead, skipped = [], 0
+    dead, skipped, refused = [], 0, {}
     for url, (store, name) in sorted(links.items()):
         try:
             http(url)
@@ -241,9 +241,13 @@ def check_stores():
                 dead.append((url, store, name))
             else:
                 skipped += 1
-        except Exception:
+                refused[store] = refused.get(store, []) + [e.code]
+        except Exception as e:
             skipped += 1
+            refused[store] = refused.get(store, []) + [type(e).__name__]
     print(f"guardian: stores: {len(links)} links, {len(dead)} dead, {skipped} could not be checked")
+    for store, codes in sorted(refused.items()):
+        print(f"guardian: stores: not checked: {store} x{len(codes)} ({sorted(set(map(str, codes)))})")
     by_store, totals = {}, {}
     for url, store, name in dead:
         by_store.setdefault(store, []).append(url)
