@@ -1,14 +1,69 @@
 {
- "date": "2026-11-27",
+ "date": "2026-11-28",
  "property": "https://learnwithian.com/",
  "totals": {
   "clicks": 0,
-  "impressions": 0
+  "impressions": 5
  },
- "pages": [],
- "top_searches": [],
+ "pages": [
+  {
+   "url": "https://learnwithian.com/ep/ian-s-christmas-eve.html",
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 53
+  },
+  {
+   "url": "https://learnwithian.com/ep/ian-s-color-day.html",
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 92
+  },
+  {
+   "url": "https://learnwithian.com/ep/shape-hunt.html",
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 94
+  },
+  {
+   "url": "https://learnwithian.com/es/",
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "url": "https://learnwithian.com/free.html",
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  }
+ ],
+ "top_searches": [
+  {
+   "query": "colors worksheets pdf",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 92
+  },
+  {
+   "query": "preschool sequencing cards",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 53
+  },
+  {
+   "query": "shape activities for toddlers",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 94
+  }
+ ],
  "fixed": [],
  "new_topics": [],
  "notes": [],
- "spent_this_month_usd": 0.2024
+ "spent_this_month_usd": 0.7003
 }
