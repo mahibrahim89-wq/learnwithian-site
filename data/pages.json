@@ -647,5 +647,117 @@
     "<b>Grupo misto:</b> junte uma criança menor com uma maior. A maior diz a palavra e a menor faz a ação."
    ]
   }
+ },
+ {
+  "id": "counting-walk-activity",
+  "episode": "number-walk",
+  "ytid": "_5Jwth51cnc",
+  "ep_title": "Ian's Number Walk",
+  "game_title": {
+   "en": "Number Walk",
+   "es": "Number Walk",
+   "pt": "Number Walk"
+  },
+  "live_from": "2026-11-28",
+  "written_by": "robot",
+  "en": {
+   "slug": "counting-walk-activity",
+   "topic": "Counting",
+   "title": "Counting Walk Activity for Toddlers: Free 15-Minute Number Game | Learn with Ian",
+   "h1": "Counting Walk Activity for Toddlers: Count 1 to 5 in English",
+   "desc": "A free counting walk activity for toddlers and preschoolers, ages 2 to 6. Find and count 1 to 5 things in English around the room or garden. Free printables included.",
+   "learns": "Children count objects from 1 to 5 in English, saying one number for each object.",
+   "words": [
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "count"
+   ],
+   "need": [
+    "5 sheets of paper with the numbers 1 to 5 written big, one on each sheet",
+    "A basket or a bag for the things you find (use big, safe things, and stay close with children under 3)",
+    "The episode Ian&rsquo;s Number Walk (free on YouTube), if you want to start with a story"
+   ],
+   "steps": [
+    "Watch Ian&rsquo;s Number Walk together first, or hold up your fingers one at a time and count to five: one, two, three, four, five.",
+    "Put the five number sheets in different places, like stops on a walk: around the room, the house or the garden. Say: &ldquo;Let&rsquo;s go on a counting walk!&rdquo;",
+    "Walk to the first stop together. Ask: &ldquo;Can you find <b>one</b> thing?&rdquo; The child brings one thing and puts it on the sheet. Then go to number 2 and ask for two things, and so on up to five.",
+    "At each stop, touch each thing and count out loud, one number for each thing: &ldquo;One, two, three. <b>Three</b> blocks!&rdquo;",
+    "At the end, bring everything together and count it. Then take one away and ask: &ldquo;How many now?&rdquo; Count again together."
+   ],
+   "easy": [
+    "<b>Younger children:</b> walk to only three stops (1, 2 and 3). Let them point and touch while you count with them.",
+    "<b>Older children:</b> give a number without the sheet and ask: &ldquo;Can you find <b>four</b> things?&rdquo; Then ask: &ldquo;How many?&rdquo;",
+    "<b>Mixed group:</b> pair a younger child with an older one. The older child counts out loud and the younger child touches each thing."
+   ]
+  },
+  "es": {
+   "slug": "contar-hasta-5-en-ingles",
+   "topic": "Contar",
+   "title": "Contar hasta 5 en Inglés para Niños: Actividad Gratis de 15 Minutos | Learn with Ian",
+   "h1": "Contar hasta 5 en Inglés para Niños: Paseo de los Números",
+   "desc": "Una actividad gratis para contar hasta 5 en inglés, para niños de 2 a 6 años. Buscan 1, 2, 3, 4 y 5 cosas por la casa o el jardín. Incluye juegos imprimibles gratis.",
+   "learns": "Los niños cuentan objetos del 1 al 5 en inglés, diciendo un número por cada objeto.",
+   "words": [
+    "one &middot; uno",
+    "two &middot; dos",
+    "three &middot; tres",
+    "four &middot; cuatro",
+    "five &middot; cinco",
+    "count &middot; contar"
+   ],
+   "need": [
+    "5 hojas de papel con los números del 1 al 5 escritos en grande, uno en cada hoja",
+    "Una cesta o una bolsa para lo que encuentren (usa cosas grandes y seguras, y quédate cerca si hay niños menores de 3 años)",
+    "El episodio Ian&rsquo;s Number Walk (gratis en YouTube), si quieres empezar con una historia"
+   ],
+   "steps": [
+    "Miren primero Ian&rsquo;s Number Walk juntos, o levanta los dedos uno por uno y cuenten hasta cinco: one, two, three, four, five.",
+    "Pon las cinco hojas con números en lugares distintos, como paradas de un paseo: por la habitación, la casa o el jardín. Di: &ldquo;Let&rsquo;s go on a counting walk!&rdquo;",
+    "Caminen juntos hasta la primera parada. Pregunta: &ldquo;Can you find <b>one</b> thing?&rdquo; El niño trae una cosa y la pone sobre la hoja. Luego vayan al número 2 y pide dos cosas, y así hasta cinco.",
+    "En cada parada, toquen cada cosa y cuenten en voz alta, un número por cada cosa: &ldquo;One, two, three. <b>Three</b> blocks!&rdquo;",
+    "Al final, junten todo y cuéntenlo. Luego quita una cosa y pregunta: &ldquo;How many now?&rdquo; Cuenten otra vez juntos."
+   ],
+   "easy": [
+    "<b>Más pequeños:</b> vayan solo a tres paradas (1, 2 y 3). Deja que señalen y toquen mientras cuentas con ellos.",
+    "<b>Mayores:</b> di un número sin la hoja y pregunta: &ldquo;Can you find <b>four</b> things?&rdquo; Luego pregunta: &ldquo;How many?&rdquo;",
+    "<b>Grupo mixto:</b> junta a un niño pequeño con uno mayor. El mayor cuenta en voz alta y el pequeño toca cada cosa."
+   ]
+  },
+  "pt": {
+   "slug": "contar-ate-5-em-ingles",
+   "topic": "Contar",
+   "title": "Contar até 5 em Inglês para Crianças: Atividade Grátis de 15 Minutos | Learn with Ian",
+   "h1": "Contar até 5 em Inglês para Crianças: Passeio dos Números",
+   "desc": "Uma atividade grátis para contar até 5 em inglês, para crianças de 2 a 6 anos. Procuram 1, 2, 3, 4 e 5 coisas pela casa ou jardim. Inclui jogos para imprimir grátis.",
+   "learns": "As crianças contam objetos de 1 a 5 em inglês, dizendo um número para cada objeto.",
+   "words": [
+    "one &middot; um",
+    "two &middot; dois",
+    "three &middot; três",
+    "four &middot; quatro",
+    "five &middot; cinco",
+    "count &middot; contar"
+   ],
+   "need": [
+    "5 folhas de papel com os números de 1 a 5 escritos grande, um em cada folha",
+    "Uma cesta ou uma sacola para o que encontrarem (use coisas grandes e seguras, e fique perto se houver crianças menores de 3 anos)",
+    "O episódio Ian&rsquo;s Number Walk (grátis no YouTube), se quiser começar com uma história"
+   ],
+   "steps": [
+    "Assistam primeiro a Ian&rsquo;s Number Walk juntos, ou levante os dedos um de cada vez e contem até cinco: one, two, three, four, five.",
+    "Coloque as cinco folhas com números em lugares diferentes, como paradas de um passeio: pela sala, pela casa ou pelo jardim. Diga: &ldquo;Let&rsquo;s go on a counting walk!&rdquo;",
+    "Caminhem juntos até a primeira parada. Pergunte: &ldquo;Can you find <b>one</b> thing?&rdquo; A criança traz uma coisa e coloca sobre a folha. Depois vão ao número 2 e peça duas coisas, e assim até cinco.",
+    "Em cada parada, toquem em cada coisa e contem em voz alta, um número para cada coisa: &ldquo;One, two, three. <b>Three</b> blocks!&rdquo;",
+    "No final, juntem tudo e contem. Depois tire uma coisa e pergunte: &ldquo;How many now?&rdquo; Contem de novo juntos."
+   ],
+   "easy": [
+    "<b>Menores:</b> vão a só três paradas (1, 2 e 3). Deixe apontar e tocar enquanto você conta com eles.",
+    "<b>Maiores:</b> diga um número sem a folha e pergunte: &ldquo;Can you find <b>four</b> things?&rdquo; Depois pergunte: &ldquo;How many?&rdquo;",
+    "<b>Grupo misto:</b> junte uma criança menor com uma maior. A maior conta em voz alta e a menor toca em cada coisa."
+   ]
+  }
  }
 ]

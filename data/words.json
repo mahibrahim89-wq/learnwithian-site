@@ -522,5 +522,384 @@
     "Não corrija a pronúncia. Repita a palavra com calma e continue brincando."
    ]
   }
+ },
+ {
+  "episode": "number-walk",
+  "live_from": "2026-11-28",
+  "written_by": "robot",
+  "es": {
+   "slug": "numeros-en-ingles",
+   "topic": "Números",
+   "title": "Los números en inglés para niños: 6 palabras con pronunciación | Learn with Ian",
+   "h1": "Los números en inglés para niños",
+   "desc": "Los números del 1 al 5 en inglés para niños de 2 a 6 años: 6 palabras con su significado y cómo se pronuncian, frases fáciles y un dibujo animado gratis.",
+   "lead": "Los números del 1 al 5 en inglés y la palabra contar, con lo que significan y cómo se dicen. Lee la lista con tu hijo, mira el episodio y cuenten juntos.",
+   "words": [
+    {
+     "en": "one",
+     "tr": "uno",
+     "say": "uan"
+    },
+    {
+     "en": "two",
+     "tr": "dos",
+     "say": "tu"
+    },
+    {
+     "en": "three",
+     "tr": "tres",
+     "say": "srii"
+    },
+    {
+     "en": "four",
+     "tr": "cuatro",
+     "say": "for"
+    },
+    {
+     "en": "five",
+     "tr": "cinco",
+     "say": "faiv"
+    },
+    {
+     "en": "count",
+     "tr": "contar",
+     "say": "kaunt"
+    }
+   ],
+   "phrases": [
+    [
+     "Let us count!",
+     "¡Vamos a contar!"
+    ],
+    [
+     "How many can you see?",
+     "¿Cuántos puedes ver?"
+    ],
+    [
+     "I see five.",
+     "Veo cinco."
+    ]
+   ],
+   "tips": [
+    "Levanta los dedos uno a uno y di <b>one</b>, <b>two</b>, <b>three</b>. Tu hijo te sigue.",
+    "Cuenta los pasos al caminar por la casa: un número por cada paso.",
+    "No corrijas la pronunciación. Repite tú el número con calma y sigue contando."
+   ]
+  },
+  "pt": {
+   "slug": "numeros-em-ingles",
+   "topic": "Números",
+   "title": "Os números em inglês para crianças: 6 palavras com pronúncia | Learn with Ian",
+   "h1": "Os números em inglês para crianças",
+   "desc": "Os números de 1 a 5 em inglês para crianças de 2 a 6 anos: 6 palavras com o significado e como se pronunciam, frases fáceis e um desenho animado grátis.",
+   "lead": "Os números de 1 a 5 em inglês e a palavra contar, com o que significam e como se falam. Leia a lista com seu filho, assistam ao episódio e contem juntos.",
+   "words": [
+    {
+     "en": "one",
+     "tr": "um",
+     "say": "uân"
+    },
+    {
+     "en": "two",
+     "tr": "dois",
+     "say": "tu"
+    },
+    {
+     "en": "three",
+     "tr": "três",
+     "say": "sri"
+    },
+    {
+     "en": "four",
+     "tr": "quatro",
+     "say": "fór"
+    },
+    {
+     "en": "five",
+     "tr": "cinco",
+     "say": "fáiv"
+    },
+    {
+     "en": "count",
+     "tr": "contar",
+     "say": "káunt"
+    }
+   ],
+   "phrases": [
+    [
+     "Let us count!",
+     "Vamos contar!"
+    ],
+    [
+     "How many can you see?",
+     "Quantos você consegue ver?"
+    ],
+    [
+     "I see five.",
+     "Eu vejo cinco."
+    ]
+   ],
+   "tips": [
+    "Levante os dedos um a um e fale <b>one</b>, <b>two</b>, <b>three</b>. Seu filho acompanha.",
+    "Conte os passos ao andar pela casa: um número para cada passo.",
+    "Não corrija a pronúncia. Repita o número com calma e continue contando."
+   ]
+  }
+ },
+ {
+  "episode": "shape-hunt",
+  "live_from": "2026-11-28",
+  "written_by": "robot",
+  "es": {
+   "slug": "formas-en-ingles",
+   "topic": "Formas",
+   "title": "Las formas en inglés para niños: 5 palabras con pronunciación | Learn with Ian",
+   "h1": "Las formas en inglés para niños",
+   "desc": "Las formas en inglés para niños de 2 a 6 años: 5 palabras con su significado y cómo se pronuncian, frases fáciles y un dibujo animado gratis para escucharlas.",
+   "lead": "Cinco palabras en inglés para hablar de formas, con lo que significan y cómo se dicen. Lee la lista con tu hijo, mira el episodio y repitan juntos.",
+   "words": [
+    {
+     "en": "circle",
+     "tr": "círculo",
+     "say": "SÉR-col"
+    },
+    {
+     "en": "square",
+     "tr": "cuadrado",
+     "say": "skuer"
+    },
+    {
+     "en": "triangle",
+     "tr": "triángulo",
+     "say": "TRÁI-an-gol"
+    },
+    {
+     "en": "shape",
+     "tr": "forma",
+     "say": "sheip"
+    },
+    {
+     "en": "corner",
+     "tr": "esquina",
+     "say": "CÓR-ner"
+    }
+   ],
+   "phrases": [
+    [
+     "It is a circle.",
+     "Es un círculo."
+    ],
+    [
+     "What shape is that?",
+     "¿Qué forma es esa?"
+    ],
+    [
+     "I see a square.",
+     "Veo un cuadrado."
+    ]
+   ],
+   "tips": [
+    "Busca una forma en casa, señálala y di su nombre en inglés. Tu hijo lo repite.",
+    "Dibuja con el dedo en el aire un <b>circle</b>, un <b>square</b> y un <b>triangle</b>. Tu hijo te imita.",
+    "No corrijas la pronunciación. Repite tú la palabra con calma y sigue jugando."
+   ]
+  },
+  "pt": {
+   "slug": "formas-em-ingles",
+   "topic": "Formas",
+   "title": "As formas em inglês para crianças: 5 palavras com pronúncia | Learn with Ian",
+   "h1": "As formas em inglês para crianças",
+   "desc": "As formas em inglês para crianças de 2 a 6 anos: 5 palavras com o significado e como se pronunciam, frases fáceis e um desenho animado grátis para ouvir.",
+   "lead": "Cinco palavras em inglês para falar de formas, com o que significam e como se falam. Leia a lista com seu filho, assistam ao episódio e repitam juntos.",
+   "words": [
+    {
+     "en": "circle",
+     "tr": "círculo",
+     "say": "SÊR-cou"
+    },
+    {
+     "en": "square",
+     "tr": "quadrado",
+     "say": "skuér"
+    },
+    {
+     "en": "triangle",
+     "tr": "triângulo",
+     "say": "TRÁI-an-gou"
+    },
+    {
+     "en": "shape",
+     "tr": "forma",
+     "say": "chêip"
+    },
+    {
+     "en": "corner",
+     "tr": "canto",
+     "say": "CÓR-nêr"
+    }
+   ],
+   "phrases": [
+    [
+     "It is a circle.",
+     "É um círculo."
+    ],
+    [
+     "What shape is that?",
+     "Que forma é essa?"
+    ],
+    [
+     "I see a square.",
+     "Eu vejo um quadrado."
+    ]
+   ],
+   "tips": [
+    "Procure uma forma em casa, aponte e fale o nome em inglês. Seu filho repete.",
+    "Desenhe com o dedo no ar um <b>circle</b>, um <b>square</b> e um <b>triangle</b>. Seu filho imita você.",
+    "Não corrija a pronúncia. Repita a palavra com calma e continue brincando."
+   ]
+  }
+ },
+ {
+  "episode": "zoo-day",
+  "live_from": "2026-11-28",
+  "written_by": "robot",
+  "es": {
+   "slug": "zoologico-en-ingles",
+   "topic": "Zoológico",
+   "title": "El zoológico en inglés para niños: 8 palabras con pronunciación | Learn with Ian",
+   "h1": "El zoológico en inglés para niños",
+   "desc": "El zoológico en inglés para niños de 2 a 6 años: 8 palabras con su significado y cómo se pronuncian, frases fáciles y un dibujo animado gratis para escucharlas.",
+   "lead": "Ocho palabras del día de Ian en el zoológico, con lo que significan y cómo se dicen. Lee la lista con tu hijo, mira el episodio y repitan juntos.",
+   "words": [
+    {
+     "en": "zoo",
+     "tr": "zoológico",
+     "say": "su"
+    },
+    {
+     "en": "animal",
+     "tr": "animal",
+     "say": "Á-ni-mol"
+    },
+    {
+     "en": "big",
+     "tr": "grande",
+     "say": "big"
+    },
+    {
+     "en": "small",
+     "tr": "pequeño",
+     "say": "smol"
+    },
+    {
+     "en": "hop",
+     "tr": "saltar",
+     "say": "jop"
+    },
+    {
+     "en": "swing",
+     "tr": "balancearse",
+     "say": "suing"
+    },
+    {
+     "en": "stomp",
+     "tr": "pisar fuerte",
+     "say": "stomp"
+    },
+    {
+     "en": "waddle",
+     "tr": "caminar meciéndose",
+     "say": "UÓ-dol"
+    }
+   ],
+   "phrases": [
+    [
+     "It is big.",
+     "Es grande."
+    ],
+    [
+     "Which animal is that?",
+     "¿Qué animal es ese?"
+    ],
+    [
+     "I can hop.",
+     "Puedo saltar."
+    ]
+   ],
+   "tips": [
+    "Di la palabra en inglés y haz el movimiento. Tu hijo te imita y la repite.",
+    "Juega a grande y pequeño: abre los brazos para <b>big</b> y encógete para <b>small</b>.",
+    "No corrijas la pronunciación. Repite tú la palabra con calma y sigue jugando."
+   ]
+  },
+  "pt": {
+   "slug": "zoologico-em-ingles",
+   "topic": "Zoológico",
+   "title": "O zoológico em inglês para crianças: 8 palavras com pronúncia | Learn with Ian",
+   "h1": "O zoológico em inglês para crianças",
+   "desc": "O zoológico em inglês para crianças de 2 a 6 anos: 8 palavras com o significado e como se pronunciam, frases fáceis e um desenho animado grátis para ouvir.",
+   "lead": "Oito palavras do dia de Ian no zoológico, com o que significam e como se falam. Leia a lista com seu filho, assistam ao episódio e repitam juntos.",
+   "words": [
+    {
+     "en": "zoo",
+     "tr": "zoológico",
+     "say": "zu"
+    },
+    {
+     "en": "animal",
+     "tr": "animal",
+     "say": "Ã-ni-mou"
+    },
+    {
+     "en": "big",
+     "tr": "grande",
+     "say": "bigui"
+    },
+    {
+     "en": "small",
+     "tr": "pequeno",
+     "say": "smól"
+    },
+    {
+     "en": "hop",
+     "tr": "pular",
+     "say": "rróp"
+    },
+    {
+     "en": "swing",
+     "tr": "balançar",
+     "say": "suíng"
+    },
+    {
+     "en": "stomp",
+     "tr": "pisar forte",
+     "say": "stómp"
+    },
+    {
+     "en": "waddle",
+     "tr": "andar balançando",
+     "say": "UÓ-dou"
+    }
+   ],
+   "phrases": [
+    [
+     "It is big.",
+     "É grande."
+    ],
+    [
+     "Which animal is that?",
+     "Que animal é esse?"
+    ],
+    [
+     "I can hop.",
+     "Eu sei pular."
+    ]
+   ],
+   "tips": [
+    "Fale a palavra em inglês e faça o movimento. Seu filho imita e repete.",
+    "Brinque de grande e pequeno: abra os braços para <b>big</b> e se encolha para <b>small</b>.",
+    "Não corrija a pronúncia. Repita a palavra com calma e continue brincando."
+   ]
+  }
  }
 ]

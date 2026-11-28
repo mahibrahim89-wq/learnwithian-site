@@ -1,10 +1,10 @@
 {
  "months": {
   "2026-11": {
-   "usd": 0.7003,
-   "calls": 10,
-   "in": 52356,
-   "out": 36218
+   "usd": 0.9437,
+   "calls": 14,
+   "in": 65061,
+   "out": 49901
   }
  },
  "runs": [
@@ -22,6 +22,14 @@
    "written": [
     "animal-sounds-game",
     "plant-a-seed-activity"
+   ],
+   "skipped": [],
+   "planned": []
+  },
+  {
+   "date": "2026-11-28",
+   "written": [
+    "counting-walk-activity"
    ],
    "skipped": [],
    "planned": []
