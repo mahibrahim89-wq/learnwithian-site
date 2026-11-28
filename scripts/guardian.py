@@ -273,7 +273,11 @@ def check_stores():
     for url, pr in sorted(prices.items()):
         store, name = links[url]
         print(f"guardian: stores: price {pr} | {store} | {name} | {url}")
-        want = base.get(url)
+        want = base.get(url)  # one price, or a list while a price change we asked for is on its way
+        if isinstance(want, list):
+            if pr in want:
+                continue
+            want = want[-1]
         if want and want != pr:
             add("store-price-" + re.sub(r"[^a-z0-9]+", "-", url.lower())[-50:],
                 f"سعر اتغيّر على {store} ({name or 'منتج'}): كان {want} يوم ما اتسجّل، والمعروض دلوقتي {pr}. {url} . لو التغيير مقصود قول لـ Claude يحدّث القايمة.")

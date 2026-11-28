@@ -1,5 +1,5 @@
 {
- "note": "Prices the Guardian saw on the store pages on 2026-11-28. The Guardian alerts when a page shows a different price. Change a line here only when Mahmoud says the new price is meant. A link that is not listed is not price-checked (Zazzle store page left out: it shows many products).",
+ "note": "Prices the Guardian saw on the store pages on 2026-11-28. The Guardian alerts when a page shows a different price. Change a line here only when Mahmoud says the new price is meant. A link that is not listed is not price-checked (Zazzle store page left out: it shows many products). A list means both prices are fine for now: on 28 Nov the shop bot was asked to change the all-books bundle from 5.98 to 9.99; when it is done keep only 9.99.",
  "date": "2026-11-28",
  "prices": {
   "https://ko-fi.com/s/9710aa2221": "USD 3.99",
@@ -7,7 +7,10 @@
   "https://ko-fi.com/s/cd702ae449": "USD 2.99",
   "https://learnwithian.gumroad.com/l/busqsl": "USD 3.99",
   "https://learnwithian.gumroad.com/l/guybk": "USD 6.99",
-  "https://learnwithian.gumroad.com/l/jwxgyp": "USD 5.98",
+  "https://learnwithian.gumroad.com/l/jwxgyp": [
+   "USD 5.98",
+   "USD 9.99"
+  ],
   "https://learnwithian.gumroad.com/l/plant-life-cycle-printable": "USD 2.99",
   "https://learnwithian.gumroad.com/l/ttlgl": "USD 5.99",
   "https://learnwithian.gumroad.com/l/wjegih": "USD 2.99",
