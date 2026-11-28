@@ -65,6 +65,11 @@ RULES FOR EVERY EPISODE (approved by Mahmoud, 27 Nov 2026)
 7. Title starts with the words parents search for: "<topic> for Toddlers | Ian's <episode name> | Learn with Ian".
 8. Nothing about buying, books or prices inside the video. Never add dubbed audio: the videos stay in English.
 10. American English and the five learning areas of section 1b in every week (one letter, one math skill, one value, one movement game per week).
+11. MUSIC AND SONGS (Mahmoud, 28 Nov 2026), so children sing, clap and move:
+   - Every episode opens with the same 10-second channel song (our own words and tune): "Learn with Ian! Clap, clap, clap! Look and listen, say it back!" Bright ukulele and hand claps, about 110 beats a minute. Same words and tune every time.
+   - Every episode has ONE NEW song of about 40 seconds about its new words, with a movement (clap, jump, sway, spin). Mama sings; Ian dances and may say a tiny happy word. It plays in the middle, and a short part of it again before goodbye. The song may repeat the new words more than 2 times.
+   - Songs are 100% our own words and tune. Never a known children's song or its melody, not even "inspired by". Never reuse an episode song in another episode.
+   - Soft happy music under the story; quiet music for sleepy or calm scenes; no loud sounds.
 9. In info.txt of the "New episodes" folder add 3 lines: "program: Y1 <month> W<week> <A|B|C>", "new words: ...", "review words: ...". Claude uses them for the worksheets, the lesson plan and the word pages.
 The word lists below are the plan. You may swap a word for a better one of the same small topic when the story needs it, but keep 8 new words and write the real ones in info.txt.
 
