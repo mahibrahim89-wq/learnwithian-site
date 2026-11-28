@@ -211,6 +211,21 @@ def check_scout():
     if not r.get("suggestions"):
         add("scout-blind", f"الكشّاف ماقدرش يقرا اقتراحات البحث في آخر تشغيل ({r.get('date')}): خدمات الاقتراحات ماردّتش.")
 
+def page_price(html):
+    """The price a product page tells machines about (JSON-LD or meta tags), as 'USD 3.99'. None if it tells nothing."""
+    cur = None
+    m = re.search(r'"priceCurrency"\s*:\s*"([A-Z]{3})"', html) or re.search(r'property="(?:product|og):price:currency"\s+content="([A-Z]{3})"', html) \
+        or re.search(r'itemprop="priceCurrency"\s+content="([A-Z]{3})"', html)
+    if m:
+        cur = m.group(1)
+    for pat in (r'"price"\s*:\s*"?(\d+(?:\.\d{1,2})?)"?', r'property="(?:product|og):price:amount"\s+content="(\d+(?:\.\d{1,2})?)"',
+                r'itemprop="price"\s+content="(\d+(?:\.\d{1,2})?)"', r'"lowPrice"\s*:\s*"?(\d+(?:\.\d{1,2})?)"?'):
+        m = re.search(pat, html)
+        if m:
+            return f"{cur or '?'} {float(m.group(1)):.2f}"
+    return None
+
+
 def check_stores():
     """Every product link on the shop page still opens (this used to be the shop bot's store review).
     Only a clear "gone" answer (404 or 410) counts. Stores that refuse robots (403, 429, 5xx) are skipped."""
@@ -232,10 +247,13 @@ def check_stores():
                 walk(v, name)
 
     walk(json.loads((ROOT / "data" / "shop.json").read_text()))
-    dead, skipped, refused = [], 0, {}
+    dead, skipped, refused, prices = [], 0, {}, {}
     for url, (store, name) in sorted(links.items()):
         try:
-            http(url)
+            _, body = http(url)
+            pr = page_price(body.decode("utf-8", "replace"))
+            if pr:
+                prices[url] = pr
         except urllib.error.HTTPError as e:
             if e.code in (404, 410):
                 dead.append((url, store, name))
@@ -248,6 +266,18 @@ def check_stores():
     print(f"guardian: stores: {len(links)} links, {len(dead)} dead, {skipped} could not be checked")
     for store, codes in sorted(refused.items()):
         print(f"guardian: stores: not checked: {store} x{len(codes)} ({sorted(set(map(str, codes)))})")
+    # Prices: compare with the agreed list in data/store_prices.json (written by Claude, changed only on Mahmoud's word).
+    # A page that shows no price today is not a problem (it may be a blocked or changed page): only a DIFFERENT price is.
+    bp = ROOT / "data" / "store_prices.json"
+    base = json.loads(bp.read_text()).get("prices", {}) if bp.exists() else {}
+    for url, pr in sorted(prices.items()):
+        store, name = links[url]
+        print(f"guardian: stores: price {pr} | {store} | {name} | {url}")
+        want = base.get(url)
+        if want and want != pr:
+            add("store-price-" + re.sub(r"[^a-z0-9]+", "-", url.lower())[-50:],
+                f"سعر اتغيّر على {store} ({name or 'منتج'}): المتفق عليه {want} والمعروض دلوقتي {pr}. {url} . لو التغيير مقصود قول لـ Claude يحدّث القايمة.")
+    print(f"guardian: stores: prices read {len(prices)}, in the agreed list {len(base)}")
     by_store, totals = {}, {}
     for url, store, name in dead:
         by_store.setdefault(store, []).append(url)
