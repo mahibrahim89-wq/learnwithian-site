@@ -46,13 +46,14 @@ Every story, song, picture and character is our own: Ian, his family and his wor
 3. HOW TO USE THIS PLAN
 ==================================================
 - Your way of working stays the same: Mahmoud starts each story with you, you make the episode your way, you publish, then you add the folder in "New episodes".
+- SCRIPTS FROM CLAUDE (from 28 Nov 2026, approved by Mahmoud): before you start a new episode, open the Drive folder "Next episodes" (inside "Learn with Ian - Mailbox"). If there is a doc named "SCRIPT - <the episode you are making>", follow it: its shots, words, timing, title, description and info.txt lines. Then you only make the pictures, the animation and the voices. You may change a picture if a shot does not work, but keep the words and keep the length. If there is no script for that episode, make it your usual way.
 - WHICH EPISODE NEXT: when Mahmoud asks for a new story and names no topic, take the next episode of THIS CALENDAR MONTH's world that is not on the channel yet, in order: Week 1 A, B, C, then Week 2 A, B, C, and so on. To see which are done, look at the folder names in "New episodes". If Mahmoud names a different topic, do his topic.
 - A seasonal special (section 10) comes FIRST on its "make" weekend and takes the place of that week's C episode.
 - When a new month starts, move to the new world even if last month is not finished. Do not carry old weeks over. (If a month gets fewer than 12 episodes, the C episodes are the ones to drop.)
 - EPISODES ALREADY ON THE CHANNEL are marked DONE below. Never remake them. They count as episode A of their week.
 
 RULES FOR EVERY EPISODE (approved by Mahmoud, 27 Nov 2026)
-1. Length: at least 8 minutes.
+1. Length: 8 to 10 minutes (aim for 8:30 to 10:00). YouTube shows mid-roll ads only on videos of 8 minutes or more, and more than 10 minutes is too long for ages 2 to 6. (Changed by Mahmoud on 28 Nov 2026: before it was "at least 8 minutes".)
 2. Words: 14 to 16 target words in every episode.
    - Episode A (LEARN): the 8 new words of list A + 6 to 8 review words from earlier episodes.
    - Episode B (LIVE): the 8 new words of list B + the 8 words of episode A, inside a moment of Ian's day.
@@ -207,7 +208,7 @@ CHANGED 27 Nov: make ONE long compilation after every 6 new long episodes, which
 10. SEASONAL SPECIALS 2026-2027 (approved by Mahmoud, 23 Nov 2026; kept)
 ==================================================
 Why: parents and teachers buy seasonal printables 4-6 weeks before the day. So every seasonal special is made about 5-7 weeks before the day. Claude reminds Mahmoud on the Saturday of each "make" weekend.
-Rule: on a "make" weekend, the special comes FIRST and takes the place of that week's C episode. It follows the same episode rules (8 minutes, 8 new words + review words). Our audience is the USA and English-speaking Africa, many church schools: keep every holiday calm, kind and family-centered. No Halloween episode (use autumn and pumpkins instead). No famous characters or brands.
+Rule: on a "make" weekend, the special comes FIRST and takes the place of that week's C episode. It follows the same episode rules (8 to 10 minutes, 8 new words + review words). Our audience is the USA and English-speaking Africa, many church schools: keep every holiday calm, kind and family-centered. No Halloween episode (use autumn and pumpkins instead). No famous characters or brands.
 
 MAKE WEEKEND (starts Sat) -> PUBLISH BY -> OCCASION -> EPISODE
 - 28 Nov 2026 -> 14 Dec 2026 -> New Year (1 Jan) -> EP 8 Happy New Year! Count down from 10 (this is December W3 A)

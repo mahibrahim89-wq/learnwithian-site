@@ -28,6 +28,7 @@ STATUS = ROOT / "data" / "program_status.json"
 EPISODES = ROOT / "data" / "episodes.json"
 RULES_FROM = "2026-11-28"   # episodes published before the program are not judged
 MIN_SECONDS = 8 * 60
+MAX_SECONDS = 10 * 60 + 30   # Mahmoud 28 Nov 2026: episodes 8 to 10 minutes (30 s grace)
 AR = {1: "يناير", 2: "فبراير", 3: "مارس", 4: "أبريل", 5: "مايو", 6: "يونيو", 7: "يوليو", 8: "أغسطس", 9: "سبتمبر", 10: "أكتوبر", 11: "نوفمبر", 12: "ديسمبر"}
 
 
@@ -155,8 +156,10 @@ def main():
             continue
         name = rec.get("title", vid)
         if rec.get("seconds") is not None and rec["seconds"] < MIN_SECONDS:
-            problems.append({"key": f"short-{vid}", "text": f"حلقة \"{name}\" مدتها {rec['seconds'] // 60}:{rec['seconds'] % 60:02d}، والقاعدة 8 دقايق على الأقل."})
+            problems.append({"key": f"short-{vid}", "text": f"حلقة \"{name}\" مدتها {rec['seconds'] // 60}:{rec['seconds'] % 60:02d}، والقاعدة من 8 لـ 10 دقايق."})
         slot = rec.get("slot")
+        if slot not in (None, "none") and rec.get("seconds") is not None and rec["seconds"] > MAX_SECONDS:
+            problems.append({"key": f"long-{vid}", "text": f"حلقة \"{name}\" مدتها {rec['seconds'] // 60}:{rec['seconds'] % 60:02d}، والقاعدة من 8 لـ 10 دقايق."})
         if slot == "none":
             problems.append({"key": f"none-{vid}", "text": f"حلقة \"{name}\" مش من المنهج (مالهاش مكان في البرنامج)."})
         elif slot and slot != "special" and cur:
