@@ -276,7 +276,7 @@ def check_stores():
         want = base.get(url)
         if want and want != pr:
             add("store-price-" + re.sub(r"[^a-z0-9]+", "-", url.lower())[-50:],
-                f"سعر اتغيّر على {store} ({name or 'منتج'}): المتفق عليه {want} والمعروض دلوقتي {pr}. {url} . لو التغيير مقصود قول لـ Claude يحدّث القايمة.")
+                f"سعر اتغيّر على {store} ({name or 'منتج'}): كان {want} يوم ما اتسجّل، والمعروض دلوقتي {pr}. {url} . لو التغيير مقصود قول لـ Claude يحدّث القايمة.")
     print(f"guardian: stores: prices read {len(prices)}, in the agreed list {len(base)}")
     by_store, totals = {}, {}
     for url, store, name in dead:
